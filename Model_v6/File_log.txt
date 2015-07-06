@@ -1,0 +1,28 @@
+Model_v4
+Obj: Including instrument for service level using the current framework of minimizing weighted sum of squares for "error" terms with respect to distance coefficient, which includes the xi and residuals of fixed effects.
+
+data_estimation_2.6_weather.R
+  -Changing service level generation to be at stationXtw level and not month level.
+
+
+
+####
+#from Model_v3
+#This folder enhances Model_v1 (which is everything from Round 1) to include 
+#enhanced density model
+
+
+generate_density_model.R - Generates metro annual traffic data.
+
+eval_func_4_GMM_new_temp_2.89.R - 
+  - Removed district fixed effect
+  - removed service level variable.
+  - Still has station fixed effects computation and removal, can simplify until I want to include service level effect.
+
+eval_func_2_cpp_MPEC.R
+  - Has objective and gradient function for MPEC implementation
+  - Also included weather information and service level estimation in eval_error_xi_sl_MPEC
+
+reg_results_MPEC_2.89_wconstraint.R
+  - Runs ipoptr for MPEC implementation
+  - uses objective function implementation in eval_func_2_cpp_MPEC.R
