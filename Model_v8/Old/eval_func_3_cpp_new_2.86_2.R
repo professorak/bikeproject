@@ -1,0 +1,128 @@
+# sourceCpp("eval_func_3_new.cpp")
+# 
+# eval_lambda_theta <- function(theta1, deltain, wdcMergedday, points, tw_groupin) {
+#   #for argument day compute the lambda values for all stations and times 
+#   #in ascensing station_id n_time order
+#   #this implies integrating over all points
+#   #return will be a single vector of length no_stations X no_time in that day
+#   return(eval_lambda_delta_list(deltain, theta1, wdcMergedday, points, tw_groupin)[[1]])    
+# }  
+# 
+# eval_grad_lambda_theta_full <- function(theta1, deltain, wdcMergedday, points, tw_groupin) {
+#   #for each point we have to generate the gradient wrt theta1 
+#   #taking into account delta is function of theta
+#   #for this will have to compute gradient of shares wrt delta and theta1
+#   
+#   #computing the gradients of station fixed effects wrt beta1
+#   list_grad_share_delta <- eval_grad_share_delta (deltain, theta1, wdcMergedday, points, tw_groupin)
+#   list_grad_share_theta <- eval_grad_share_theta (deltain, theta1, wdcMergedday, points, tw_groupin)
+#   
+#   grad_share_delta <- list_grad_share_delta[[1]]
+#   grad_lambda_delta <- list_grad_share_delta[[2]]
+#   grad_share_theta <- list_grad_share_theta[[1]]
+#   grad_lambda_theta <- list_grad_share_theta[[2]]
+#   
+#   grad_delta_theta <- -solve(grad_share_delta) %*% as.matrix(grad_share_theta)
+#   #the full gradient of lambda is given by gradient of lambda wrt theta 
+#   #and that wrt delta is scaled by gradient of delta wrt theta 
+#   grad_lambda_theta_full <- grad_lambda_theta + grad_lambda_delta %*% grad_delta_theta
+#   
+#   return (grad_lambda_theta_full)
+# }  
+# 
+# 
+eval_grad_share_delta_new <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  #generates the gradient of shares sfT for dayin wrt \delta
+  #calls eval_grad_lambda_delta and then aggregates.
+  #output is of dimension no_stXno_st  
+  grad_t <- eval_lambda_delta_list_new(deltain, theta1, wdcMergedday, points, tw_groupin)[[2]]
+  
+  grad_dem_T <- grad_t
+  
+  #returning both gradients of share and graident of lambda
+  return(list(grad_dem_T,grad_t))
+}
+
+eval_grad_share_theta_new <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  #generates the gradient of shares sfT for dayin wrt \delta
+  #calls eval_grad_lambda_delta and then aggregates.
+  #output is of dimension no_stXno_params 
+  #note that this is partial gradient of share wrt theta and doesnt account delta is function of theta
+  grad_t <- eval_grad_lambda_theta_new(theta1, deltain, wdcMergedday, points, tw_groupin)
+  
+  grad_dem_T <- grad_t
+  return(list(grad_dem_T,grad_t))
+}
+
+eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points, tw_groupin) {
+  #for argument day compute the lambda values for all stations and times 
+  #in ascensing station_id n_time order
+  #this implies integrating over all points
+  #return will be a single vector of length no_stations X no_time in that day
+  no_st <- max(wdcMergedday$station_id_index)
+  if(length(deltain_tw)!=nrow(wdcMergedday)) stop("error in eval_grad_lambda_theta")
+  sto_state_local <- wdcMergedday$sto_state_local
+  local_stations <- wdcMergedday$local_stations
+  points_local_stations <- points$local_stations
+  wdcMergedday  = wdcMergedday[,c("station_id",
+                                  "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
+  
+  wdcMergedday = as.matrix(wdcMergedday)
+  points_mat <- points
+  points_mat$density <- ((points_mat$type==1)*theta1[density_ridership_col] + 
+                           (points_mat$type==2)*theta1[density_metro_col]) *points_mat$weight   + 
+                        (points_mat$type==1)*theta1[density_intercept_col]  
+  points_mat = as.matrix(points_mat[,c("lat","lon","density")])
+  
+  
+  grad_t <- eval_grad_lambda_theta_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                    as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))
+  
+  #compute gradient wrt density_ridership and density_metro_col
+  points_mat <- points
+  points_mat$density <- ((points_mat$type==1)) *points_mat$weight
+  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+  grad_t_ridership <- res[,1]
+  points_mat <- points  
+  points_mat$density <- ((points_mat$type==2)) *points_mat$weight
+  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+  grad_t_metro <- res[,1]
+  points_mat <- points
+  points_mat$density <- ((points_mat$type==1))
+  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+  grad_t_intercept <- res[,1]
+  
+  grad_t_all <- cbind(grad_t,grad_t_ridership,grad_t_metro,grad_t_intercept)
+  
+  return(grad_t_all)  
+}
+
+eval_grad_delta_theta_new <- function(theta1, deltain, wdcMergedday, points, tw_groupin) {
+  #for each point we have to generate the gradient wrt theta1 
+  #taking into account delta is function of theta
+  #for this will have to compute gradient of shares wrt delta and theta1
+  
+  #computing the gradients of station fixed effects wrt beta1
+  list_grad_share_delta <- eval_grad_share_delta_new (deltain, theta1, wdcMergedday, points, tw_groupin)
+  list_grad_share_theta <- eval_grad_share_theta_new (deltain, theta1, wdcMergedday, points, tw_groupin)
+  
+  grad_share_delta <- list_grad_share_delta[[1]]
+  grad_lambda_delta <- list_grad_share_delta[[2]]
+  grad_share_theta <- list_grad_share_theta[[1]]
+  grad_lambda_theta <- list_grad_share_theta[[2]]
+  
+  stocked_list <- which(wdcMergedday$stocked_out==FALSE)
+  print("kappa grad_share_delta: ")
+  print(kappa(grad_share_delta[stocked_list,stocked_list]))
+  grad_delta_theta <- -solve(grad_share_delta[stocked_list,stocked_list]) %*% 
+                            as.matrix(grad_share_theta[stocked_list,])
+  grad_delta_theta_full <- matrix(0,nrow(wdcMergedday),ncol(grad_delta_theta))
+  grad_delta_theta_full[stocked_list,] <- grad_delta_theta
+  return(grad_delta_theta_full)
+}
