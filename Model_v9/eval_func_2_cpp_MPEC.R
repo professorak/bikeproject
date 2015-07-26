@@ -48,8 +48,8 @@ eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday,
   stocked_list <- which(wdcMergedday$stocked_out==F)
   grad_theta <- grad_theta[stocked_list,]
   grad_delta <- grad_delta[stocked_list, stocked_list]
-        
-  return(c(t(cbind(grad_theta,grad_delta))))
+  grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
+  return(grad_constraints_tw[which(grad_constraints_tw!=0)])
 }
 
 eval_grad_constraints_MPEC <- function(params, wdcMerged, points, length_theta) {
@@ -71,7 +71,7 @@ eval_grad_constraints_MPEC <- function(params, wdcMerged, points, length_theta) 
                                     eval_grad_constraints_MPEC_tw_groupin(deltain_tw, theta1, 
                                           wdcMergedday,points, tw_groupin))
   }
-  return(grad_constraints[which(grad_constraints!=0)])  
+  return(grad_constraints)  
 }
 
 eval_jac_g <- function(params, wdcMerged, points, length_theta) {
