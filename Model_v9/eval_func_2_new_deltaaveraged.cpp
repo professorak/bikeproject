@@ -7,7 +7,7 @@
 #include <vector>
 #include <stdlib.h>     /* atoi */
 #include <assert.h>
-
+#include <ctime>
 
 using namespace Rcpp;
 using namespace std;
@@ -185,8 +185,8 @@ mat  compute_prob_theta(uint i, mat station_data, NumericMatrix xpoints, uint wd
     uint pointslat1_col, uint pointslon1_col, double beta1, double sigma0, colvec xdeltain, 
     uvec st_point_list_uvec, rowvec deltain_row, urowvec mat_st_state_row, NumericVector xv0_vec,
     uint points_density_col);
-rowvec  compute_prob_unweighted(uint i, mat station_data, mat xpoints, uint wdclat1_col, uint wdclon1_col,
-    uint pointslat1_col, uint pointslon1_col, double beta1, double sigma0, colvec xdeltain, 
+rowvec  compute_prob_unweighted(uint i, mat station_data, uint wdclat1_col, uint wdclon1_col,
+    double pointslat1_i, double pointslon1_i, double beta1, double sigma0, colvec xdeltain, 
     uvec st_point_list_uvec, rowvec deltain_row, urowvec mat_st_state_row, 
     NumericVector xv0_vec);
 
@@ -478,8 +478,7 @@ SEXP eval_lambda_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday , SEXP p
     mat station_data_all = xwdcmat.rows(unique_idx(station_id_index_r));
     
     //station_data_all <- unique(wdcMerged[,c("station_id","lat","lon","station_id_index")])
-    
-    
+
     for(uint i=0;i<xpoints.nrow();i++) {
     //  cout << "point no" << i << endl;
     //for(uint i=2;i<3;i++) {
@@ -619,14 +618,14 @@ SEXP eval_lambda_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday , SEXP p
               rowvec deltain_row = delta_avg;
 
               deltain_row(k) = delta_a[k][l];
-           
+               
               vector<mat> ret = compute_prob(i, station_data, xpoints, wdclat1_col, wdclon1_col, pointslat1_col, 
               pointslon1_col, beta1, sigma0, xdeltain, st_point_list_uvec, deltain_row, mat_st_state_row,  
               xv0_vec, points_density_col); 
                             
               rowvec lambda_st_t = ret[0];              
-              lambda_t(a_vec[k][l]) +=  lambda_st_t(k);
 
+              lambda_t(a_vec[k][l]) +=  lambda_st_t(k);
 //              mat util_grad = ret[1];              
 //
 //              rowvec grad_temp = util_grad.row(k);
@@ -657,6 +656,7 @@ SEXP eval_lambda_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday , SEXP p
 
         }
     }//end of points loop      
+
     colvec wdcobswt_colvec = xwdcmat.col(wdcobswt_col);    
     mat wdcobswt_mat = repmat(wdcobswt_colvec,1,xwdcMergedday.nrow());
     lambda_t = lambda_t%wdcobswt_colvec;    
@@ -687,10 +687,6 @@ SEXP eval_lambda_multiple_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday
 
     uint min_points_col = 2;
     uint max_points_col = xpoints.n_cols-1;
-    cout << max_points_col << endl;
-    cout << xpoints( 1, span(min_points_col, max_points_col) ) << endl;
-    //cout << xpoints(1,Range(min_points_col,max_points_col)) << endl;  
-    //NumericMatrix zz1= xpoints( Range(1,1),Range(min_points_col,max_points_col));  
     
     int xno_st = as<int>(no_st); 
     double xmax_walking_dis = as<double>(max_walking_dis);
@@ -725,7 +721,6 @@ SEXP eval_lambda_multiple_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday
     mat station_data_all = xwdcmat.rows(unique_idx(station_id_index_r));
     
     //station_data_all <- unique(wdcMerged[,c("station_id","lat","lon","station_id_index")])
-    
     
     for(uint i=0;i<xpoints.n_rows;i++) {
     //  cout << "point no" << i << endl;
@@ -867,8 +862,8 @@ SEXP eval_lambda_multiple_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday
 
               deltain_row(k) = delta_a[k][l];
            
-              rowvec lambda_st_t = compute_prob_unweighted(i, station_data, xpoints, wdclat1_col, wdclon1_col, pointslat1_col, 
-              pointslon1_col, beta1, sigma0, xdeltain, st_point_list_uvec, deltain_row, mat_st_state_row,  
+              rowvec lambda_st_t = compute_prob_unweighted(i, station_data, wdclat1_col, wdclon1_col, xpoints(i,pointslat1_col), 
+                xpoints(i,pointslon1_col), beta1, sigma0, xdeltain, st_point_list_uvec, deltain_row, mat_st_state_row,  
               xv0_vec); 
                             
               lambda_t.row(a_vec[k][l]) +=  lambda_st_t(k)*xpoints( i, span(min_points_col,max_points_col));
@@ -878,7 +873,8 @@ SEXP eval_lambda_multiple_cpp_new(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday
           }
 
         }
-    }//end of points loop      
+    }//end of points loop  
+
     colvec wdcobswt_colvec = xwdcmat.col(wdcobswt_col);    
     mat wdcobswt_mat = repmat(wdcobswt_colvec,1,xpoints.n_cols-2);
     lambda_t = lambda_t % wdcobswt_mat;    
@@ -1298,13 +1294,13 @@ vector<mat>  compute_prob(uint i, mat station_data, NumericMatrix xpoints, uint 
           return((obj_ret));  
 }
 
-rowvec  compute_prob_unweighted(uint i, mat station_data, mat xpoints, uint wdclat1_col, uint wdclon1_col,
-    uint pointslat1_col, uint pointslon1_col, double beta1, double sigma0, colvec xdeltain, 
+rowvec  compute_prob_unweighted(uint i, mat station_data, uint wdclat1_col, uint wdclon1_col,
+    double pointslat1_i, double pointslon1_i, double beta1, double sigma0, colvec xdeltain, 
     uvec st_point_list_uvec, rowvec deltain_row, urowvec mat_st_state_row, 
     NumericVector xv0_vec) {
   
           rowvec station_data_dis_vIdx = conv_to< rowvec >::from(latlondistance(station_data.col(wdclat1_col), 
-            station_data.col(wdclon1_col), xpoints(i,pointslat1_col), xpoints(i,pointslon1_col)));                    
+            station_data.col(wdclon1_col), pointslat1_i, pointslon1_i));                    
           
           rowvec util = exp(beta1*station_data_dis_vIdx + deltain_row)% (mat_st_state_row==0);
           double den_util = sum(util);

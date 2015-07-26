@@ -54,7 +54,7 @@ eval_grad_share_theta_new <- function(deltain, theta1, wdcMergedday, points, tw_
   return(list(grad_dem_T,grad_t))
 }
 
-eval_grad_lambda_theta_alternate <- function(theta1, deltain_tw, wdcMergedday, points, 
+eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points, 
                                              tw_groupin) {
   #for argument day compute the lambda values for all stations and times 
   #in ascensing station_id n_time order
@@ -73,102 +73,102 @@ eval_grad_lambda_theta_alternate <- function(theta1, deltain_tw, wdcMergedday, p
   points_mat <- points
   points_mat$density <- get_points_density(points_mat, theta1, tw_in)
   points_mat = as.matrix(points_mat[,c("lat","lon","density")])
-  
-  
+
   grad_t <- eval_grad_lambda_theta_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
                                            as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))
-  
+
   #compute gradient wrt density_ridership and density_metro_col
-  density_mat <- cbind(get_points_density_grad_ridership_col(points, tw_in),
+  density_mat <- cbind(get_points_density_grad_ridership_col(points, tw_in)
+                       ,
                        get_points_density_grad_metro_col(points, tw_in),  
                        get_points_density_grad_intercept_col(points, tw_in),  
                        get_points_density_grad_metro_evening_col(points, tw_in),
                        get_points_density_grad_places_count_col(points, tw_in),
-                       get_points_density_grad_bus_col(points, tw_in))
+                       get_points_density_grad_bus_col(points, tw_in)
+)
   points_mat <- cbind(points[,c("lat","lon")], density_mat)
   points_mat = as.matrix(points_mat)
   grad_t_densitycols <- eval_lambda_multiple_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
                                                      as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  
   grad_t_all <- cbind(grad_t,grad_t_densitycols)  
   return(grad_t_all)  
 }  
 
-eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points, tw_groupin) {
-  #for argument day compute the lambda values for all stations and times 
-  #in ascensing station_id n_time order
-  #this implies integrating over all points
-  #return will be a single vector of length no_stations X no_time in that day
-  no_st <- max(wdcMergedday$station_id_index)
-  tw_in <- wdcMergedday$tw[1]
-  if(length(deltain_tw)!=nrow(wdcMergedday)) stop("error in eval_grad_lambda_theta")
-  sto_state_local <- wdcMergedday$sto_state_local
-  local_stations <- wdcMergedday$local_stations
-  points_local_stations <- points$local_stations
-  wdcMergedday  = wdcMergedday[,c("station_id",
-                                  "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
-  
-  wdcMergedday = as.matrix(wdcMergedday)
-  points_mat <- points
-  points_mat$density <- get_points_density(points_mat, theta1, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])
-  
-  
-  grad_t <- eval_grad_lambda_theta_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                    as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))
-  
-  #compute gradient wrt density_ridership and density_metro_col
-  points_mat <- points
-  #points_mat$density <- ((points_mat$type==1)) *points_mat$weight
-  points_mat$density <- get_points_density_grad_ridership_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_ridership <- res[,1]
-  points_mat <- points  
-  #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
-  points_mat$density <- get_points_density_grad_metro_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_metro <- res[,1]
-  points_mat <- points
-  #points_mat$density <- ((points_mat$type==1))
-  points_mat$density <- get_points_density_grad_intercept_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_intercept <- res[,1]
-  
-  points_mat <- points  
-  #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
-  points_mat$density <- get_points_density_grad_metro_evening_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_metro_evening <- res[,1]
-  
-  points_mat <- points  
-  #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
-  points_mat$density <- get_points_density_grad_places_count_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_places_count <- res[,1]
-  
-  points_mat <- points  
-  #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
-  points_mat$density <- get_points_density_grad_bus_col(points_mat, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
-  res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
-  grad_t_bus <- res[,1]
-  
-  grad_t_all <- cbind(grad_t,grad_t_ridership,grad_t_metro,grad_t_intercept,grad_t_metro_evening,
-                      grad_t_places_count,grad_t_bus)
-  
-  return(grad_t_all)  
-}
+# eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points, tw_groupin) {
+#   #for argument day compute the lambda values for all stations and times 
+#   #in ascensing station_id n_time order
+#   #this implies integrating over all points
+#   #return will be a single vector of length no_stations X no_time in that day
+#   no_st <- max(wdcMergedday$station_id_index)
+#   tw_in <- wdcMergedday$tw[1]
+#   if(length(deltain_tw)!=nrow(wdcMergedday)) stop("error in eval_grad_lambda_theta")
+#   sto_state_local <- wdcMergedday$sto_state_local
+#   local_stations <- wdcMergedday$local_stations
+#   points_local_stations <- points$local_stations
+#   wdcMergedday  = wdcMergedday[,c("station_id",
+#                                   "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
+#   
+#   wdcMergedday = as.matrix(wdcMergedday)
+#   points_mat <- points
+#   points_mat$density <- get_points_density(points_mat, theta1, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])
+#   
+#   
+#   grad_t <- eval_grad_lambda_theta_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                     as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))
+#   
+#   #compute gradient wrt density_ridership and density_metro_col
+#   points_mat <- points
+#   #points_mat$density <- ((points_mat$type==1)) *points_mat$weight
+#   points_mat$density <- get_points_density_grad_ridership_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_ridership <- res[,1]
+#   points_mat <- points  
+#   #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
+#   points_mat$density <- get_points_density_grad_metro_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_metro <- res[,1]
+#   points_mat <- points
+#   #points_mat$density <- ((points_mat$type==1))
+#   points_mat$density <- get_points_density_grad_intercept_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_intercept <- res[,1]
+#   
+#   points_mat <- points  
+#   #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
+#   points_mat$density <- get_points_density_grad_metro_evening_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_metro_evening <- res[,1]
+#   
+#   points_mat <- points  
+#   #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
+#   points_mat$density <- get_points_density_grad_places_count_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_places_count <- res[,1]
+#   
+#   points_mat <- points  
+#   #points_mat$density <- ((points_mat$type==2)) *points_mat$weight
+#   points_mat$density <- get_points_density_grad_bus_col(points_mat, tw_in)
+#   points_mat = as.matrix(points_mat[,c("lat","lon","density")])  
+#   res <- eval_lambda_delta_list_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+#                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+#   grad_t_bus <- res[,1]
+#   
+#   grad_t_all <- cbind(grad_t,grad_t_ridership,grad_t_metro,grad_t_intercept,grad_t_metro_evening,
+#                       grad_t_places_count,grad_t_bus)
+#   
+#   return(grad_t_all)  
+# }
 
 eval_grad_delta_theta_new <- function(theta1, deltain, wdcMergedday, points, tw_groupin) {
   #for each point we have to generate the gradient wrt theta1 
