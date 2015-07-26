@@ -1,8 +1,7 @@
 eval_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
-  ret <- eval_share_log_list_new(exp(deltain),theta1,wdcMergedday,points,tw_groupin)
   stocked_list <- which(wdcMergedday$stocked_out==FALSE)
-  dem_T <- as.numeric(ret$dem_T)[stocked_list]
-  dem_hat_T <- as.numeric(ret$dem_hat_T)[stocked_list]      
+  dem_T <- eval_lambda_new(deltain, theta1, wdcMergedday, points, tw_groupin)[stocked_list]
+  dem_hat_T <- wdcMergedday$out_dem_sum[stocked_list]
   obj <- dem_T-dem_hat_T
   return(obj)
 }
