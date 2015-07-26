@@ -30,8 +30,13 @@ eval_constraints_MPEC <- function(params, wdcMerged, points, length_theta) {
 }
 
 eval_g <- function(params, wdcMerged, points, length_theta) {
-  return(c(eval_constraints_MPEC(params, wdcMerged, points, length_theta),
-           get_total_density(params, wdcMerged, points)))  
+  print("In eval_g: ")
+  ptm <- proc.time()  
+  ret <- c(eval_constraints_MPEC(params, wdcMerged, points, length_theta),
+           get_total_density(params, wdcMerged, points))
+  print("eval time:")
+  print(proc.time()-ptm)
+  return(ret)  
 }
 
 eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
@@ -70,8 +75,13 @@ eval_grad_constraints_MPEC <- function(params, wdcMerged, points, length_theta) 
 }
 
 eval_jac_g <- function(params, wdcMerged, points, length_theta) {
-  return(c(eval_grad_constraints_MPEC(params, wdcMerged, points, length_theta),
-           get_grad_total_density(params, wdcMerged, points)))
+  print("In eval_jac_g: ")
+  ptm <- proc.time()  
+  ret <- c(eval_grad_constraints_MPEC(params, wdcMerged, points, length_theta),
+           get_grad_total_density(params, wdcMerged, points))
+  print("eval time:")
+  print(proc.time()-ptm)
+  return(ret)
 }
 
 eval_grad_structure_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin, span_start) {

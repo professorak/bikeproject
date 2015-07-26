@@ -1,3 +1,4 @@
+weighing_GMM_mat <<- NULL
 eval_error_xi_model4 <- function(theta1,deltain,wdcMerged,points) {
   
   if(!identical(order(user_serv_lvl$st_tw_index), c(1:nrow(user_serv_lvl)))) stop("user_serv_lvl not sorted")  
@@ -55,12 +56,19 @@ eval_error_xi_model4 <- function(theta1,deltain,wdcMerged,points) {
                         ,"bus_den_1","bus_den_2","googleplaces_den_1","googleplaces_den_2","sto_nearby")])
   Z <- cbind(Xbase, Zbase)
   
+  Z <- colNormalize(Z) #so that column sums are equal to 1.
+  
   #theta_2 is given by, Inv(X'.W'.Z.A_N.Z'.W.X).(X'.W'.Z.A_N.Z'.W.delta)
   #W above can be replaced by W/|W|
   
   #Z_weighted equal to W'.Z
   Z_weighted <- (Z * (wdcMerged$obs_weight[stocked_list]))/sum(wdcMerged$obs_weight[stocked_list])
-  A_N <- diag(ncol(Z))
+  if(is.null(weighing_GMM_mat)) {
+    A_N <- diag(ncol(Z))    
+  } else {
+    A_N <- weighing_GMM_mat
+  }
+
   theta_2 <- solve(t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted) %*% X) %*%
                 (t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted) %*% deltain)
   
@@ -73,7 +81,10 @@ eval_error_xi_model4 <- function(theta1,deltain,wdcMerged,points) {
   return(list("obj"=obj,
               "theta2"=theta_2,
               "theta3"=NULL,
-              "grad_obj_wrt_delta"=grad_obj_wrt_delta))  
+              "grad_obj_wrt_delta"=grad_obj_wrt_delta,
+              "Z"=Z,
+              "weights"=wdcMerged$obs_weight[stocked_list],
+              "xi"=xi))
 }
 
 eval_obj_GMM_model4_obj <- function(params, wdcMerged, points, length_theta) {    
@@ -127,5 +138,11 @@ eval_obj_GMM_model4 <- function(theta, deltain, wdcMerged, points) {
   
 }
 
-
+colNormalize <- function(Z) {
+  #see if there is easier way by avoiding two tranpose operations.
+  Z_norm <- t(Z)
+  Z_norm <- Z_norm/rowSums(Z_norm)*ncol(Z_norm)
+  Z_norm <- t(Z_norm)
+  return(Z_norm)
+}
 

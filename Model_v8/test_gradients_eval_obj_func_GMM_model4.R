@@ -1,17 +1,14 @@
 #test_gradients eval_obj_func_GMM_model4
 source("eval_obj_func_GMM_model4.R")
 source("GetDataGooglePlaces.R")
-ret <- get_maindata_wgoogleplaces()
-wdcMerged <- ret$wdcMerged 
-points <- ret$points
-user_serv_lvl <- ret$user_serv_lvl
 
 
 
 ######
 #test
 #test gradient manually for fewer dimensions
-theta <- c(-10.7374110745,0.8860478015,403.4177015742,2.8258972200, 200,10,10)
+#theta <- c(-10.7374110745,0.8860478015,403.4177015742,2.8258972200, 200,10,10)
+theta <- c(1.91,0.76,148.54,0.0768,206.8,0.25,7.799,0.036)
 
 set.seed(34675)
 deltain_stin <- rnorm(length(which(!wdcMerged$stocked_out)),-3, 2)
@@ -71,6 +68,27 @@ num_grad[which(round(num_grad,2)!=
                  round(a2_eval_jac_constraints[,idx],2))][1:10]
 a2_eval_jac_constraints[,idx][which(round(num_grad,2)!=
                                       round(a2_eval_jac_constraints[,idx],2))][1:10]
+
+
+
+#########################
+#test gradient wrt dis coef, delta optimized
+theta <- c(1.91,0.76,148.54,0.0768,206.8,0.25,7.799)
+delta_all <- compute_delta_list_cntrt_map_new(c(theta[1],0,theta[-1]),wdcMerged, points)
+deltain_stin <- delta_all[which(wdcMerged$stocked_out==F)]
+params <- c(theta,deltain_stin)  
+a1 <- eval_obj_GMM_model4_obj(params,wdcMerged, points, length(theta))
+a1_eval_constraints <- eval_g(params,wdcMerged, points, length(theta))
+
+theta_2 <- c(-2,0.76,148.54,0.0768,206.8,0.25,7.799)
+delta_all_2 <- compute_delta_list_cntrt_map_new(c(theta_2[1],0,theta_2[-1]),wdcMerged, points)
+deltain_stin_2 <- delta_all_2[which(wdcMerged$stocked_out==F)]
+params_2 <- c(theta_2,deltain_stin_2)  
+a1_2 <- eval_obj_GMM_model4_obj(params_2,wdcMerged, points, length(theta_2))
+
+
+
+
 
 
 

@@ -11,6 +11,7 @@ source("data_prep_functions_ffdf_limstostate.R")
 source("data_prep_inte_points_limstostate.R")
 source("eval_func_2_cpp_cntrt_map_2.86_2.R")
 source("eval_func_3_cpp_new_2.86_2.R")
+source("temp_read_google_places_data.R")
 
 #max_walking_dis = 0.1
 tract_list <- list(1:10)
@@ -280,7 +281,25 @@ for(tract in tract_list) {
     points$weight <- points$density
     points$density <- NULL #changing density to weight to track where density is being used
     points$weight[which(points$type==2)] <- points$weight[which(points$type==2)]/max(points$weight[which(points$type==2)])
-  
+    points <- points[order(points$type, points$lat, points$lon),]
+
+    #google places data
+    places_data <- read_googleplaces_data()
+    #places_cols_select <- c("lat","lon","cafe", "grocery_or_supermarket", "local_government_office")
+    places_cols_select <- c("lat","lon","places_count")
+    places_data <- places_data[,places_cols_select]
+    places_data <- places_data[order(places_data$lat, places_data$lon),]
+    if(!identical(round(points$lat[c(1:nrow(places_data))],4), round(places_data$lat,4))) stop("points lat dont match")
+    if(!identical(round(points$lon[c(1:nrow(places_data))],4), round(places_data$lon,4))) stop("points lon dont match")
+    places_data_temp <- places_data
+    places_data_temp$lat <- NULL
+    places_data_temp$lon <- NULL
+    places_colnames <- colnames(places_data_temp)
+    places_data_temp_full <- as.data.frame(matrix(0,nrow=nrow(points),ncol=ncol(places_data_temp)))
+    colnames(places_data_temp_full) <- places_colnames
+    places_data_temp_full[c(1:nrow(places_data_temp)),] <- places_data_temp
+    points <- cbind(points, places_data_temp_full)
+
     # and convert to coefficient based 
     station_data_tract <- unique(wdcMerged[,c("tract","station_id_index")])  
 

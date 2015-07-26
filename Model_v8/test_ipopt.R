@@ -46,18 +46,22 @@ eval_h <- function( x, obj_factor, hessian_lambda ) {
 # initial values
 x0 <- c( -1.2, 1 )
 
-opts <- list("print_level"=0,
-             "file_print_level"=12,
-             "output_file"="banana.out",
+opts <- list(
+#              "print_level"=0,
+#              "file_print_level"=7,
+#              #"file_print_level"=12,
+#              "output_file"="banana.out",
              "tol"=1.0e-8)
 
 # solve Rosenbrock Banana function with analytic hessian 
-print( ipoptr( x0=x0, 
+system.time({
+  print( ipoptr( x0=x0, 
                eval_f=eval_f, 
                eval_grad_f=eval_grad_f, 
-               eval_h=eval_h,
-               eval_h_structure=eval_h_structure,
+#                eval_h=eval_h,
+#                eval_h_structure=eval_h_structure,
                opts=opts) )
+})
 
 # solve Rosenbrock Banana function with approximated hessian    	   
 # print( ipoptr( x0=x0, 

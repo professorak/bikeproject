@@ -49,6 +49,11 @@ if(!identical(user_serv_lvl$st_tw_index, c(1:nrow(user_serv_lvl)))) stop("user_s
 wdcMerged$instr_serv_lvl <- user_serv_lvl$instr_serv_lvl[wdcMerged$st_tw_index]
 wdcMerged$serv_lvl_neighbours <- user_serv_lvl$serv_lvl_neighbours[wdcMerged$st_tw_index]
 
+rm(instr_serv_lvl_1_df)
+rm(local_stations_vec)
+rm(user_serv_lvl_subset)
+rm(instr_serv_lvl_1_tw_df)
+
 #save commands
 # save(wdcMerged, file="wdcMerged_lin_weather.RData")
 # save(current_serv_lvl, file="current_serv_lvl_lin_weather.RData")
