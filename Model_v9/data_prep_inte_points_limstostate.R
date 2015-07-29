@@ -3,10 +3,12 @@
 generate_integration_points <- function(wdcMerged_in=wdcMerged,  dis_points=0.050) {
 
   #gen integration boundaries 
-  min_lon <- min(wdcMerged_in$lon)
-  max_lon <- max(wdcMerged_in$lon)
-  min_lat <- min(wdcMerged_in$lat)
-  max_lat <- max(wdcMerged_in$lat)
+  if(!exists("min_lon") | !exists("max_lon") | !exists("min_lat") | !exists("max_lat")) {
+    min_lon <- min(wdcMerged_in$lon)
+    max_lon <- max(wdcMerged_in$lon)
+    min_lat <- min(wdcMerged_in$lat)
+    max_lat <- max(wdcMerged_in$lat)    
+  }
   
   #distances in kms
 

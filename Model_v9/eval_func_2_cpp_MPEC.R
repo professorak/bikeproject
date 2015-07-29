@@ -6,6 +6,15 @@ eval_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, poin
   return(obj)
 }
 
+eval_constraints_MPEC_tw_groupin_tiny <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  stocked_list <- which(wdcMergedday$stocked_out==FALSE)
+  dem_T <- eval_lambda_new(deltain, theta1, wdcMergedday, points, tw_groupin)[stocked_list]
+  dem_hat_T <- wdcMergedday$out_dem_sum[stocked_list]
+  obj <- (dem_T-dem_hat_T)/wdcMergedday$obs_weight[stocked_list]
+  return(obj)
+}
+
+
 eval_constraints_MPEC <- function(params, wdcMerged, points, length_theta) {
   theta <- params[c(1:length_theta)]
   deltain_stin <- params[-c(1:length_theta)]
@@ -28,11 +37,43 @@ eval_constraints_MPEC <- function(params, wdcMerged, points, length_theta) {
   return(obj)
 }
 
+eval_constraints_MPEC_tiny <- function(params, wdcMerged, points, length_theta) {
+  theta <- params[c(1:length_theta)]
+  deltain_stin <- params[-c(1:length_theta)]
+  theta1 <- c(theta[1],0,theta[-1])  
+  
+  #expand deltain to all observations, it is currently #stocked in observations
+  deltain <- rep(-30, nrow(wdcMerged))
+  deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
+  
+  tw_group_list <- unique(wdcMerged$tw_group)
+  obj <- c()
+  for(i in 1:length(tw_group_list)) {
+    tw_groupin = tw_group_list[i]
+    wdcMergedday <- subset(wdcMerged, tw_group==tw_groupin)
+    deltain_tw = deltain[which(wdcMerged$tw_group==tw_groupin)]    
+    obj <- c(obj, 
+             eval_constraints_MPEC_tw_groupin_tiny(deltain_tw, theta1, wdcMergedday, 
+                                              points, tw_groupin))
+  }
+  return(obj)
+}
+
 eval_g <- function(params, wdcMerged, points, length_theta) {
   print("In eval_g: ")
   ptm <- proc.time()  
   ret <- c(eval_constraints_MPEC(params, wdcMerged, points, length_theta),
            get_total_density(params, wdcMerged, points))
+  print("eval time:")
+  print(proc.time()-ptm)
+  return(ret)  
+}
+
+eval_g_tiny <- function(params, wdcMerged, points, length_theta) {
+  print("In eval_g: ")
+  ptm <- proc.time()  
+  ret <- c(eval_constraints_MPEC_tiny(params, wdcMerged, points, length_theta),
+           get_total_density(params, wdcMerged, points)/tot_density*target_density_constraint)
   print("eval time:")
   print(proc.time()-ptm)
   return(ret)  
@@ -47,6 +88,19 @@ eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday,
   stocked_list <- which(wdcMergedday$stocked_out==F)
   grad_theta <- grad_theta[stocked_list,]
   grad_delta <- grad_delta[stocked_list, stocked_list]
+  grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
+  return(grad_constraints_tw[which(grad_constraints_tw!=0)])
+}
+
+eval_grad_constraints_MPEC_tw_groupin_tiny <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  grad_theta <- eval_grad_lambda_theta_new(theta1, deltain, wdcMergedday, points, tw_groupin)
+  grad_theta <- grad_theta[,-2]
+  grad_delta <- eval_lambda_delta_list_new(deltain, theta1, wdcMergedday, points, tw_groupin)[[2]]
+  
+  #reduce the rows and columns corresponding to only stocked in obervations of wdcMergedday
+  stocked_list <- which(wdcMergedday$stocked_out==F)
+  grad_theta <- grad_theta[stocked_list,]/wdcMergedday$obs_weight[stocked_list]
+  grad_delta <- grad_delta[stocked_list, stocked_list]/wdcMergedday$obs_weight[stocked_list]
   grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
   return(grad_constraints_tw[which(grad_constraints_tw!=0)])
 }
@@ -73,11 +127,43 @@ eval_grad_constraints_MPEC <- function(params, wdcMerged, points, length_theta) 
   return(grad_constraints)  
 }
 
+eval_grad_constraints_MPEC_tiny <- function(params, wdcMerged, points, length_theta) {
+  theta <- params[c(1:length_theta)]
+  deltain_stin <- params[-c(1:length_theta)]
+  theta1 <- c(theta[1],0,theta[-1])  
+  
+  #expand deltain to all observations, it is currently #stocked in observations
+  deltain <- rep(-30, nrow(wdcMerged))
+  deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
+  
+  tw_group_list <- unique(wdcMerged$tw_group)
+  grad_constraints <- c()
+  for(i in 1:length(tw_group_list)) {
+    tw_groupin = tw_group_list[i]
+    wdcMergedday <- subset(wdcMerged, tw_group==tw_groupin)
+    deltain_tw = deltain[which(wdcMerged$tw_group==tw_groupin)]
+    grad_constraints <- c(grad_constraints, 
+                          eval_grad_constraints_MPEC_tw_groupin_tiny(deltain_tw, theta1, 
+                                                                wdcMergedday,points, tw_groupin))
+  }
+  return(grad_constraints)  
+}
+
 eval_jac_g <- function(params, wdcMerged, points, length_theta) {
   print("In eval_jac_g: ")
   ptm <- proc.time()  
   ret <- c(eval_grad_constraints_MPEC(params, wdcMerged, points, length_theta),
            get_grad_total_density(params, wdcMerged, points))
+  print("eval time:")
+  print(proc.time()-ptm)
+  return(ret)
+}
+
+eval_jac_g_tiny <- function(params, wdcMerged, points, length_theta) {
+  print("In eval_jac_g: ")
+  ptm <- proc.time()  
+  ret <- c(eval_grad_constraints_MPEC_tiny(params, wdcMerged, points, length_theta),
+           get_grad_total_density(params, wdcMerged, points)/tot_density*target_density_constraint)
   print("eval time:")
   print(proc.time()-ptm)
   return(ret)

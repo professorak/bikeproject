@@ -176,13 +176,8 @@ eval_grad_delta_theta_new <- function(theta1, deltain, wdcMergedday, points, tw_
   #for this will have to compute gradient of shares wrt delta and theta1
   
   #computing the gradients of station fixed effects wrt beta1
-  list_grad_share_delta <- eval_grad_share_delta_new (deltain, theta1, wdcMergedday, points, tw_groupin)
-  list_grad_share_theta <- eval_grad_share_theta_new (deltain, theta1, wdcMergedday, points, tw_groupin)
-  
-  grad_share_delta <- list_grad_share_delta[[1]]
-  grad_lambda_delta <- list_grad_share_delta[[2]]
-  grad_share_theta <- list_grad_share_theta[[1]]
-  grad_lambda_theta <- list_grad_share_theta[[2]]
+  grad_share_delta <- eval_lambda_delta_list_new(deltain, theta1, wdcMergedday, points, tw_groupin)[[2]]
+  grad_share_theta <- eval_grad_lambda_theta_new(theta1, deltain, wdcMergedday, points, tw_groupin)
   
   stocked_list <- which(wdcMergedday$stocked_out==FALSE)
   print("kappa grad_share_delta: ")
@@ -193,3 +188,20 @@ eval_grad_delta_theta_new <- function(theta1, deltain, wdcMergedday, points, tw_
   grad_delta_theta_full[stocked_list,] <- grad_delta_theta
   return(grad_delta_theta_full)
 }
+
+
+eval_grad_delta_theta_full <- function(theta1, deltain, wdcMerged, points) {
+  #assumes wdcMerged is first sorted by tw_group
+  grad_delta_theta <- c()
+  tw_groupin_list <- unique(wdcMerged$tw_group)   
+  for(tw_groupin in tw_groupin_list) {
+    wdcMergedday = subset(wdcMerged, tw_group==tw_groupin)      
+    tw_index <- which(tw_groupin_list==tw_groupin)
+    deltain_tw <- deltain[which(wdcMerged$tw_group==tw_groupin)]
+    grad_delta_theta <- rbind(grad_delta_theta,
+                              eval_grad_delta_theta_new(theta1, deltain_tw, wdcMergedday, points, tw_groupin))
+  }  
+  return(grad_delta_theta)
+}
+
+

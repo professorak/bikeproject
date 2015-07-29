@@ -47,6 +47,10 @@ eval_error_xi_model4 <- function(theta1,deltain,wdcMerged,points) {
   } else {
     stop("error in eval_error_xi")
   }  
+  #drop from Xbase columns which have no non-zero entry
+  #rowsum is quite sure way to test
+  Xbase <- Xbase[,-which(colSums(Xbase)==0)] 
+  
   #add service level vector to convert Xbase to X
   X <- cbind(Xbase, serv_lvl=wdcMerged$serv_lvl[stocked_list])
 

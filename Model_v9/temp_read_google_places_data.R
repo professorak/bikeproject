@@ -5,20 +5,13 @@ read_googleplaces_data <- function() {
     na_list <- which(is.na(places_data[,i]))
     places_data[na_list,i] <- 0
   }
+  #assign points to tracts
+  wdcCenTrParsed <- readtractboundaryfile() 
+  
+  #find distance from each points row to each point in census and assign one that 
+  #is closest
+  places_data$tract <- assign_points_tract(places_data$lat,places_data$lon,wdcCenTrParsed)
+  
   return(places_data)
 }
-
-
-
-
-# #computing coef. of variation for each column
-# colmeans <- colMeans(places_data)
-# sd <- apply(places_data, 2, FUN=sd)
-# coefvar <- sd/colmeans
-# coefvar <- coefvar[-c(1:2)]
-# 
-# coefvar <- coefvar[order(coefvar, decreasing=T)]
-# 
-# summary(coefvar)
-
 

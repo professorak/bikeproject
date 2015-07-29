@@ -33,12 +33,12 @@ a2_g[idx]
 a1_g[idx]
 
 #test constraints gradient
-a1_eval_constraints <- eval_g(params,wdcMerged, points, length(theta))
+a1_eval_constraints <- eval_g_tiny(params,wdcMerged, points, length(theta))
 get_total_density(params[1:length(theta)], wdcMerged, points)
-a1_eval_jac_constraints <- eval_jac_g(params,wdcMerged, points, length(theta))
-eval_jac_g_structure_val <- eval_jac_g_structure(params, wdcMerged, points, length(theta))
-if(length(a1_eval_jac_constraints)!=length(unlist(eval_jac_g_structure_val))) stop("gradient lengths dont match a1_eval_jac_constraints")
-a1_eval_jac_constraints <- getfullfromsparsematrix (eval_jac_g_structure_val, a1_eval_jac_constraints) 
+a1_eval_jac_constraints <- eval_jac_g_tiny(params,wdcMerged, points, length(theta))
+eval_jac_g_tiny_structure_val <- eval_jac_g_structure(params, wdcMerged, points, length(theta))
+if(length(a1_eval_jac_constraints)!=length(unlist(eval_jac_g_tiny_structure_val))) stop("gradient lengths dont match a1_eval_jac_constraints")
+a1_eval_jac_constraints <- getfullfromsparsematrix (eval_jac_g_tiny_structure_val, a1_eval_jac_constraints) 
 
 
 idx <- 6
@@ -47,10 +47,10 @@ diff <- 0.0001
 params_2 <- params
 params_2[idx] <- params_2[idx] + diff  
 
-a2_eval_constraints <- eval_g(params_2,wdcMerged, points, length(theta))
+a2_eval_constraints <- eval_g_tiny(params_2,wdcMerged, points, length(theta))
 get_total_density(params_2[1:length(theta)], wdcMerged, points)
-a2_eval_jac_constraints <- eval_jac_g(params_2,wdcMerged, points, length(theta))
-a2_eval_jac_constraints <- getfullfromsparsematrix (eval_jac_g_structure_val, a2_eval_jac_constraints) 
+a2_eval_jac_constraints <- eval_jac_g_tiny(params_2,wdcMerged, points, length(theta))
+a2_eval_jac_constraints <- getfullfromsparsematrix (eval_jac_g_tiny_structure_val, a2_eval_jac_constraints) 
 
 (sum(a2_eval_constraints)-sum(a1_eval_constraints))/diff
 sum(a2_eval_jac_constraints[,idx])
@@ -78,7 +78,7 @@ delta_all <- compute_delta_list_cntrt_map_new(c(theta[1],0,theta[-1]),wdcMerged,
 deltain_stin <- delta_all[which(wdcMerged$stocked_out==F)]
 params <- c(theta,deltain_stin)  
 a1 <- eval_obj_GMM_model4_obj(params,wdcMerged, points, length(theta))
-a1_eval_constraints <- eval_g(params,wdcMerged, points, length(theta))
+a1_eval_constraints <- eval_g_tiny(params,wdcMerged, points, length(theta))
 
 theta_2 <- c(-2,0.76,148.54,0.0768,206.8,0.25,7.799)
 delta_all_2 <- compute_delta_list_cntrt_map_new(c(theta_2[1],0,theta_2[-1]),wdcMerged, points)
