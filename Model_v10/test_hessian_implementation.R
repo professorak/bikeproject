@@ -1,29 +1,5 @@
 sourceCpp("eval_func_2_new_deltaaveraged.cpp")
 
-eval_hessian_delta_list_new <- function(deltain_tw, theta1, wdcMergedday, points, tw_groupin,lambda_multiplers_in) {
-  no_st <- length(unique(wdcMergedday$station_id_index))
-  no_obs <- nrow(wdcMergedday)
-  tw_in <- wdcMergedday$tw[1]
-  if(length(deltain_tw)!=no_obs) stop("error in eval_lambda_delta_list")  
-  sto_state_local <- wdcMergedday$sto_state_local
-  local_stations <- wdcMergedday$local_stations
-  points_local_stations <- points$local_stations
-  wdcMergedday  = wdcMergedday[,c("station_id",
-                                  "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
-  
-  
-  points_mat <- points
-  points_mat$density <- get_points_density(points_mat, theta1, tw_in)
-  points_mat = as.matrix(points_mat[,c("lat","lon","density")])
-  wdcMergedday = as.matrix(wdcMergedday)
-  
-  hessian_lambda_delta_sq <- eval_hessian_lambda_delta_sq_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                        as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
-                                        lambda_multiplers_in)
-  
-  return(hessian_lambda_delta_sq)  
-  
-}
 
 deltain <- rep(-30, nrow(wdcMerged))
 deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
