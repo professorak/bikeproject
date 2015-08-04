@@ -1,4 +1,5 @@
-SEXP eval_hessian_lambda_theta1_sq_cpp(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday , SEXP points,
+// [[Rcpp::export]]
+SEXP eval_hessian_lambda_delta_theta1_cpp(SEXP deltain , SEXP  theta1 ,SEXP wdcMergedday , SEXP points,
          SEXP no_st, SEXP max_walking_dis,
          SEXP v0_vec, SEXP wdc_sto_state_local_in, 
          SEXP wdc_local_stations_in, SEXP points_local_stations_in,
@@ -40,8 +41,7 @@ SEXP eval_hessian_lambda_theta1_sq_cpp(SEXP deltain , SEXP  theta1 ,SEXP wdcMerg
     colvec lon1(lon1_r.begin(),lon1_r.size(),true);
     colvec wdcobswt(wdcobswt_r.begin(),wdcobswt_r.size(),true);
         
-    //arma::mat lambda_t(xwdcMergedday.nrow(), xpoints.n_cols-2, fill::zeros);
-    mat hessian_theta1_sq(xtheta1.size(),xtheta1.size(),fill::zeros);
+    mat hessian_theta1_delta(xtheta1.size(),xwdcMergedday.nrow(),fill::zeros);
     
     uint pointslat1_col = 0;
     uint pointslon1_col = 1;
@@ -182,16 +182,47 @@ SEXP eval_hessian_lambda_theta1_sq_cpp(SEXP deltain , SEXP  theta1 ,SEXP wdcMerg
            
               if(lambda_multiplers(a_vec[k][l])==0) continue;
 
-              mat hessian_theta1_sq_kl = compute_hessian_theta1_sq_weighted(i, station_data, wdclat1_col, wdclon1_col, xpoints(i,pointslat1_col), 
+              mat hessian_theta1_delta_kl = compute_hessian_theta1_delta_weighted(i, station_data, wdclat1_col, wdclon1_col, xpoints(i,pointslat1_col), 
                 xpoints(i,pointslon1_col), beta1, sigma0, xdeltain, st_point_list_uvec, deltain_row, mat_st_state_row,  
-              xv0_vec, k, xpoints(i, min_points_col), xpoints(i,span(min_points_col+1,max_points_col)));
+              xv0_vec, k, xtheta1.size(), xpoints(i, min_points_col), xpoints(i,span(min_points_col+1,max_points_col)));
               //multiply with observation wt & lambda_multiplers_in(a_vec[k][l])
               
-              hessian_theta1_sq_kl *=  wdcobswt(a_vec[k][l])*lambda_multiplers(a_vec[k][l]);
+              hessian_theta1_delta_kl *=  wdcobswt(a_vec[k][l])*lambda_multiplers(a_vec[k][l]);
               
+              //need to expand hessian_delta_sq_kl to reflect gradients wrt
+              //a_vec columns to reflect the deltaaveraged gradients.
+              //test in a seperate Rcpp file how to repeat rows and columns and then 
+              //multiply rows and columns with prob_a values.
+              //creating version of a_vec and prob_a which have the focal station 
+              //with only one entry and rest of the stations with actual list.
+              vector< vector<double> > prob_a_temp = prob_a;
+              vector<double> temp_vec1(1); temp_vec1[0]=1;
+              prob_a_temp[k] = temp_vec1;
+              vector< vector<int> > a_vec_temp = a_vec;
+              vector<int> temp_vec2(1); temp_vec2[0]=a_vec[k][l];
+              a_vec_temp[k] = temp_vec2;
+              //cout << "simplify above lines, there should be way of direclty assigning\
+              //instead of creating temp vecs" << endl; 
+              //unlisting above lists
+              vector<int> a_vec_unlisted;
+              vector<double> prob_a_unlisted;
+              //create list of hessian_delta_sq_kl indexes to expand
+              uvec hessian_expand_index;
 
-              hessian_theta1_sq += hessian_theta1_sq_kl;
-              
+              for(uint m=0; m <prob_a_temp.size(); ++m) {  
+                uvec hessian_expand_index_temp(prob_a_temp[m].size());
+                hessian_expand_index_temp.fill(m);
+                hessian_expand_index.insert_rows( hessian_expand_index.size(), hessian_expand_index_temp ); 
+                a_vec_unlisted.insert(a_vec_unlisted.end(),a_vec_temp[m].begin(),a_vec_temp[m].end());
+                prob_a_unlisted.insert(prob_a_unlisted.end(),prob_a_temp[m].begin(),prob_a_temp[m].end());                
+              }              
+              mat weights_mat(prob_a_unlisted.size(),prob_a_unlisted.size(),fill::zeros);
+              weights_mat.diag()  = conv_to<vec>::from(prob_a_unlisted);
+              mat hessian_theta1_delta_kl_expanded = hessian_delta_sq_kl_expanded.cols(hessian_expand_index);
+              //hessian_delta_sq_kl_expanded = hessian_delta_sq_kl_expanded.cols(hessian_expand_index);
+              hessian_theta1_delta_kl_expanded = hessian_theta1_delta_kl_expanded * weights_mat;
+              uvec a_vec_unlisted_uvec = conv_to<uvec>::from(a_vec_unlisted);
+              hessian_theta1_delta.cols(a_vec_unlisted_uvec) += hessian_theta1_delta_kl_expanded;
             }
             }
           }
@@ -199,17 +230,17 @@ SEXP eval_hessian_lambda_theta1_sq_cpp(SEXP deltain , SEXP  theta1 ,SEXP wdcMerg
         }
     }//end of points loop  
 
-    return(wrap(hessian_theta1_sq));  
+    return(wrap(hessian_theta1_delta));  
       
 }
 
 
 
-mat compute_hessian_theta1_sq(uint i, mat station_data, uint wdclat1_col, uint wdclon1_col,
+mat compute_hessian_theta1_delta_weighted(uint i, mat station_data, uint wdclat1_col, uint wdclon1_col,
     double pointslat1_i, double pointslon1_i, double beta1, double sigma0, colvec xdeltain, 
     uvec st_point_list_uvec, rowvec deltain_row, urowvec mat_st_state_row, 
-    NumericVector xv0_vec, uint focal_station_index, NumericVector xtheta1,
-    double point_density_i, vec points_den_covariates) {
+    NumericVector xv0_vec, uint focal_station_index, uint xtheta1_size,
+    double point_density_i, rowvec points_den_covariates) {
   
           rowvec station_data_dis_vIdx = conv_to< rowvec >::from(latlondistance(station_data.col(wdclat1_col), 
             station_data.col(wdclon1_col), pointslat1_i, pointslon1_i));                    
@@ -218,13 +249,19 @@ mat compute_hessian_theta1_sq(uint i, mat station_data, uint wdclat1_col, uint w
           double den_util = sum(util);
           uint no_t_st = util.size();          
           //rowvec lambda_st_t(no_t_st,fill::zeros);
-          mat hessian_theta1(xtheta1.size(),xtheta1.size(),fill::zeros);
-          double hessian_beta1_sq_t=0;
-          double hessian_sigma_sq_t=0;
-          double hessian_beta1_thetaden_t=0;  
+          mat hessian_beta1_delta_t(1,no_t_st,fill::zeros);
+          mat hessian_theta1_delta_t(xtheta1_size,no_t_st,fill::zeros);
+          rowvec grad_delta(no_t_st,fill::zeros);
 
-          uvec no_focal_indexes(no_t_st,fill::zeros);          
+          uvec no_focal_indexes(no_t_st,fill::zeros);
           
+          //fill  no_focal_indexes with index sequence
+          //find more efficient way to do this
+          for(uint m=0; m<no_focal_indexes.size(); ++m) {
+            no_focal_indexes(m)=m;
+          }
+          no_focal_indexes.shed_row(focal_station_index);
+
           for(int m=0; m<xv0_vec.size(); ++m) {
               double out = exp(-xv0_vec(m)*sigma0);
               double denutil_t = den_util+out;        
@@ -233,32 +270,34 @@ mat compute_hessian_theta1_sq(uint i, mat station_data, uint wdclat1_col, uint w
 
               rowvec disP = util_prob_t%station_data_dis_vIdx;
               double disP_sum = sum( disP);
+              // rowvec disP_sum_vec(no_t_st);
+              // disP_sum_vec.fill(disP_sum);
 
-              double val1 = util_prob_t(focal_station_index) *\
-                pow(station_data_dis_vIdx(focal_station_index)-disP_sum,2.0); 
+              vec val1(no_t_st,fill::zeros);
+              val1 = station_data_dis_vIdx 
+              val1 += station_data_dis_vIdx(focal_station_index) - 2*disP_sum_vec;
+              val1 = val1 % util_prob_t;
+              val1 *= -util_prob_t(focal_station_index);
+              //remove focal_station_index from val1 as it is incorrect.
+              val1.shed_row(focal_station_index);
 
-              rowvec disP_sum_vec(no_t_st);
-              disP_sum_vec.fill(disP_sum);
-
-              double val2 = util_prob_t(focal_station_index)*sum((disP-disP_sum_vec) % disP);
-              hessian_beta1_sq_t += val1 + val2;
-
-              hessian_beta1_thetaden_t += util_prob_t(focal_station_index)*\
+              hessian_beta1_delta_t(0,no_focal_indexes) += val1;
+              hessian_beta1_delta_t(0,focal_station_index) += util_prob_t(focal_station_index) * (1-2*util_prob_t(focal_station_index))\
                 (station_data_dis_vIdx(focal_station_index)-disP_sum);
+
+              grad_delta -= util_prob_t(focal_station_index)*util_prob_t;
+              grad_delta(focal_station_index) += util_prob_t(focal_station_index);
           }
-          hessian_beta1_sq_t *= (1/xv0_vec.size());
+          grad_delta *= (1/xv0_vec.size());
+          hessian_beta1_delta_t *= (1/xv0_vec.size())* point_density_i;
+          
+          mat hessian_thetaden_delta_t = points_den_covariates.t() * grad_delta;
+          assert(hessian_thetaden_delta_t.n_rows==points_den_covariates.size());
+          assert(hessian_thetaden_delta_t.n_cols==grad_delta.size());
 
-          hessian_beta1_thetaden_t *= (1/xv0_vec.size());
+          hessian_theta1_delta_t.row(0)=hessian_beta1_delta_t;
+          hessian_theta1_delta_t.rows(span(2,xtheta1_size-1))=hessian_thetaden_delta_t;
 
-          vec hessian_beta1_thetaden_vec_t(xtheta1.size()-2);
-          hessian_beta1_thetaden_vec_t.fill(hessian_beta1_thetaden_t);
-          //multilpy hessian_beta1_thetaden_vec_t with points_den_covariates
-          hessian_beta1_thetaden_vec_t = hessian_beta1_thetaden_vec_t % points_den_covariates;
-
-          hessian_theta1(0,0) = hessian_beta1_sq_t * point_density_i;
-          hessian_theta1(0,span(2,xtheta1.size()-1)) = hessian_beta1_thetaden_vec_t;
-
-          return((hessian_theta1));  
+          return((hessian_theta1_delta_t));  
 }
-
 

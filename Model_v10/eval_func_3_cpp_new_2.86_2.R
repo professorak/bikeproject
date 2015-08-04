@@ -288,3 +288,37 @@ eval_hessian_theta1_sq_tw <- function(deltain_tw, theta1, wdcMergedday, points, 
   
 }
 
+eval_hessian_lambda_theta1_delta_tw <- function(deltain_tw, theta1, wdcMergedday, points, tw_groupin,lambda_multiplers_in) {
+  no_st <- length(unique(wdcMergedday$station_id_index))
+  no_obs <- nrow(wdcMergedday)
+  tw_in <- wdcMergedday$tw[1]
+  if(length(deltain_tw)!=no_obs) stop("error in eval_lambda_delta_list")  
+  sto_state_local <- wdcMergedday$sto_state_local
+  local_stations <- wdcMergedday$local_stations
+  points_local_stations <- points$local_stations
+  wdcMergedday  = wdcMergedday[,c("station_id",
+                                  "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
+  
+  density_mat <- cbind(get_points_density_grad_ridership_col(points, tw_in)
+                       ,
+                       get_points_density_grad_metro_col(points, tw_in),  
+                       get_points_density_grad_intercept_col(points, tw_in),  
+                       get_points_density_grad_metro_evening_col(points, tw_in),
+                       get_points_density_grad_places_count_col(points, tw_in),
+                       get_points_density_grad_bus_col(points, tw_in)
+  )
+  points_mat <- points
+  points_mat$density <- get_points_density(points_mat, theta1, tw_in)  
+  points_mat <- cbind(points_mat[,c("lat","lon","density")], density_mat)
+  points_mat = as.matrix(points_mat)
+  
+  wdcMergedday = as.matrix(wdcMergedday)
+  
+  hessian_lambda_theta1_delta <- eval_hessian_lambda_theta1_delta_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                                                as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
+                                                                lambda_multiplers_in)
+  
+  return(hessian_lambda_theta1_delta)  
+  
+}
+
