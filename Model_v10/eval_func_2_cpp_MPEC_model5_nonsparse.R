@@ -90,12 +90,13 @@ eval_grad_constraints_moment_conditions <- function(deltain, theta1, eta, wdcMer
 
   obj_moments <- t(Z_weighted) %*% xi
   ret <- obj_moments - eta
-  grad_theta <- matrix(0,length(obj_moments), length(theta1))
-  grad_theta <- grad_theta[,-2]
+#   grad_theta <- matrix(0,length(obj_moments), length(theta1))
+#   grad_theta <- grad_theta[,-2]
   grad_delta <- t(Z_weighted) %*% grad_xi_delta
+  #grad_delta <- grad_delta[, stocked_list]   #already done above.
   grad_eta <- diag(-1,length(eta))
-  grad_all <- cbind(grad_theta,grad_delta,grad_eta)
-  return(grad_all)  
+  grad_all <- c(t(cbind(grad_delta,grad_eta)))
+  return(grad_all[which(grad_all!=0)])
 }
   
   
@@ -174,10 +175,8 @@ eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday,
   stocked_list <- which(wdcMergedday$stocked_out==F)
   grad_theta <- grad_theta[stocked_list,]
   grad_delta <- grad_delta[stocked_list, stocked_list]
-#   grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
-#   return(grad_constraints_tw[which(grad_constraints_tw!=0)])
-  grad_constraints_tw <- cbind(grad_theta,grad_delta)
-  return(grad_constraints_tw)
+  grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
+  return(grad_constraints_tw[which(grad_constraints_tw!=0)])
 }
 
 
@@ -186,22 +185,22 @@ eval_grad_constraints_MPEC <- function(deltain_stin, theta1, eta, wdcMerged, poi
   #expand deltain to all observations, it is currently #stocked in observations
   deltain <- rep(-30, nrow(wdcMerged))
   deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
-  theta <- theta1[-2]
-  stocked_list <- which(wdcMerged$stocked_out==F)
+  # theta <- theta1[-2]
+  # stocked_list <- which(wdcMerged$stocked_out==F)
   
   tw_group_list <- unique(wdcMerged$tw_group)
-  grad_constraints <- matrix(0,length(stocked_list), length(c(theta,deltain_stin,eta)))
+  grad_constraints <- c()
   for(i in 1:length(tw_group_list)) {
     tw_groupin = tw_group_list[i]
     wdcMergedday <- subset(wdcMerged, tw_group==tw_groupin)
     deltain_tw = deltain[which(wdcMerged$tw_group==tw_groupin)]
-#     grad_constraints <- c(grad_constraints, 
-#                                     eval_grad_constraints_MPEC_tw_groupin(deltain_tw, theta1, 
-#                                           wdcMergedday,points, tw_groupin))
-    rows <- which(wdcMerged$tw_group[stocked_list]==tw_groupin)
-    cols <- c(c(1:length(theta)),length(theta)+rows)
-    grad_constraints[rows,cols] <- eval_grad_constraints_MPEC_tw_groupin(deltain_tw, theta1, 
-                                          wdcMergedday,points, tw_groupin)
+    grad_constraints <- c(grad_constraints, 
+                                    eval_grad_constraints_MPEC_tw_groupin(deltain_tw, theta1, 
+                                          wdcMergedday,points, tw_groupin))
+#     rows <- which(wdcMerged$tw_group[stocked_list]==tw_groupin)
+#     cols <- c(c(1:length(theta)),length(theta)+rows)
+#     grad_constraints[rows,cols] <- eval_grad_constraints_MPEC_tw_groupin(deltain_tw, theta1, 
+#                                           wdcMergedday,points, tw_groupin)
 
   }
   return(grad_constraints)  
@@ -233,11 +232,9 @@ eval_jac_g <- function(params, wdcMerged, points, length_theta, length_delta, le
   eta <- params[c((length_theta+length_delta+1):(length_theta+length_delta+length_eta))]
   theta1 <- c(theta[1],0,theta[-1])  
   
-  grad_total_density_full <- rep(0,length(params))
-  grad_total_density_full[c(1:length_theta)] <- get_grad_total_density(params, wdcMerged, points)
-  ret <- rbind(eval_grad_constraints_MPEC(deltain_stin, theta1, eta, wdcMerged, points),
+  ret <- c(eval_grad_constraints_MPEC(deltain_stin, theta1, eta, wdcMerged, points),
            eval_grad_constraints_moment_conditions(deltain_stin, theta1, eta, wdcMerged, points),
-           grad_total_density_full)
+           get_grad_total_density(params, wdcMerged, points))
 
   print("eval time:")
   print(proc.time()-ptm)
@@ -264,11 +261,7 @@ eval_grad_structure_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdc
   return(list(grad_sparse,ncol(grad_delta)))
 }
 
-eval_grad_structure_constraints_MPEC <- function(params, wdcMerged, points, length_theta) {
-  theta <- params[c(1:length_theta)]
-  deltain_stin <- params[-c(1:length_theta)]
-  theta1 <- c(theta[1],0,theta[-1])  
-  
+eval_grad_structure_constraints_MPEC <- function(deltain_stin, theta1, eta, wdcMerged, points) {
   #expand deltain to all observations, it is currently #stocked in observations
   deltain <- rep(-30, nrow(wdcMerged))
   deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
@@ -288,10 +281,58 @@ eval_grad_structure_constraints_MPEC <- function(params, wdcMerged, points, leng
   return(grad_structure_constraints)  
 }  
 
-eval_jac_g_structure <- function(params, wdcMerged, points, length_theta) {
-  return(c(eval_grad_structure_constraints_MPEC(params, wdcMerged, points, length_theta),
+eval_grad_structure_moment_conditions <- function(deltain, theta1, eta, wdcMerged, points) {
+  if(!identical(order(user_serv_lvl$st_tw_index), c(1:nrow(user_serv_lvl)))) stop("user_serv_lvl not sorted")  
+  stocked_list <- which(wdcMerged$stocked_out==FALSE)
+  #get covariates
+  list_covariates <- eval_covariates_delta_reg(deltain,theta1,wdcMerged,points)
+  X <- list_covariates$X
+  Z <- list_covariates$Z
+  
+  
+  #theta_2 is given by, Inv(X'.W'.Z.A_N.Z'.W.X).(X'.W'.Z.A_N.Z'.W.delta)
+  #W above can be replaced by W/|W|
+  
+  #Z_weighted equal to W'.Z
+  Z_weighted <- (Z * (wdcMerged$obs_weight[stocked_list]))/sum(wdcMerged$obs_weight[stocked_list])
+  if(is.null(weighing_GMM_mat)) {
+    A_N <- diag(ncol(Z))    
+  } else {
+    A_N <- weighing_GMM_mat
+  }
+  
+  theta_2 <- solve(t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted) %*% X) %*%
+    (t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted) %*% deltain)
+  
+  xi <- deltain - (X %*%  theta_2) 
+  grad_xi_delta <- diag(1,nrow(X)) - X %*% solve(t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted) %*% X) %*%
+    (t(X) %*% Z_weighted %*% A_N %*% t(Z_weighted))
+  #seems like grad_xi_delta is not sparse.
+  
+  print("not implementing hessian right now for eval_grad_constraints_moment_conditions")
+  
+  obj_moments <- t(Z_weighted) %*% xi
+  ret <- obj_moments - eta
+  grad_theta <- matrix(0,length(obj_moments), length(theta1))
+  grad_theta <- grad_theta[,-2]
+  grad_delta <- t(Z_weighted) %*% grad_xi_delta
+  grad_eta <- diag(-1,length(eta))
+  grad_all <- cbind(grad_theta, grad_delta,grad_eta)
+
+  grad_sparse <- make.sparse(grad_all)
+  return(grad_sparse)
+}
+
+eval_jac_g_structure <- function(params, wdcMerged, points, length_theta, length_delta, length_eta) {
+  theta <- params[c(1:length_theta)]
+  deltain_stin <- params[c((length_theta+1):(length_theta+length_delta))]
+  eta <- params[c((length_theta+length_delta+1):(length_theta+length_delta+length_eta))]
+  theta1 <- c(theta[1],0,theta[-1])  
+  
+  return(c(eval_grad_structure_constraints_MPEC(deltain_stin, theta1, eta, wdcMerged, points),
+           eval_grad_structure_moment_conditions(deltain_stin, theta1, eta, wdcMerged, points),
            list(c(1:length_theta))
-    ))
+        ))
 }
   
 eval_obj_GMM_MPEC <- function(theta, deltain, wdcMerged, points) {  
