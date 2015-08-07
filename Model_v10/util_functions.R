@@ -194,6 +194,20 @@ my_make_sparse <- function (A,B,offset_B)
   return(S)
 }
 
+my_make_sparse_2 <- function (B,offset_B) 
+{
+  S <- list()
+  for (i in 1:nrow(B)) {
+    indices <- c()
+    for (j in 1:ncol(B)) {
+      if (B[i, j]) {
+        indices <- c(indices, j+offset_B)
+      }
+    }
+    S <- c(S, list(indices))
+  }
+  return(S)
+}
 
 
 ##these functions are used to set constraints for total density

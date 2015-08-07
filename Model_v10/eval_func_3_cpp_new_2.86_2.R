@@ -283,7 +283,7 @@ eval_hessian_theta1_sq_tw <- function(deltain_tw, theta1, wdcMergedday, points, 
   hessian_lambda_theta1_sq <- eval_hessian_lambda_theta1_sq_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
                                                               as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
                                                               lambda_multiplers_in)
-  
+  print(hessian_lambda_theta1_sq[1,1])
   return(hessian_lambda_theta1_sq)  
   
 }
