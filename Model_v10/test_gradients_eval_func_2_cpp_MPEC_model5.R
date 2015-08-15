@@ -15,8 +15,10 @@ set.seed(34675)
 deltain_stin <- rnorm(length(which(!wdcMerged$stocked_out)),-3, 2)
 # delta_all <- compute_delta_list_cntrt_map_new(c(theta[1],0,theta[-1]),wdcMerged, points)
 # deltain_stin <- delta_all[which(wdcMerged$stocked_out==F)]
-eta <- rep(0,12)
-length_eta <- length(eta)
+length_eta <- ncol(eval_covariates_delta_reg(deltain_stin,c(theta[1],0,theta[-1]),wdcMerged,points)$Z)
+eta <- rep(0,length_eta)
+eta <- c(eval_constraints_moment_conditions(deltain_stin, c(theta[1],0,theta[-1]), eta, wdcMerged, points))
+
 length_theta <- length(theta)
 length_delta <- length(deltain_stin)
 params <- c(theta,deltain_stin, eta)
@@ -34,9 +36,9 @@ eval_jac_g_structure_val <- eval_jac_g_structure(params,wdcMerged, points, lengt
 if(length(a1_eval_jac_constraints)!=length(unlist(eval_jac_g_structure_val))) stop("gradient lengths dont match a1_eval_jac_constraints")
 a1_eval_jac_constraints <- getfullfromsparsematrix (eval_jac_g_structure_val, a1_eval_jac_constraints) 
 
-#idx <- 6
+idx <- 8
 #idx <- length(theta)+11
-idx <- length(theta)+length(deltain_stin)+9
+#idx <- length(theta)+length(deltain_stin)+9
 diff <- 0.000001
 
 params_2 <- params

@@ -31,9 +31,9 @@ print(time)
 #W_optimal <<- eval_weighting_mat_new(c(-10),wdcMerged,points) 
 
 opts <- list("tol"=1.0e-6,
-             "print_info_string"='yes',
-             "file_print_level"=6,
-             "output_file"="iterinfo_GMM_model4.out"
+             "print_info_string"='yes'
+#              ,"file_print_level"=6,
+#              "output_file"="iterinfo_GMM_model4.out"
 )
 
 time <- proc.time()
@@ -94,5 +94,13 @@ theta2 <- eval_xi$theta2
 theta2
 theta3 <- eval_xi$theta3  
 theta3
+
+
+active_coef <- c(1:7)
+var_covar_theta <- eval_theta_variance(theta1,deltain_stin,wdcMerged,points,active_coef)
+round(theta[active_coef]/sqrt(diag(var_covar_theta)),2)
+
+st_err <- sqrt(diag(var_covar_theta))
+round(correlation_theta_estimates <- diag(1/st_err) %*% var_covar_theta %*% diag(1/st_err),3)
 
 

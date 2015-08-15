@@ -95,3 +95,6 @@ require("colorspace")
 lsos <- function(..., n=10) {
   .ls.objects(..., order.by="Size", decreasing=TRUE, head=TRUE, n=n)
 }
+
+
+print_iter_values <<- 1

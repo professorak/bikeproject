@@ -94,6 +94,42 @@ eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points,
   return(grad_t_all)  
 }  
 
+eval_grad_lambda_new <- function(theta1, deltain_tw, wdcMergedday, points, 
+                                 tw_groupin) {
+  #for argument day compute the lambda values for all stations and times 
+  #in ascensing station_id n_time order
+  #this implies integrating over all points
+  #return will be a single vector of length no_stations X no_time in that day
+  no_st <- max(wdcMergedday$station_id_index)
+  tw_in <- wdcMergedday$tw[1]
+  if(length(deltain_tw)!=nrow(wdcMergedday)) stop("error in eval_grad_lambda_theta")
+  sto_state_local <- wdcMergedday$sto_state_local
+  local_stations <- wdcMergedday$local_stations
+  points_local_stations <- points$local_stations
+  wdcMergedday  = wdcMergedday[,c("station_id",
+                                  "stocked_out","station_id_index","lat","lon","obs_weight","out_dem_sum")]
+  
+  wdcMergedday = as.matrix(wdcMergedday)
+
+  density_mat <- cbind(get_points_density_grad_ridership_col(points, tw_in)
+                       ,
+                       get_points_density_grad_metro_col(points, tw_in),  
+                       get_points_density_grad_intercept_col(points, tw_in),  
+                       get_points_density_grad_metro_evening_col(points, tw_in),
+                       get_points_density_grad_places_count_col(points, tw_in),
+                       get_points_density_grad_bus_col(points, tw_in)
+  )
+  points_mat <- points
+  points_mat$density <- get_points_density(points_mat, theta1, tw_in)
+  points_mat <- cbind(points_mat[,c("lat","lon","density")], density_mat)
+  points_mat = as.matrix(points_mat)
+  grad_t_all <- eval_grad_lambda_cpp_new(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                         as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations))  
+  return(grad_t_all)  
+}  
+
+
+
 # eval_grad_lambda_theta_new <- function(theta1, deltain_tw, wdcMergedday, points, tw_groupin) {
 #   #for argument day compute the lambda values for all stations and times 
 #   #in ascensing station_id n_time order
@@ -349,56 +385,60 @@ eval_hessian_lambda_constraints_MPEC_tw_groupin <- function(deltain_tw, theta1, 
   
   wdcMergedday = as.matrix(wdcMergedday)
   
-  hessian_lambda_theta1_delta <- eval_hessian_lambda_theta1_delta_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                                                      as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
-                                                                      lambda_multiplers_tw)
-  hessian_lambda_delta_sq <- eval_hessian_lambda_delta_sq_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                                              as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
-                                                              lambda_multiplers_tw)
-  hessian_lambda_theta1_sq <- eval_hessian_lambda_theta1_sq_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
-                                                                as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
-                                                                lambda_multiplers_tw)
-#   hessian_lambda_constraints_tw_groupin <- matrix(0,length(theta1)+nrow(wdcMergedday),length(theta1)+nrow(wdcMergedday))
-#   theta_range <- c(1:length(theta1))
-#   delta_range <- c((1+length(theta1)):(length(theta1)+nrow(wdcMergedday)))
-#   #theta1_sq
-#   hessian_lambda_constraints_tw_groupin[theta_range,theta_range] <- hessian_lambda_theta1_sq
-#   
-#   #delta_sq
-#   hessian_lambda_constraints_tw_groupin[delta_range,delta_range] <- hessian_lambda_delta_sq
-#   
-#   #theta1_delta_sq
-#   hessian_lambda_constraints_tw_groupin[theta_range,delta_range] <- hessian_lambda_theta1_delta
-#   hessian_lambda_constraints_tw_groupin[delta_range,theta_range] <- t(hessian_lambda_theta1_delta)
-
-#   #remove 2 index of theta1
-#   hessian_lambda_constraints_tw_groupin <- hessian_lambda_constraints_tw_groupin[-2,-2]
-#   #keep only stocked_list of delta indexes
-#   stocked_list <- which(wdcMergedday$stocked_out==F)
-#   keep_index <- c(c(1:length(theta)),length(theta)+stocked_list)
-#   hessian_lambda_constraints_tw_groupin <- hessian_lambda_constraints_tw_groupin[keep_index,keep_index]
-#I cannot return hessian_lambda_constraints_tw_groupin seperately for each tw as a vector, since the 
-#input from other time windows will add to some of the same rows (corresponding to theta1)
-#so will return each component separately
-
-    #remove 2 index of theta1
-    hessian_lambda_theta1_sq <- hessian_lambda_theta1_sq[-2,-2]
-    hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[-2,]
-    #keep only stocked_list of delta indexes    
-    hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[,stocked_list]
-    hessian_lambda_delta_sq <- hessian_lambda_delta_sq[stocked_list,stocked_list]
-    hessian_lambda_delta_theta1 <- t(hessian_lambda_theta1_delta)
+  hessian_lambda_all <- eval_hessian_lambda_cpp(deltain_tw,theta1,wdcMergedday,points_mat,no_st,max_walking_dis,v0_vec,
+                                                as.character(sto_state_local), as.character(local_stations), as.character(points_local_stations),
+                                                lambda_multiplers_tw)
+  theta_index <- c(1:length(theta1))
+  delta_index <- length(theta1)+c(1:nrow(wdcMergedday))
+  hessian_lambda_theta1_sq <- hessian_lambda_all[theta_index,theta_index]
+  hessian_lambda_theta1_delta <- hessian_lambda_all[theta_index,delta_index]
+  hessian_lambda_delta_sq <- hessian_lambda_all[delta_index,delta_index]
   
-    #linearize and sparsify
-    #not compressing hessian_lambda_theta1_sq and hessian_lambda_theta1_delta
-    hessian_lambda_delta_vs_theta1_n_delta <- cbind(hessian_lambda_delta_theta1,hessian_lambda_delta_sq)
-    hessian_lambda_delta_vs_theta1_n_delta <- linearize_sparsify(hessian_lambda_delta_vs_theta1_n_delta)
+  #   hessian_lambda_constraints_tw_groupin <- matrix(0,length(theta1)+nrow(wdcMergedday),length(theta1)+nrow(wdcMergedday))
+  #   theta_range <- c(1:length(theta1))
+  #   delta_range <- c((1+length(theta1)):(length(theta1)+nrow(wdcMergedday)))
+  #   #theta1_sq
+  #   hessian_lambda_constraints_tw_groupin[theta_range,theta_range] <- hessian_lambda_theta1_sq
+  #   
+  #   #delta_sq
+  #   hessian_lambda_constraints_tw_groupin[delta_range,delta_range] <- hessian_lambda_delta_sq
+  #   
+  #   #theta1_delta_sq
+  #   hessian_lambda_constraints_tw_groupin[theta_range,delta_range] <- hessian_lambda_theta1_delta
+  #   hessian_lambda_constraints_tw_groupin[delta_range,theta_range] <- t(hessian_lambda_theta1_delta)
   
-    return(list("hessian_lambda_theta1_sq"=hessian_lambda_theta1_sq,
-                "hessian_lambda_theta1_delta"=hessian_lambda_theta1_delta,
-                "hessian_lambda_delta_vs_theta1_n_delta_lin"=hessian_lambda_delta_vs_theta1_n_delta
-      ))
+  #   #remove 2 index of theta1
+  #   hessian_lambda_constraints_tw_groupin <- hessian_lambda_constraints_tw_groupin[-2,-2]
+  #   #keep only stocked_list of delta indexes
+  #   stocked_list <- which(wdcMergedday$stocked_out==F)
+  #   keep_index <- c(c(1:length(theta)),length(theta)+stocked_list)
+  #   hessian_lambda_constraints_tw_groupin <- hessian_lambda_constraints_tw_groupin[keep_index,keep_index]
+  #I cannot return hessian_lambda_constraints_tw_groupin seperately for each tw as a vector, since the 
+  #input from other time windows will add to some of the same rows (corresponding to theta1)
+  #so will return each component separately
+  
+  #remove 2 index of theta1
+  hessian_lambda_theta1_sq <- hessian_lambda_theta1_sq[-2,-2]
+  hessian_lambda_theta1_sq <- keep_lower_traingular_matrix(hessian_lambda_theta1_sq)
+  hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[-2,]
+  #keep only stocked_list of delta indexes    
+  hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[,stocked_list]
+  hessian_lambda_delta_sq <- hessian_lambda_delta_sq[stocked_list,stocked_list]
+  hessian_lambda_delta_sq <- keep_lower_traingular_matrix(hessian_lambda_delta_sq)
+  hessian_lambda_delta_theta1 <- t(hessian_lambda_theta1_delta)
+  hessian_lambda_theta1_delta[,] <- 0 #since it is all in upper triangle portion
+  
+  #linearize and sparsify
+  #not compressing hessian_lambda_theta1_sq and hessian_lambda_theta1_delta
+  hessian_lambda_delta_vs_theta1_n_delta <- cbind(hessian_lambda_delta_theta1,hessian_lambda_delta_sq)
+  hessian_lambda_delta_vs_theta1_n_delta <- linearize_sparsify(hessian_lambda_delta_vs_theta1_n_delta)
+  
+  return(list("hessian_lambda_theta1_sq"=hessian_lambda_theta1_sq,
+              "hessian_lambda_theta1_delta"=hessian_lambda_theta1_delta,
+              "hessian_lambda_delta_vs_theta1_n_delta_lin"=hessian_lambda_delta_vs_theta1_n_delta
+  ))
 }
+
 
 eval_hessian_lambda_constraints_MPEC <- function(deltain_stin, theta1, eta, wdcMerged, points, lambda_multiplers_in) {  
   #expand deltain to all observations, it is currently #stocked in observations

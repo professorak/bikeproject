@@ -322,3 +322,9 @@ colNormalize <- function(Z) {
   Z_norm <- t(Z_norm)
   return(Z_norm)
 }
+
+keep_lower_traingular_matrix <- function(A) {
+  A[upper.tri(A)] <- 0
+  return(A)  
+}
+

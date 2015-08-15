@@ -60,22 +60,28 @@ eval_constraints_MPEC_tiny <- function(params, wdcMerged, points, length_theta) 
 }
 
 eval_g <- function(params, wdcMerged, points, length_theta) {
-  print("In eval_g: ")
+  if(print_iter_values) {print("In eval_g: ") }
   ptm <- proc.time()  
   ret <- c(eval_constraints_MPEC(params, wdcMerged, points, length_theta),
            get_total_density(params, wdcMerged, points))
-  print("eval time:")
-  print(proc.time()-ptm)
+  if(print_iter_values) {
+    print("eval time:")
+    print(proc.time()-ptm)
+  }
   return(ret)  
 }
 
 eval_g_tiny <- function(params, wdcMerged, points, length_theta) {
-  print("In eval_g: ")
+  if(print_iter_values) {
+    print("In eval_g: ")
+  }
   ptm <- proc.time()  
   ret <- c(eval_constraints_MPEC_tiny(params, wdcMerged, points, length_theta),
            get_total_density(params, wdcMerged, points)/tot_density*target_density_constraint)
-  print("eval time:")
-  print(proc.time()-ptm)
+  if(print_iter_values) {
+    print("eval time:")
+    print(proc.time()-ptm)
+  }
   return(ret)  
 }
 
@@ -150,12 +156,16 @@ eval_grad_constraints_MPEC_tiny <- function(params, wdcMerged, points, length_th
 }
 
 eval_jac_g <- function(params, wdcMerged, points, length_theta) {
-  print("In eval_jac_g: ")
+  if(print_iter_values) {
+    print("In eval_jac_g: ")
+  }
   ptm <- proc.time()  
   ret <- c(eval_grad_constraints_MPEC(params, wdcMerged, points, length_theta),
            get_grad_total_density(params, wdcMerged, points))
-  print("eval time:")
-  print(proc.time()-ptm)
+  if(print_iter_values) {
+    print("eval time:")
+    print(proc.time()-ptm)
+  }
   return(ret)
 }
 

@@ -118,9 +118,11 @@ eval_covariates_delta_reg <- function(deltain,theta1,wdcMerged,points) {
     if(length(levels(wdcMerged$Conditions))>1) paste(reg_formula, "+ Conditions")
     length_levels <- c(length(levels(wdcMerged$Conditions)), length(levels(wdcMerged$Temperature_group)),
                        length(levels(wdcMerged$Humidity_high)), length(levels(wdcMerged$Wind.Speed_high)))
-    reg_terms <- c("Conditions", "Temperature_group", "Humidity_high", "Wind.Speed_high")[which(length_levels>1)]
-    reg_formula <- paste(reg_formula, paste(reg_terms, collapse = " + "), sep = " + ")
     
+    reg_terms <- c("Conditions", "Temperature_group", "Humidity_high", "Wind.Speed_high")[which(length_levels>1)]
+    if(length(reg_terms)) {
+      reg_formula <- paste(reg_formula, paste(reg_terms, collapse = " + "), sep = " + ")      
+    }    
     Xbase <- model.matrix(as.formula(reg_formula), data=wdcMerged[stocked_list,])    
     
     if(length(which(colnames(Xbase) %like% "Conditions")) != length(levels(wdcMerged$Conditions))-1) {
@@ -156,8 +158,19 @@ eval_covariates_delta_reg <- function(deltain,theta1,wdcMerged,points) {
   
   #add two service level instruments, local density attributes of a station, stockout indicator for nearby station
   #to get Z
-  Zbase <- as.matrix(wdcMerged[stocked_list,c("instr_serv_lvl","serv_lvl_neighbours","census_density","metro_den_on_1","metro_den_on_2","metro_den_off_1","metro_den_off_2"
-                                              ,"bus_den_1","bus_den_2","googleplaces_den_1","googleplaces_den_2","sto_nearby")])
+  list_covariates <- c("instr_serv_lvl","serv_lvl_neighbours","metro_den_on_1","metro_den_on_2","metro_den_off_1","metro_den_off_2"
+                       ,"bus_den_1","bus_den_2","googleplaces_den_1","googleplaces_den_2","sto_nearby")
+  if(length(unique(wdcMerged$tract)) > 1) {
+    Zbase <- as.matrix(wdcMerged[stocked_list,c("census_density",list_covariates)])    
+  } else {
+    #not including census_density
+    Zbase <- as.matrix(wdcMerged[stocked_list,list_covariates])
+  }
+
+  if(length(which(colSums(Zbase)==0))) {
+    Zbase <- Zbase[,-which(colSums(Zbase)==0)]     
+  }
+  
   Z <- cbind(Xbase, Zbase)
   
   Z <- colNormalize(Z) #so that column sums are equal to 1.
@@ -168,18 +181,19 @@ eval_covariates_delta_reg <- function(deltain,theta1,wdcMerged,points) {
 
 
 
-eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
-  grad_theta <- eval_grad_lambda_theta_new(theta1, deltain, wdcMergedday, points, tw_groupin)
-  grad_theta <- grad_theta[,-2]
-  grad_delta <- eval_lambda_delta_list_new(deltain, theta1, wdcMergedday, points, tw_groupin)[[2]]
 
+eval_grad_constraints_MPEC_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  grad_all <- eval_grad_lambda_new(theta1, deltain, wdcMergedday, points, tw_groupin)
+  grad_all <- grad_all[,-2] #remove rand coef col
+  
   #reduce the rows and columns corresponding to only stocked in obervations of wdcMergedday
   stocked_list <- which(wdcMergedday$stocked_out==F)
-  grad_theta <- grad_theta[stocked_list,]
-  grad_delta <- grad_delta[stocked_list, stocked_list]
-  grad_constraints_tw <- c(t(cbind(grad_theta,grad_delta)))  
-  return(grad_constraints_tw[which(grad_constraints_tw!=0)])
+  length_theta <- length(theta1)-1
+  keep_cols <- c(c(1:length_theta),length_theta+stocked_list)
+  grad_all <- grad_all[stocked_list,keep_cols]
+  return(linearize_sparsify(grad_all))
 }
+
 
 
 
@@ -211,7 +225,7 @@ eval_grad_constraints_MPEC <- function(deltain_stin, theta1, eta, wdcMerged, poi
 
 
 eval_g <- function(params, wdcMerged, points, length_theta, length_delta, length_eta) {
-  print("In eval_g: ")
+#  print("In eval_g: ")
   ptm <- proc.time()  
   theta <- params[c(1:length_theta)]
   deltain_stin <- params[c((length_theta+1):(length_theta+length_delta))]
@@ -221,13 +235,21 @@ eval_g <- function(params, wdcMerged, points, length_theta, length_delta, length
   ret <- c(eval_constraints_MPEC(deltain_stin, theta1, wdcMerged, points),
            eval_constraints_moment_conditions(deltain_stin, theta1, eta, wdcMerged, points),
            get_total_density(params, wdcMerged, points))
-  print("eval time:")
-  print(proc.time()-ptm)
+  if(length(ret)!=(length_delta+length_eta+1)) stop ("eval_g error")
+  if(print_iter_values) {
+    print("In eval_g: summary of constraints. delta constraints, eta constraint, density constraint")
+    print(as.numeric(summary(ret[1:length_delta],digits = 10)))
+    print(as.numeric(summary(ret[length_delta+c(1:length_eta)],digits = 10)))
+    print(as.numeric(ret[length_delta+1+length_eta]))
+    print('')
+  }
+#   print("eval time:")
+#   print(proc.time()-ptm)
   return(ret)  
 }
 
 eval_jac_g <- function(params, wdcMerged, points, length_theta, length_delta, length_eta) {
-  print("In eval_jac_g: ")
+#   print("In eval_jac_g: ")
   ptm <- proc.time()  
   theta <- params[c(1:length_theta)]
   deltain_stin <- params[c((length_theta+1):(length_theta+length_delta))]
@@ -238,8 +260,8 @@ eval_jac_g <- function(params, wdcMerged, points, length_theta, length_delta, le
            eval_grad_constraints_moment_conditions(deltain_stin, theta1, eta, wdcMerged, points),
            get_grad_total_density(params, wdcMerged, points))
 
-  print("eval time:")
-  print(proc.time()-ptm)
+#   print("eval time:")
+#   print(proc.time()-ptm)
   return(ret)
 }
 
@@ -600,16 +622,16 @@ eval_obj_GMM_MPEC_grad <- function(params, wdcMerged, points, length_theta) {
 
 
 eval_hessian <- function(params, wdcMerged, points, length_theta, length_delta, length_eta, obj_factor, hessian_lambda) {
-  print("In eval_hessian: ")
+#   print("In eval_hessian: ")
   ptm <- proc.time()  
   theta <- params[c(1:length_theta)]
   deltain_stin <- params[c((length_theta+1):(length_theta+length_delta))]
   eta <- params[c((length_theta+length_delta+1):(length_theta+length_delta+length_eta))]
   theta1 <- c(theta[1],0,theta[-1])  
   #making multipliers non-zero so that the return values confirm to the sparse strcuture.
-  obj_factor <- obj_factor+1e-16
+  obj_factor <- obj_factor+1e-32
   constraint_multipliers <- hessian_lambda
-  constraint_multipliers <- constraint_multipliers+1e-16
+  constraint_multipliers <- constraint_multipliers+1e-32
   lambda_multiplers_in <- constraint_multipliers[c(1:length_delta)]
   
   ret <- c(eval_hessian_lambda_constraints_MPEC(deltain_stin, theta1, 
@@ -618,9 +640,16 @@ eval_hessian <- function(params, wdcMerged, points, length_theta, length_delta, 
   )
   #make 0 the values less than 1e-16, they are only non-zero due to above shifting of multiplers and 
   #will otherwise cause issues with condition number of matrix.
-  ret[which(abs(ret)<=1e-16)] <- 0
-  print("eval time:")
-  print(proc.time()-ptm)
+  #ret[which(abs(ret)<=1e-32)] <- 0
+#   print("eval time:")
+#   print(proc.time()-ptm)
+# params_save <<- params
+# print(obj_factor)
+# print(constraint_multipliers[1:10])
+# print(summary(constraint_multipliers))
+# print(summary(params))
+# print(theta)
+# print(ret[1:10])
   return(ret)
 }
 
@@ -630,7 +659,8 @@ eval_hessian_eta_sq <- function(obj_factor, length_eta) {
   } else {
     A_N <- weighing_GMM_mat
   }
-  return(c(t(2*A_N)))  
+  A_N <- keep_lower_traingular_matrix(A_N)
+  return(obj_factor*c(t(2*A_N)))  
 }
 
 
@@ -722,11 +752,14 @@ eval_hessian_structure_lambda_constraints_MPEC_tw_groupin <- function(deltain_tw
   
   #remove 2 index of theta1
   hessian_lambda_theta1_sq <- hessian_lambda_theta1_sq[-2,-2]
+  hessian_lambda_theta1_sq <- keep_lower_traingular_matrix(hessian_lambda_theta1_sq)
   hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[-2,]
   #keep only stocked_list of delta indexes    
   hessian_lambda_theta1_delta <- hessian_lambda_theta1_delta[,stocked_list]
   hessian_lambda_delta_sq <- hessian_lambda_delta_sq[stocked_list,stocked_list]
+  hessian_lambda_delta_sq <- keep_lower_traingular_matrix(hessian_lambda_delta_sq)
   hessian_lambda_delta_theta1 <- t(hessian_lambda_theta1_delta)
+  hessian_lambda_theta1_delta[,] <- 0 #since it is all in upper triangle portion
   
   #not compressing hessian_lambda_theta1_sq and hessian_lambda_theta1_delta
   hessian_structure_lambda_delta_vs_theta1_n_delta <- my_make_sparse(hessian_lambda_delta_theta1,

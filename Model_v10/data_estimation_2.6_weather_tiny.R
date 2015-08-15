@@ -4,7 +4,7 @@ source("data_estimation_2.6_weather_functions.R")
 point_range <- 3
 no_bootstrap_runs <- 1
 reg_runs_save_file <- "reg_runs_discoef_2.89_8states_mw6_bootstrap.txt"
-
+num_top_states_select <- 2
 
 source("eval_func_4_GMM_new_temp_2.89.R")
 source("data_prep_functions_ffdf_limstostate.R")
@@ -20,7 +20,7 @@ min_lat <<- 48.83708
 max_lat <<- 48.884252
 
 #max_walking_dis = 0.1
-tract_list <- list(1:4)
+tract_list <- list(1)
 for(tract in tract_list) {
   
   st_list = select_stations_in_tract(c(tract))
@@ -31,19 +31,19 @@ for(tract in tract_list) {
   st_list <- intersect(st_5_8,st_list)
   
   filelist_all <- c("Paris/ind_paris_6.csv",
-                    "Paris/ind_paris_7.csv")
-  filelist_all_mons <- c(6:7)
+                    "Paris/ind_paris_7.csv","Paris/ind_paris_8.csv")
+  filelist_all_mons <- c(6:8)
   #   filelist_all <- c("Paris/ind_paris_7.csv")
   #   filelist_all_mons <- c(7)
   filelist_all_weather <- c("weatherdata_2013-6.csv",
-                            "weatherdata_2013-7.csv")
+                            "weatherdata_2013-7.csv","weatherdata_2013-8.csv")
   
   #filelist_servlvl <- c("Paris/ind_paris_4.csv","Paris/ind_paris_5.csv")
   wdcMerged <- c()
   for( i in 1:length(filelist_all_mons)) {
     filelist <- filelist_all[i]
     mon <- filelist_all_mons[i]
-    save_file <- paste0(csv_dir,"/ffdb/wdcMerged_bootstrap_limstostate_6_7_den",
+    save_file <- paste0(csv_dir,"/ffdb/wdcMerged_bootstrap_limstostate_5_8_den",
                         point_range,"/mw6_tract_",paste0(tract,collapse="_"),"_mon_",mon)  
     print(save_file)
     #load files
@@ -53,66 +53,11 @@ for(tract in tract_list) {
     rm(wdcMerged_bootstrap)
   }  
   
-  #read weather data
-  weather_data <- c()
-  weather_data_dir <- paste0(csv_dir,"/../ParisData/Weather/WeatherbaseCSV")
-  for( i in 1:length(filelist_all_mons)) {
-    filename <- paste0(weather_data_dir,"/",filelist_all_weather[i])
-    weather_data_i <- read.csv(filename) 
-    weather_data <- rbind(weather_data, weather_data_i)
-  }
-  
-  weather_data$time <- paste(weather_data$Date,weather_data$Local.Time)
-  weather_data$time <- as.POSIXct(strptime(weather_data$time, "%Y-%m-%d %I:%M %p"))
-  weather_data <- subset(weather_data, !is.na(weather_data$time))
-  #convert time in  weather_data to integer
-  weather_data$time_halfhour_int <- round(as.numeric(weather_data$time)/1800)
-  #remove duplicates
-  weather_data <- weather_data[!duplicated(weather_data$time),]
-  row.names(weather_data) <- NULL
-  weather_data$Date <- NULL
-  weather_data$Local.Time <- NULL
-  weather_data$time_weather <- weather_data$time
-  weather_data$time <- NULL
-  
   #round wdcMerged$n_time_int to closest half hour interval corresponding to weather times
   wdcMerged$time_halfhour_int <- round(wdcMerged$n_time_int/1800)
-  weather_data$Conditions[which(weather_data$Conditions=="")] <- "Clear"
-  #Group Conditions  
-  weather_data$Conditions_org <- weather_data$Conditions
-  Conditions_group_1 <- c("Thunderstorms and Rain","Light Thunderstorm", "Thunderstorm", "Light Thunderstorms and Rain",
-                          "Light Rain Showers","Light Rain","Heavy Rain Showers","Rain", "Heavy Thunderstorms and Rain")
-  Conditions_group_2 <- c("Patches of Fog","Light Fog","Mist", "Fog","Shallow Fog","Heavy Fog","Partial Fog")
-  Conditions_group_3 <- c("Partly Cloudy", "Light Drizzle", "Mostly Cloudy", "Scattered Clouds", "Overcast")
-  weather_data$Conditions <- as.character(weather_data$Conditions)
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_1)] <- "Thunderstorm and Rain"
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_2)] <- "Mist and Fog"
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_3)] <- "Cloudy"
-  weather_data$Conditions <- as.factor(weather_data$Conditions)
   
-  #Temperature <10 and >30
-  weather_data$Temperature_group <- 0
-  weather_data$Temperature_group[which(weather_data$Temperature<10)] <- 1
-  weather_data$Temperature_group[which(weather_data$Temperature>=10 &
-                                         weather_data$Temperature<=30)] <- 2
-  weather_data$Temperature_group[which(weather_data$Temperature>30)] <- 3
-  weather_data$Temperature_group  <- as.factor(weather_data$Temperature_group)
+  weather_data <- get_weather_data(filelist_all_weather)
   
-  weather_data$Humidity_high <- 0
-  weather_data$Humidity_high[which(weather_data$Humidity>80)] <- 1
-  weather_data$Humidity_high  <- as.factor(weather_data$Humidity_high)
-  
-  weather_data$Wind.Speed_high <- 0
-  weather_data$Wind.Speed_high[which(weather_data$Wind.Speed>20)] <- 1
-  weather_data$Wind.Speed_high  <- as.factor(weather_data$Wind.Speed_high)
-  
-  weather_data <- droplevels(weather_data)
-  weather_data <- weather_data[,c("time_halfhour_int","Conditions","Temperature_group",
-                                  "Humidity_high","Wind.Speed_high")]
-  weather_data$Conditions_num <- as.numeric(weather_data$Conditions)
-  weather_data$weather_state <- as.factor(apply(weather_data[,c("Conditions_num","Temperature_group",
-                                                                "Humidity_high","Wind.Speed_high")],1, FUN=function(x) {paste(x, collapse="_")}))
-  #merge wdcMerged and weather_data by time_halfhour_int
   system.time({
     wdcMerged <- merge(wdcMerged,as.ffdf(weather_data), by="time_halfhour_int")    
   })
@@ -143,7 +88,7 @@ for(tract in tract_list) {
     wdcMerged$less_5perc_bikes <- wdcMerged$bikes/wdcMerged$station_size
     wdcMerged$less_5perc_bikes <- (wdcMerged$less_5perc_bikes<=0.05)
     
-    wdcMerged <- subset(wdcMerged, month>=6 & month<=7)
+    wdcMerged <- subset(wdcMerged, month>=5 & month<=8)
     wdcMerged$week <- wdcMerged$month
     wdcMerged$tw <- floor(wdcMerged$tw/4)
     wdcMerged$tw_fac <-  as.ff(as.character(wdcMerged$tw))
@@ -238,7 +183,7 @@ for(tract in tract_list) {
                                       wdcMerged$station_id_index)
     wdcMerged <- wdcMerged[order(wdcMerged$groupbyfactor,wdcMerged$stocked_out,-wdcMerged$obs_weight),]
     wdcMerged$index <- ave(wdcMerged$station_id_index, wdcMerged$groupbyfactor, FUN=function(x)c(1:length(x)))
-    wdcMerged <- subset(wdcMerged, index<=8)
+    wdcMerged <- subset(wdcMerged, index<=num_top_states_select)
     points <- generate_integration_points()
     
     #for each points, find out stations that are in locality and store them as a string
@@ -345,9 +290,14 @@ for(tract in tract_list) {
     #add serv_lvl to wdcMerged
     if(!identical(c(1:nrow(current_serv_lvl)),current_serv_lvl$st_tw_index)) stop("error Line 320")
     wdcMerged$serv_lvl <- current_serv_lvl$serv_lvl[wdcMerged$st_tw_index]
-    
+    wdcMerged <- droplevels(wdcMerged)
     gc()
   }
 }
 
+#save commands
+# save(wdcMerged, file="wdcMerged_lin_weather_tiny.RData")
+# save(current_serv_lvl, file="current_serv_lvl_lin_weather_tiny.RData")
+# save(user_serv_lvl, file="user_serv_lvl_lin_weather_tiny.RData")
+# save(points, file="points_lin_weather_tiny.RData")
 

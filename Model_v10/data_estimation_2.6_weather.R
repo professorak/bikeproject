@@ -47,66 +47,11 @@ for(tract in tract_list) {
     rm(wdcMerged_bootstrap)
   }  
 
-  #read weather data
-  weather_data <- c()
-  weather_data_dir <- paste0(csv_dir,"/../ParisData/Weather/WeatherbaseCSV")
-  for( i in 1:length(filelist_all_mons)) {
-    filename <- paste0(weather_data_dir,"/",filelist_all_weather[i])
-    weather_data_i <- read.csv(filename) 
-    weather_data <- rbind(weather_data, weather_data_i)
-  }
-
-  weather_data$time <- paste(weather_data$Date,weather_data$Local.Time)
-  weather_data$time <- as.POSIXct(strptime(weather_data$time, "%Y-%m-%d %I:%M %p"))
-  weather_data <- subset(weather_data, !is.na(weather_data$time))
-  #convert time in  weather_data to integer
-  weather_data$time_halfhour_int <- round(as.numeric(weather_data$time)/1800)
-  #remove duplicates
-  weather_data <- weather_data[!duplicated(weather_data$time),]
-  row.names(weather_data) <- NULL
-  weather_data$Date <- NULL
-  weather_data$Local.Time <- NULL
-  weather_data$time_weather <- weather_data$time
-  weather_data$time <- NULL
-
   #round wdcMerged$n_time_int to closest half hour interval corresponding to weather times
   wdcMerged$time_halfhour_int <- round(wdcMerged$n_time_int/1800)
-  weather_data$Conditions[which(weather_data$Conditions=="")] <- "Clear"
-  #Group Conditions  
-  weather_data$Conditions_org <- weather_data$Conditions
-  Conditions_group_1 <- c("Thunderstorms and Rain","Light Thunderstorm", "Thunderstorm", "Light Thunderstorms and Rain",
-        "Light Rain Showers","Light Rain","Heavy Rain Showers","Rain", "Heavy Thunderstorms and Rain")
-  Conditions_group_2 <- c("Patches of Fog","Light Fog","Mist", "Fog","Shallow Fog","Heavy Fog","Partial Fog")
-  Conditions_group_3 <- c("Partly Cloudy", "Light Drizzle", "Mostly Cloudy", "Scattered Clouds", "Overcast")
-  weather_data$Conditions <- as.character(weather_data$Conditions)
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_1)] <- "Thunderstorm and Rain"
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_2)] <- "Mist and Fog"
-  weather_data$Conditions[which(weather_data$Conditions_org %in% Conditions_group_3)] <- "Cloudy"
-  weather_data$Conditions <- as.factor(weather_data$Conditions)
   
-#Temperature <10 and >30
-  weather_data$Temperature_group <- 0
-  weather_data$Temperature_group[which(weather_data$Temperature<10)] <- 1
-  weather_data$Temperature_group[which(weather_data$Temperature>=10 &
-    weather_data$Temperature<=30)] <- 2
-  weather_data$Temperature_group[which(weather_data$Temperature>30)] <- 3
-  weather_data$Temperature_group  <- as.factor(weather_data$Temperature_group)
+  weather_data <- get_weather_data(filelist_all_weather)
 
-  weather_data$Humidity_high <- 0
-  weather_data$Humidity_high[which(weather_data$Humidity>80)] <- 1
-  weather_data$Humidity_high  <- as.factor(weather_data$Humidity_high)
-  
-  weather_data$Wind.Speed_high <- 0
-  weather_data$Wind.Speed_high[which(weather_data$Wind.Speed>20)] <- 1
-  weather_data$Wind.Speed_high  <- as.factor(weather_data$Wind.Speed_high)
-
-  weather_data <- droplevels(weather_data)
-  weather_data <- weather_data[,c("time_halfhour_int","Conditions","Temperature_group",
-                    "Humidity_high","Wind.Speed_high")]
-  weather_data$Conditions_num <- as.numeric(weather_data$Conditions)
-  weather_data$weather_state <- as.factor(apply(weather_data[,c("Conditions_num","Temperature_group",
-        "Humidity_high","Wind.Speed_high")],1, FUN=function(x) {paste(x, collapse="_")}))
-  #merge wdcMerged and weather_data by time_halfhour_int
   system.time({
     wdcMerged <- merge(wdcMerged,as.ffdf(weather_data), by="time_halfhour_int")    
   })
@@ -338,9 +283,14 @@ for(tract in tract_list) {
     #add serv_lvl to wdcMerged
     if(!identical(c(1:nrow(current_serv_lvl)),current_serv_lvl$st_tw_index)) stop("error Line 320")
     wdcMerged$serv_lvl <- current_serv_lvl$serv_lvl[wdcMerged$st_tw_index]
-
+    wdcMerged <- droplevels(wdcMerged)
     gc()
   }
 }
 
+#save commands
+# save(wdcMerged, file="wdcMerged_lin_weather.RData")
+# save(current_serv_lvl, file="current_serv_lvl_lin_weather.RData")
+# save(user_serv_lvl, file="user_serv_lvl_lin_weather.RData")
+# save(points, file="points_lin_weather.RData")
 
