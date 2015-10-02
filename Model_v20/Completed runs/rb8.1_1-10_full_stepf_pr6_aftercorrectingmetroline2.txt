@@ -1,0 +1,67 @@
+> ##########
+> print("Step 1 output: ")
+[1] "Step 1 output: "
+> print("theta1 output: ")
+[1] "theta1 output: "
+> print(paste0(theta_save[c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "-109.971551286566, -25.1019567828564"
+> print(paste0(theta_save[-c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "0, 33.7774204477924, 2.45299870224324, 0, 0.000108083509063594, 2.12797337013479e-05, 0"
+> print("theta1 t-stat:")
+[1] "theta1 t-stat:"
+> print(paste0(theta1_save_t_stat[c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "-2, 0"
+> print(paste0(theta1_save_t_stat[-c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] ", 0.91, , , 0, 0, "
+> print("theta2 output: ")
+[1] "theta2 output: "
+> print(theta2_save[which(rownames(theta2_save) %like% "serv_lvl")]/serv_lvl_scale)
+numeric(0)
+> print("theta2 t-stat:")
+[1] "theta2 t-stat:"
+> print(round(theta2_save[serv_cols]/sqrt(diag(var_covar_theta_2_save)[serv_cols]),2))
+numeric(0)
+> print(res_save$objective)
+[1] 0.3082493
+> print(res_save$iterations)
+[1] 83
+> print(time_1)
+    user   system  elapsed 
+1850.178   10.504 1899.306 
+> 
+> print("Step 2 output: ")
+[1] "Step 2 output: "
+> print("theta1 output: ")
+[1] "theta1 output: "
+> print(paste0(theta[c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "-109.971508491197, -24.7881639867475"
+> print(paste0(theta[-c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "0, 33.7775348849975, 2.4530004372775, 0, 0.000106167920110797, 1.35703381029336e-05, 0"
+> print("theta1 t-stat:")
+[1] "theta1 t-stat:"
+> print(paste0(theta1_t_stat[c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] "-2, 0"
+> print(paste0(theta1_t_stat[-c(1:(nonden_ceoflength-1))],collapse = ", " ))
+[1] ", 0.9, , , 0, 0, "
+> print("theta2 output: ")
+[1] "theta2 output: "
+> print(theta2[which(rownames(theta2) %like% "serv_lvl")]/serv_lvl_scale)
+numeric(0)
+> print("theta2 t-stat:")
+[1] "theta2 t-stat:"
+> print(round(theta2[serv_cols]/sqrt(diag(var_covar_theta_2)[serv_cols]),2))
+numeric(0)
+> print(res$objective)
+[1] 0.3082492
+> print(res$iterations + res_save$iterations)
+[1] 130
+> print(time + time_1)
+    user   system  elapsed 
+2937.531   20.408 3049.548 
+> print(round(correlation_theta_estimates <- diag(1/st_err) %*% var_covar_theta %*% diag(1/st_err),3))
+       [,1]   [,2]   [,3]   [,4]   [,5]
+[1,]  1.000 -0.001 -0.358 -0.117 -0.574
+[2,] -0.001  1.000  0.780 -0.572 -0.687
+[3,] -0.358  0.780  1.000 -0.248 -0.397
+[4,] -0.117 -0.572 -0.248  1.000  0.492
+[5,] -0.574 -0.687 -0.397  0.492  1.000
