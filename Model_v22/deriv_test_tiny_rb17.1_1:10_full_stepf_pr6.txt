@@ -1,0 +1,303 @@
+28.16894  -12.94185  3.373104  ;; 0.0006904724  -10.0565  0.0006902342  ;; 4.35643e-07  -10.05611  4.356429e-07  ;; 2.593148e-10  -10.05611  2.593143e-10  ;; 1.507751e-13  -10.05611  [1] "itr:  6"
+   user  system elapsed 
+  2.940   0.017   3.106 
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                    
+ [3] "metro_den_on_4"                     "googleplaces_food_den_1_2"         
+ [5] "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"     
+ [9] "googleplaces_government_den_4"      "catchment_area_step1"              
+[11] "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"               
+[15] "touristlocs_den_3"                  "touristlocs_den_4"                 
+[17] "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"       
+[21] "googleplaces_museum_den_3"          "googleplaces_museum_den_4"         
+[23] "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                    
+ [3] "metro_den_on_4"                     "googleplaces_food_den_1_2"         
+ [5] "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"     
+ [9] "googleplaces_government_den_4"      "catchment_area_step1"              
+[11] "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"               
+[15] "touristlocs_den_3"                  "touristlocs_den_4"                 
+[17] "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"       
+[21] "googleplaces_museum_den_3"          "googleplaces_museum_den_4"         
+[23] "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 17887.16
+[1] 53543.22
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+Starting derivative checker for second derivatives.
+
+*     1-th constr_hess[    2,   17] = -5.2010945903723524e-04 v  ~ -1.2950809310511471e-01  [ 1.290e-01]
+*     1-th constr_hess[    2,   19] = -7.4658774882021394e-03 v  ~ -8.0456025590892197e-02  [ 7.299e-02]
+*     1-th constr_hess[    2,   24] = -1.3260465932352658e-04 v  ~ -8.5217149446748020e-02  [ 8.508e-02]
+*     1-th constr_hess[    2,   25] = -2.4332465644538750e+01 v  ~ -2.3228699698735237e+01  [ 4.752e-02]
+*     1-th constr_hess[    2,   27] = -2.4400622700444723e+00 v  ~ -3.0968873638473484e+00  [ 2.121e-01]
+*     1-th constr_hess[    2,   28] = -8.2410151836818233e-07 v  ~ -7.1401051969776329e-04  [ 7.132e-04]
+*     1-th constr_hess[    2,   36] = -1.8587824804711675e-01 v  ~ -4.5931719787438186e-01  [ 2.734e-01]
+*     1-th constr_hess[    2,   38] = -4.9934539808080174e-03 v  ~ -2.3225273772669169e-01  [ 2.273e-01]
+*     1-th constr_hess[    2,   40] = -3.3617514822590415e-05 v  ~ -9.9547272406989434e-03  [ 9.921e-03]
+*     1-th constr_hess[   17,    2] = -5.2010945903723524e-04 v  ~ -1.2950972948733264e-01  [ 1.290e-01]
+*     1-th constr_hess[   19,    2] = -7.4658774882021394e-03 v  ~ -8.0457225277723407e-02  [ 7.299e-02]
+*     1-th constr_hess[   24,    2] = -1.3260465932352658e-04 v  ~ -8.5226702570938423e-02  [ 8.509e-02]
+*     1-th constr_hess[   25,    2] = -2.4332465644538750e+01 v  ~ -2.3228707537718371e+01  [ 4.752e-02]
+*     1-th constr_hess[   27,    2] = -2.4400622700444723e+00 v  ~ -3.0968864127931113e+00  [ 2.121e-01]
+*     1-th constr_hess[   28,    2] = -8.2410151836818233e-07 v  ~ -7.1457803925446643e-04  [ 7.138e-04]
+*     1-th constr_hess[   36,    2] = -1.8587824804711675e-01 v  ~ -4.5932392079971140e-01  [ 2.734e-01]
+*     1-th constr_hess[   38,    2] = -4.9934539808080174e-03 v  ~ -2.3225440409526485e-01  [ 2.273e-01]
+*     1-th constr_hess[   40,    2] = -3.3617514822590415e-05 v  ~ -9.9570573332911864e-03  [ 9.923e-03]
+*     2-th constr_hess[    2,   15] = -1.6685532648189348e+02 v  ~ -8.4401870952106219e-05  [ 1.669e+02]
+*     2-th constr_hess[    2,   17] = -6.2516669234360887e+00 v  ~ -8.1898805553034008e-04  [ 6.251e+00]
+*     2-th constr_hess[    2,   19] = -2.5168287413895320e+02 v  ~ -1.0921411036209075e-03  [ 2.517e+02]
+*     2-th constr_hess[    2,   21] = -1.4619291896491967e-02 v  ~ -1.1990384411895726e-06  [ 1.462e-02]
+*     2-th constr_hess[    2,   24] = -4.3015707250945008e-02 v  ~ -1.3707470622838369e-05  [ 4.300e-02]
+*     2-th constr_hess[    2,   25] = -2.7756069768401929e+01 v  ~ -2.3594161718493030e-05  [ 2.776e+01]
+*     2-th constr_hess[    2,   38] = -1.5924284409681532e-04 v  ~ -1.6598992191415822e-09  [ 1.592e-04]
+*     2-th constr_hess[   15,    2] = -1.6685532648189348e+02 v  ~ -8.4402256497170830e-05  [ 1.669e+02]
+*     2-th constr_hess[   17,    2] = -6.2516669234360887e+00 v  ~ -8.1898812865664760e-04  [ 6.251e+00]
+*     2-th constr_hess[   19,    2] = -2.5168287413895320e+02 v  ~ -1.0921411914030482e-03  [ 2.517e+02]
+*     2-th constr_hess[   21,    2] = -1.4619291896491967e-02 v  ~ -1.1990764945718046e-06  [ 1.462e-02]
+*     2-th constr_hess[   24,    2] = -4.3015707250945008e-02 v  ~ -1.3707522624114739e-05  [ 4.300e-02]
+*     2-th constr_hess[   25,    2] = -2.7756069768401929e+01 v  ~ -2.3594464259874717e-05  [ 2.776e+01]
+*     2-th constr_hess[   38,    2] = -1.5924284409681532e-04 v  ~ -1.6331052907193984e-09  [ 1.592e-04]
+*     3-th constr_hess[    2,   15] = -7.0125089681199896e+01 v  ~ -1.2950809310511471e-01  [ 7.000e+01]
+*     3-th constr_hess[    2,   16] = -1.2292851021924267e-07 v  ~ -8.1898805553034008e-04  [ 8.189e-04]
+*     3-th constr_hess[    2,   18] = -1.0180607898567561e-07 v  ~ -1.6094489342270899e-04  [ 1.608e-04]
+*     3-th constr_hess[    2,   19] = -3.6156216703106929e+02 v  ~ -1.0595124195576373e+01  [ 3.313e+01]
+*     3-th constr_hess[    2,   21] = -5.1096976123943441e-02 v  ~ -2.6568201460088283e-02  [ 2.453e-02]
+*     3-th constr_hess[    2,   24] = -4.3130504171371126e-02 v  ~ -1.2906184687046141e-01  [ 8.593e-02]
+*     3-th constr_hess[    2,   25] = -4.5582174856502377e+01 v  ~ -1.6806674307976088e-01  [ 4.541e+01]
+*     3-th constr_hess[    2,   41] = -4.1205708169220089e-06 v  ~ -1.1949525563924050e-04  [ 1.154e-04]
+*     3-th constr_hess[   15,    2] = -7.0125089681199896e+01 v  ~ -1.2950833852516888e-01  [ 7.000e+01]
+*     3-th constr_hess[   16,    2] = -1.2292851021924267e-07 v  ~ -8.1898770453979637e-04  [ 8.189e-04]
+*     3-th constr_hess[   18,    2] = -1.0180607898567561e-07 v  ~ -1.6083461787129772e-04  [ 1.607e-04]
+*     3-th constr_hess[   19,    2] = -3.6156216703106929e+02 v  ~ -1.0595123200729970e+01  [ 3.313e+01]
+*     3-th constr_hess[   21,    2] = -5.1096976123943441e-02 v  ~ -2.6568062464433752e-02  [ 2.453e-02]
+*     3-th constr_hess[   24,    2] = -4.3130504171371126e-02 v  ~ -1.2906162221032824e-01  [ 8.593e-02]
+*     3-th constr_hess[   25,    2] = -4.5582174856502377e+01 v  ~ -1.6806735870901784e-01  [ 4.541e+01]
+*     3-th constr_hess[   41,    2] = -4.1205708169220089e-06 v  ~ -1.1943646759850066e-04  [ 1.153e-04]
+*     4-th constr_hess[    2,   15] = -2.9537986607735117e+01 v  ~ -1.9730732971065128e-05  [ 2.954e+01]
+*     4-th constr_hess[    2,   17] = -1.3278710653246586e+00 v  ~ -1.6094489342270899e-04  [ 1.328e+00]
+*     4-th constr_hess[    2,   19] = -3.3224226006685734e+02 v  ~ -3.2358138678279633e-03  [ 3.322e+02]
+*     4-th constr_hess[    2,   21] = -3.7242640752019787e+00 v  ~ -1.2323119618308398e-03  [ 3.723e+00]
+*     4-th constr_hess[    2,   24] = -2.1437425236781122e-02 v  ~ -3.3245993942471586e-05  [ 2.140e-02]
+*     4-th constr_hess[    2,   25] = -8.0895909649178506e+01 v  ~ -1.9574479318105618e-04  [ 8.090e+01]
+*     4-th constr_hess[    2,   40] = -4.0180782512240860e+00 v  ~ -3.4996180372520063e-04  [ 4.018e+00]
+*     4-th constr_hess[    2,   41] = -5.9571699230238440e-04 v  ~ -1.5024827064820564e-05  [ 5.807e-04]
+*     4-th constr_hess[    2,   44] = -1.6677096418756742e-03 v  ~ -2.5280039206412549e-05  [ 1.642e-03]
+*     4-th constr_hess[    2,   47] = -3.4050842012213867e+00 v  ~ -2.1498437489139035e-05  [ 3.405e+00]
+*     4-th constr_hess[   15,    2] = -2.9537986607735117e+01 v  ~ -1.9730796088428847e-05  [ 2.954e+01]
+*     4-th constr_hess[   17,    2] = -1.3278710653246586e+00 v  ~ -1.6094490881768392e-04  [ 1.328e+00]
+*     4-th constr_hess[   19,    2] = -3.3224226006685734e+02 v  ~ -3.2358138765130806e-03  [ 3.322e+02]
+*     4-th constr_hess[   21,    2] = -3.7242640752019787e+00 v  ~ -1.2323119328807944e-03  [ 3.723e+00]
+*     4-th constr_hess[   24,    2] = -2.1437425236781122e-02 v  ~ -3.3245999823239504e-05  [ 2.140e-02]
+*     4-th constr_hess[   25,    2] = -8.0895909649178506e+01 v  ~ -1.9574478762394981e-04  [ 8.090e+01]
+*     4-th constr_hess[   40,    2] = -4.0180782512240860e+00 v  ~ -3.4996180038961909e-04  [ 4.018e+00]
+*     4-th constr_hess[   41,    2] = -5.9571699230238440e-04 v  ~ -1.5024844299414881e-05  [ 5.807e-04]
+*     4-th constr_hess[   44,    2] = -1.6677096418756742e-03 v  ~ -2.5280049199705150e-05  [ 1.642e-03]
+*     4-th constr_hess[   47,    2] = -3.4050842012213867e+00 v  ~ -2.1498448582005258e-05  [ 3.405e+00]
+*     5-th constr_hess[    2,   15] = -8.6714382996433059e-01 v  ~ -8.0456025590892197e-02  [ 7.867e-01]
+*     5-th constr_hess[    2,   16] = -2.1562923886579233e-08 v  ~ -1.0921411036209075e-03  [ 1.092e-03]
+*     5-th constr_hess[    2,   17] = -1.3419465119321521e+00 v  ~ -1.0595124195576373e+01  [ 8.733e-01]
+*     5-th constr_hess[    2,   18] = -1.0714992029458340e-07 v  ~ -3.2358138678279633e-03  [ 3.236e-03]
+*     5-th constr_hess[    2,   20] = -3.0025509918440720e-09 v  ~ -7.8242926196619089e-04  [ 7.824e-04]
+*     5-th constr_hess[    2,   21] = -4.8083187815879574e-01 v  ~ -6.1331497290559600e+00  [ 9.216e-01]
+*     5-th constr_hess[    2,   24] = -2.0489919099680367e-02 v  ~ -1.2912829302984747e+00  [ 9.841e-01]
+*     5-th constr_hess[    2,   25] = -9.8281084139772261e+00 v  ~ -9.9715876549583271e-01  [ 8.831e+00]
+*     5-th constr_hess[    2,   40] = -3.0790918171133080e-03 v  ~ -6.0491606716849819e-02  [ 5.741e-02]
+*     5-th constr_hess[    2,   41] = -9.1217926481970208e-05 v  ~ -7.4739850339465952e-02  [ 7.465e-02]
+*     5-th constr_hess[    2,   43] = -3.3392413203767002e-06 v  ~ -1.6168462280351313e-02  [ 1.617e-02]
+*     5-th constr_hess[    2,   44] = -1.5095378756948177e-05 v  ~ -1.5148654154506320e-02  [ 1.513e-02]
+*     5-th constr_hess[    2,   45] = -2.2945668962451390e-01 v  ~ -4.0690461338422717e+00  [ 9.436e-01]
+*     5-th constr_hess[    2,   47] = -1.0678837261553249e+00 v  ~ -1.2647076199451985e+00  [ 1.556e-01]
+*     5-th constr_hess[   15,    2] = -8.6714382996433059e-01 v  ~ -8.0456433993230117e-02  [ 7.867e-01]
+*     5-th constr_hess[   16,    2] = -2.1562923886579233e-08 v  ~ -1.0915327457698030e-03  [ 1.092e-03]
+*     5-th constr_hess[   17,    2] = -1.3419465119321521e+00 v  ~ -1.0595122760630316e+01  [ 8.733e-01]
+*     5-th constr_hess[   18,    2] = -1.0714992029458340e-07 v  ~ -3.2335412669861128e-03  [ 3.233e-03]
+*     5-th constr_hess[   20,    2] = -3.0025509918440720e-09 v  ~ -7.8179754308781927e-04  [ 7.818e-04]
+*     5-th constr_hess[   21,    2] = -4.8083187815879574e-01 v  ~ -6.1331488603364903e+00  [ 9.216e-01]
+*     5-th constr_hess[   24,    2] = -2.0489919099680367e-02 v  ~ -1.2912824132473260e+00  [ 9.841e-01]
+*     5-th constr_hess[   25,    2] = -9.8281084139772261e+00 v  ~ -9.9716218698229209e-01  [ 8.831e+00]
+*     5-th constr_hess[   40,    2] = -3.0790918171133080e-03 v  ~ -6.0492206616424377e-02  [ 5.741e-02]
+*     5-th constr_hess[   41,    2] = -9.1217926481970208e-05 v  ~ -7.4741236081428034e-02  [ 7.465e-02]
+*     5-th constr_hess[   43,    2] = -3.3392413203767002e-06 v  ~ -1.6167993470072264e-02  [ 1.616e-02]
+*     5-th constr_hess[   44,    2] = -1.5095378756948177e-05 v  ~ -1.5148549859455220e-02  [ 1.513e-02]
+*     5-th constr_hess[   45,    2] = -2.2945668962451390e-01 v  ~ -4.0690468189029918e+00  [ 9.436e-01]
+*     5-th constr_hess[   47,    2] = -1.0678837261553249e+00 v  ~ -1.2647083705699798e+00  [ 1.556e-01]
+ [1] -0.89691455  0.18484918  1.58784533 -1.13037567 -0.08025176  0.13242028  0.70795473 -0.23969802  1.98447394 -0.13878701  0.41765075
+[12]  0.98175278 -0.39269536 -1.03966898  1.78222896 -2.31106908  0.87860458  0.03580672  1.01282869  0.43226515
+[1] -0.8969145
+ [1]  -4.00   1.00  -4.00   0.00 146.83  20.00   0.00   0.42   0.42   0.42   0.42   0.42   0.00   1.00
+3.762443  -10.05611  1.560761  ;; 0.0002900453  -8.495578  0.0002900032  ;; 9.335008e-08  -8.495412  9.335007e-08  ;; 2.825574e-11  -8.495412  2.825562e-11  ;; 9.352894e-15  -8.495412  [1] "itr:  6"
+   user  system elapsed 
+  1.326   0.006   1.344 
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 17887.16
+[1] 53543.22
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+Starting derivative checker for second derivatives.
+
+*     1-th constr_hess[    2,   25] =  4.7446171312193275e-03 v  ~  3.0757654051474653e-03  [ 1.669e-03]
+*     1-th constr_hess[   25,    2] =  4.7446171312193275e-03 v  ~  3.0756730495795637e-03  [ 1.669e-03]
+*     2-th constr_hess[    2,   15] =  3.7944642256609831e-02 v  ~  9.4089518802776030e-10  [ 3.794e-02]
+*     2-th constr_hess[    2,   19] =  1.0375254921927408e-04 v  ~  8.2234954161323510e-11  [ 1.038e-04]
+*     2-th constr_hess[    2,   25] =  7.3091674969167351e-04 v  ~  1.7211779315458277e-10  [ 7.309e-04]
+*     2-th constr_hess[   15,    2] =  3.7944642256609831e-02 v  ~  9.4079949451535139e-10  [ 3.794e-02]
+*     2-th constr_hess[   19,    2] =  1.0375254921927408e-04 v  ~  8.2137981030796947e-11  [ 1.038e-04]
+*     2-th constr_hess[   25,    2] =  7.3091674969167351e-04 v  ~  1.7218062235311790e-10  [ 7.309e-04]
+*     3-th constr_hess[    2,   15] =  1.9361530536852342e-02 v  ~  2.3467045178711659e-06  [ 1.936e-02]
+*     3-th constr_hess[    2,   19] =  5.0270814909214644e-04 v  ~  1.8138937324378525e-06  [ 5.009e-04]
+*     3-th constr_hess[    2,   25] =  1.0935253033944573e-03 v  ~  1.1080085784229922e-06  [ 1.092e-03]
+*     3-th constr_hess[   15,    2] =  1.9361530536852342e-02 v  ~  2.3465604459538270e-06  [ 1.936e-02]
+*     3-th constr_hess[   19,    2] =  5.0270814909214644e-04 v  ~  1.8138422285157052e-06  [ 5.009e-04]
+*     3-th constr_hess[   25,    2] =  1.0935253033944573e-03 v  ~  1.1079678841063867e-06  [ 1.092e-03]
+*     4-th constr_hess[    2,   15] =  2.0973161795657261e-04 v  ~  1.0808391169770277e-10  [ 2.097e-04]
+*     4-th constr_hess[    2,   19] =  5.4916293174816534e-04 v  ~  1.0634537472399624e-09  [ 5.492e-04]
+*     4-th constr_hess[    2,   25] =  1.2611988965917312e-02 v  ~  2.5619135317426645e-09  [ 1.261e-02]
+*     4-th constr_hess[   15,    2] =  2.0973161795657261e-04 v  ~  1.0816610736437415e-10  [ 2.097e-04]
+*     4-th constr_hess[   19,    2] =  5.4916293174816534e-04 v  ~  1.0635582044990133e-09  [ 5.492e-04]
+*     4-th constr_hess[   25,    2] =  1.2611988965917312e-02 v  ~  2.5619358522653568e-09  [ 1.261e-02]
+*     6-th constr_hess[    2,   19] =  5.4520960198680736e-04 v  ~  3.2536640100675090e-10  [ 5.452e-04]
+*     6-th constr_hess[   19,    2] =  5.4520960198680736e-04 v  ~  3.2534557402029887e-10  [ 5.452e-04]
+[1] 1_2_3_4_5_9_10_11_12_13_14_15_22_24_25_26
+51 Levels: 1_11_12_13_14_15_16_17_18_19_20_21_22_24_25_28_35_45 ... 8_23_25_27_29_30_31_32_33_34_35_36_37_38_39_44_46_47_48_49_50_51
+0.5921262  -8.495412  0.8967976  ;; 0.0005326681  -9.392021  0.00053281  ;; 1.715751e-07  -9.392327  1.715751e-07  ;; 5.193227e-11  -9.392327  [1] "itr:  5"
+   user  system elapsed 
+  0.970   0.006   0.980 
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 17887.16
+[1] 53543.22
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+Starting derivative checker for second derivatives.
+
+1.718143  -9.392327  0.9999491  ;; 0.0002320703  -8.39246  0.0002320434  ;; 7.469491e-08  -8.392327  7.469491e-08  ;; 2.26074e-11  -8.392327  2.260681e-11  ;; 8.385353e-15  -8.392327  [1] "itr:  6"
+   user  system elapsed 
+  1.237   0.011   1.262 
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 17887.16
+[1] 53543.22
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+Starting derivative checker for second derivatives.
+
+*     1-th constr_hess[    2,   25] =  2.3275736555191809e-03 v  ~  1.5098111931597482e-03  [ 8.178e-04]
+*     1-th constr_hess[   25,    2] =  2.3275736555191809e-03 v  ~  1.5097256778062729e-03  [ 8.178e-04]
+[1] -1
+1.829152e-15  -8.392327  [1] "itr:  2"
+   user  system elapsed 
+  0.247   0.002   0.251 
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+ [1] "metro_den_on_1_2"                   "metro_den_on_3"                     "metro_den_on_4"                    
+ [4] "googleplaces_food_den_1_2"          "googleplaces_food_den_3"            "googleplaces_food_den_4"           
+ [7] "googleplaces_government_den_1_2"    "googleplaces_government_den_3"      "googleplaces_government_den_4"     
+[10] "catchment_area_step1"               "catchment_area_step2"               "catchment_area_step3"              
+[13] "catchment_area_step4"               "touristlocs_den_1_2"                "touristlocs_den_3"                 
+[16] "touristlocs_den_4"                  "googleplaces_lodging_den_1_2"       "googleplaces_lodging_den_3"        
+[19] "googleplaces_lodging_den_4"         "googleplaces_museum_den_1_2"        "googleplaces_museum_den_3"         
+[22] "googleplaces_museum_den_4"          "googleplaces_movie_theater_den_1_2" "googleplaces_movie_theater_den_3"  
+[25] "googleplaces_movie_theater_den_4"  
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 17887.16
+[1] 53543.22
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Starting derivative checker for first derivatives.
+
+* grad_f[         80] =  5.2260077373428054e+01    ~  5.2254403918170354e+01  [ 1.086e-04]
+Starting derivative checker for second derivatives.
+
