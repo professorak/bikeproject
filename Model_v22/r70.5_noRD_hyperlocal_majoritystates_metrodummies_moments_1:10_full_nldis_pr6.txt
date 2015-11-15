@@ -1,0 +1,1604 @@
+[1] "Keeping states that make up 80% of observation weight in stXtw_group"
+[1] "Removing too low wieghts states:"
+[1] "Percentage of total observations removed: 0.001 %"
+[1] "Removing too low demand states:"
+[1] "Percentage of 0 demand states: 0.402 %"
+[1] "Percentage of too low demand states truncated at 1e-5: 0.402 %"
+[1] "Percentage of really high demand states truncated at 2 : 0 %"
+[1] TRUE
+[1] TRUE
+471.501  -10.31281  6.15804  ;; 0.08273939  -4.291828  0.0794943  ;; 0.005466127  -4.265954  0.005451242  ;; 0.0003667233  -4.265025  0.000366656  ;; 2.378645e-05  -4.264985  2.378617e-05  ;; 1.502726e-06  -4.264983  [1] "itr:  7"
+474.5116  -10.64607  6.164391  ;; 0.06624362  -4.619647  0.06414184  ;; 0.003603161  -4.601376  0.003596685  ;; 0.0001937678  -4.600898  0.000193749  ;; 1.010577e-05  -4.600883  [1] "itr:  6"
+476.4164  -10.83179  6.168389  ;; 0.04315829  -4.80232  0.04225293  ;; 0.001534972  -4.788524  0.001533795  ;; 5.433223e-05  -4.788268  5.433076e-05  ;; 1.846372e-06  -4.788262  [1] "itr:  6"
+477.3981  -11.17513  6.170443  ;; 0.03678192  -5.14428  0.03612161  ;; 0.001097372  -5.132954  0.00109677  ;; 3.182426e-05  -5.132773  3.182376e-05  ;; 8.986306e-07  -5.13277  [1] "itr:  6"
+470.362  -9.776439  6.155626  ;; 0.09774018  -3.759877  0.09325369  ;; 0.007199955  -3.729748  0.007174159  ;; 0.0005527812  -3.728665  0.0005526285  ;; 4.100632e-05  -3.72862  4.100548e-05  ;; 2.963837e-06  -3.728618  [1] "itr:  7"
+473.0577  -10.07509  6.161329  ;; 0.05489925  -4.052203  0.05344526  ;; 0.00258812  -4.028921  0.002584777  ;; 0.0001240319  -4.028266  0.0001240242  ;; 5.844737e-06  -4.028245  [1] "itr:  6"
+   user  system elapsed 
+183.707   0.008 184.280 
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 59773.66
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.3097750   0.0000000 -25.0012900   0.0000000   0.2101448   0.2411672
+ [7]   0.2101448   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+[13]   0.0000000   4.5870590   0.1000000   0.1000000
+[1] -13.726187  -4.792577  -4.113788  -4.424914  -3.625530  -1.844478
+[1] -5.582538e+01 -1.563732e-12  2.048715e-12  6.214892e+00  1.732923e-01
+[6]  7.995478e+01
+[1] ""
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.631858e-07 -1.098209e-09 -1.671286e-10 -2.402699e-09 -1.990315e-11
+[6] -5.055093e-18
+[1] 0 0 0 0 0 0
+[1] 3399.43
+[1] ""
+   user  system elapsed 
+ 47.525   0.000  47.526 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 89.134   0.284  91.678 
+[1] "In eval_hessian: "
+   user  system elapsed 
+393.968   0.431 401.043 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.3097750   0.0000000 -25.0012900   0.0000000   0.2101448   0.2411672
+ [7]   0.2101448   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+[13]   0.0000000   4.5870590   0.1000000   0.1000000
+[1] -13.726187  -4.792577  -4.113788  -4.424914  -3.625530  -1.844478
+[1] -5.582538e+01 -1.563732e-12  2.048715e-12  6.214892e+00  1.732923e-01
+[6]  7.995478e+01
+[1] ""
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.631858e-07 -1.098209e-09 -1.671286e-10 -2.402699e-09 -1.990315e-11
+[6] -5.055093e-18
+[1] 0 0 0 0 0 0
+[1] 3399.43
+[1] ""
+   user  system elapsed 
+ 47.154   0.008  47.420 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 95.285   0.312  96.789 
+[1] "In eval_hessian: "
+   user  system elapsed 
+389.621   0.503 393.248 
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.4, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:  2608008
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:   971640
+
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 90.116   0.264  91.118 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 91.745   0.220  92.967 
+Total number of variables............................:    12389
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:    12307
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:    12381
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 1.435686e-06 2.049233e-02 4.402556e-02 5.805178e-02 7.811166e-02
+[6] 6.072507e-01
+[1] 0 0 0 0 0 0
+[1] 4698.128
+[1] ""
+   user  system elapsed 
+ 46.502   0.004  47.661 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.30977500   0.00000000 -25.00129000   0.00999999   0.21014480
+ [6]   0.24116720   0.21014480   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000   4.58705900   0.10000000
+[16]   0.10000000
+[1] -13.726187  -4.792577  -4.113788  -4.424914  -3.625530  -1.844478
+[1] -5.582538e+01 -1.563732e-12  2.048715e-12  6.214892e+00  1.732923e-01
+[6]  7.995478e+01
+[1] ""
+[1] "In eval_hessian: "
+   user  system elapsed 
+392.753   0.255 396.628 
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  7.4634402e+04 5.30e+03 1.00e+02  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 1.301704e-06 1.887812e-02 4.054980e-02 5.357734e-02 7.210908e-02
+[6] 5.580792e-01
+[1] -2.260360e-12 -1.986953e-13  9.374283e-13  1.293091e-11  1.660716e-11
+[6]  7.958612e-11
+[1] 5090.598
+[1] ""
+   user  system elapsed 
+ 48.554   0.004  49.621 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -4.466023e+00  0.000000e+00 -1.726874e+01  1.039777e-02  3.394256e-01
+ [6]  2.641519e-01  3.427183e-01  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  5.305071e+00  9.999901e-04
+[16]  4.886326e-02
+[1] -13.737308  -4.793701  -4.116716  -4.428387  -3.630653  -1.856950
+[1] -5.336032e+01 -1.609331e-12  2.064614e-12  5.693230e+00  1.013924e-01
+[6]  7.392505e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 83.189   0.092  83.900 
+[1] "In eval_hessian: "
+   user  system elapsed 
+383.112   0.284 386.173 
+   1  6.8204183e+04 4.91e+03 9.26e+01  -1.0 1.04e+02    -  1.09e-01 7.40e-02f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 1.015914e-06 1.577502e-02 3.412588e-02 4.526823e-02 6.093872e-02
+[6] 4.634142e-01
+[1] -3.112023e-11 -5.629475e-13 -4.558293e-14  9.682769e-14  7.008041e-13
+[6]  1.552536e-11
+[1] 5825.316
+[1] ""
+   user  system elapsed 
+ 44.001   0.004  44.646 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -7.9622699401  0.0000000000 -5.5059822526  0.0109451453  0.5284837861
+ [6]  0.3080706608  0.6165474003  0.0000000000  0.0000000000  0.0000000000
+[11]  0.0000000000  0.0000000000  0.0000000000  6.7810948876  0.0039960666
+[16]  0.0004886227
+[1] -13.760978  -4.798648  -4.122631  -4.435082  -3.641644  -1.871296
+[1] -4.791789e+01 -1.645367e-12  2.010525e-12  4.411553e+00  1.469699e-11
+[6]  5.981293e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 82.648   0.151  83.761 
+[1] "In eval_hessian: "
+   user  system elapsed 
+381.587   0.200 383.063 
+   2  5.6804794e+04 4.17e+03 7.87e+01  -1.0 9.43e+01    -  3.50e-01 1.50e-01f  1 Nhj 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.354931e-01 -1.109278e-02  4.042117e-05  4.762283e+00  4.880940e+00
+[6]  9.542470e+01
+[1] -1.677769e-11 -5.359255e-13  3.900544e-13  3.683584e-12  3.641087e-12
+[6]  8.383962e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 42.617   0.000  42.618 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -22.673590412   0.000000000  37.289320494   0.011549361   1.796335280
+ [6]   0.576666493   2.381780563   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  16.505472768   0.001032989
+[16]   0.016312584
+[1] -14.094947  -4.860547  -4.194794  -4.501120  -3.712168  -1.941226
+[1] -3.061257e+01 -1.800530e-11 -2.092368e-13 -3.412214e+00  4.185991e-12
+[6]  1.926732e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 83.140   0.096  83.404 
+[1] "In eval_hessian: "
+   user  system elapsed 
+383.040   0.284 384.159 
+   3  2.6961353e+04 9.54e+01 5.07e+06  -1.0 8.24e+01    -  4.81e-01 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.1308643469 -0.0101270555  0.0001745484  4.5967868440  4.7082469920
+[6] 91.9839612900
+[1] -5.121237e-11 -5.346390e-12 -7.639251e-13 -4.256279e-12  5.913614e-13
+[6]  5.447190e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 45.598   0.000  45.733 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -2.030157e+01  0.000000e+00  3.344187e+01  1.897363e-02  1.591172e+00
+ [6]  5.113404e-01  2.109227e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  1.452344e+01  1.031999e-05
+[16]  7.527547e-03
+[1] -14.088990  -4.991202  -4.357924  -4.650674  -3.882125  -2.212689
+[1] -3.772663e+01 -2.281620e+00 -6.566594e-13 -3.266676e+00  4.314687e-12
+[6]  3.195378e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 87.519   0.164  88.249 
+[1] "In eval_hessian: "
+   user  system elapsed 
+384.576   0.296 386.720 
+   4  3.4174578e+04 9.20e+01 4.93e+06  -1.0 9.36e+02   0.0 4.45e-02 2.85e-02h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.1262055184 -0.0096937796  0.0002110613  4.4162837210  4.5183454650
+[6] 88.3028386300
+[1] -6.038903e-11 -1.254345e-11 -8.808943e-13 -9.274217e-12  1.958328e-13
+[6]  2.520529e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 41.377   0.008  42.061 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.915997e+01  0.000000e+00  3.132834e+01  2.296759e-02  1.351665e+00
+ [6]  4.786770e-01  1.845888e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  1.363131e+01  4.601128e-05
+[16]  7.526557e-05
+[1] -14.142521  -5.032724  -4.410934  -4.699107  -3.938196  -2.286891
+[1] -4.639563e+01 -5.976942e-01 -8.465788e-13 -3.440481e+00  4.450713e-12
+[6]  3.767442e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 84.922   0.223  86.409 
+[1] "In eval_hessian: "
+   user  system elapsed 
+375.745   0.316 376.359 
+   5  4.0947458e+04 8.83e+01 4.76e+06  -1.0 2.79e+02   0.4 2.19e-01 3.60e-02h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.110454365 -0.002215608  0.005714288  2.617300717  2.929777929
+[6] 49.130352050
+[1] -1.294072e-11 -8.131358e-13  1.039836e-12  1.665207e-12  4.007943e-12
+[6]  1.781686e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 42.791   0.008  42.809 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.043927e+01  0.000000e+00  1.651682e+01  6.210814e-02  1.300741e-01
+ [6]  1.363349e-01  1.845887e-02  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  7.636536e+00  7.078240e-05
+[16]  1.801893e-04
+[1] -15.064378  -5.650520  -4.992127  -5.203449  -4.418104  -2.238551
+[1] -1.140617e+02 -6.240003e-12  4.087024e-15 -4.755114e+00  9.155335e-12
+[6]  1.246523e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 82.379   0.176  82.968 
+[1] "In eval_hessian: "
+   user  system elapsed 
+375.501   0.284 377.676 
+   6  2.6690431e+05 4.91e+01 4.90e+06  -1.0 4.21e+02  -0.1 1.85e-01 2.07e-01h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.1332735  0.0823774  0.2344470  1.4925621  2.0814224 31.4494244
+[1] -4.504841e-11 -1.202705e-11 -3.737413e-12 -5.815376e-12  4.086330e-12
+[6]  2.236567e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 42.605   0.004  42.691 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -2.984840e+01  0.000000e+00  3.311956e+01  3.700985e-02  4.131760e+00
+ [6]  2.508894e-01  8.365265e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  9.653219e+01  2.589885e-04
+[16]  8.369638e-04
+[1] -12.471640  -2.915458  -2.135804  -2.313105  -1.387828   1.341598
+[1] -3.149135e+02 -1.723796e+01 -4.434274e-12 -3.116760e+01  3.657211e-12
+[6]  1.815966e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 74.170   0.088  74.285 
+[1] "In eval_hessian: "
+   user  system elapsed 
+355.636   0.160 355.945 
+   7  1.1589381e+06 3.14e+01 9.17e+05  -1.0 3.12e+02    -  3.31e-03 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.30799019  0.04234393  0.10111376  0.38357381  0.56531305  5.12618738
+[1] -5.159961e-11 -6.732676e-12 -1.783462e-12 -3.147574e-12  2.326835e-12
+[6]  7.354856e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 41.228   0.000  41.242 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.694388e+01  0.000000e+00  1.773764e+01  5.317685e-02  4.421630e+00
+ [6]  9.382096e-02  8.177170e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  9.579413e+01  5.078028e-04
+[16]  2.259898e-04
+[1] -13.9537153  -4.3842610  -3.6107597  -3.9056827  -2.9892220  -0.9600287
+[1] -2.838674e+02 -2.989707e-11 -2.104840e-12 -2.054764e+01  1.013525e-11
+[6]  2.879664e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 81.658   0.168  81.839 
+[1] "In eval_hessian: "
+   user  system elapsed 
+352.839   0.368 353.359 
+   8  1.1724564e+06 5.13e+00 6.48e+05  -1.0 1.09e+02  -0.5 7.24e-01 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.06050304  0.01349907  0.03897584  0.14372611  0.21138611  1.65626697
+[1] -1.326780e-10 -2.312817e-12  2.268828e-13  1.410935e-12  4.877137e-12
+[6]  7.480594e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 38.723   0.000  38.732 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -9.4539727104  0.0000000000 10.8725376029  0.0352899993  9.3690739357
+ [6]  0.1581956189 14.6980174564  0.0000000000  0.0000000000  0.0000000000
+[11]  0.0000000000  0.0000000000  0.0000000000 98.8779281535  0.0046690764
+[16]  0.0008789628
+[1] -15.343759  -5.746442  -5.111313  -5.389787  -4.584007  -2.670392
+[1] -2.994891e+02 -1.112499e-11 -4.250694e-13 -2.105705e+01  1.326642e-11
+[6]  1.596493e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 65.213   0.124  65.375 
+[1] "In eval_hessian: "
+   user  system elapsed 
+337.379   0.256 337.833 
+   9  4.5888924e+05 1.66e+00 1.42e+04  -1.0 1.28e+02  -1.0 3.09e-01 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.06019085  0.01342612  0.03876663  0.14296034  0.21025846  1.64747634
+[1] -9.490832e-11 -1.085955e-12  1.110997e-12  5.038880e-12  8.782410e-12
+[6]  8.144241e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 28.125   0.000  28.140 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -9.477113e+00  0.000000e+00  1.087750e+01  3.531781e-02  9.263747e+00
+ [6]  1.601945e-01  1.460030e+01  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  9.843116e+01  4.668086e-05
+[16]  8.813948e-04
+[1] -15.339330  -5.740827  -5.107080  -5.385301  -4.579927  -2.669347
+[1] -2.975135e+02 -1.105938e-11 -4.198312e-13 -2.093176e+01  1.316868e-11
+[6]  1.595814e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 72.766   0.160  72.987 
+[1] "In eval_hessian: "
+   user  system elapsed 
+311.062   0.276 311.454 
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  4.5494091e+05 1.65e+00 1.41e+04  -1.0 3.76e+02    -  4.18e-01 5.34e-03f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.165724924  0.004104531  0.021075196  0.086792763  0.131401877
+[6]  1.208240829
+[1] -8.291385e-12 -2.773509e-13  2.029881e-12  9.381785e-12  1.258549e-11
+[6]  5.857714e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 25.915   0.000  25.917 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -11.427932819   0.000000000  11.217315216   0.037218575   0.092637456
+ [6]   0.338449839   5.449285033   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  57.459635821   0.001425066
+[16]   0.001137604
+[1] -14.929836  -5.330653  -4.717121  -5.009791  -4.261937  -2.602863
+[1] -1.634164e+02 -7.487343e-12 -1.193963e-12 -9.625341e+00  3.305022e-12
+[6]  1.484118e+02
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 63.697   0.176  63.924 
+[1] "In eval_hessian: "
+   user  system elapsed 
+333.865   0.364 334.434 
+  11  2.4036786e+05 1.21e+00 9.72e+03  -1.0 3.58e+02    -  8.05e-01 4.95e-01f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.1030291307  0.0001582981  0.0033187982  0.0245630525  0.0405536937
+[6]  0.4104654839
+[1] -1.203594e-11 -2.090805e-13  3.053375e-12  7.594751e-12  1.164624e-11
+[6]  4.927547e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 41.463   0.000  41.482 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -8.490181116  0.000000000  7.709277597  0.018658767  4.184877180
+ [6]  0.450758058  7.354912557  0.000000000  0.000000000  0.000000000
+[11]  0.000000000  0.000000000  0.000000000 23.631174050  0.003147585
+[16]  0.002731473
+[1] -15.250435  -5.960728  -5.386321  -5.637494  -4.928126  -3.259492
+[1] -9.455337e+01 -1.028716e-11 -4.461734e-13 -5.713596e+00  7.268550e-12
+[6]  4.266927e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 68.457   0.064  68.581 
+[1] "In eval_hessian: "
+   user  system elapsed 
+305.087   0.136 305.358 
+  12  4.1115463e+04 4.10e-01 7.45e+03  -1.0 1.19e+02    -  3.09e-02 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.058499439  0.001666208  0.004230288  0.010502727  0.015614012
+[6]  0.129571909
+[1] -5.649998e-11 -8.689049e-12 -2.085194e-12 -5.880842e-12  6.703246e-13
+[6]  1.385322e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 30.417   0.000  30.442 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -11.436794623   0.000000000   9.285922878   0.006692323   3.274468009
+ [6]   0.594040930   2.898743588   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  23.660092442   0.003512525
+[16]   0.003586868
+[1] -14.600319  -5.545141  -4.928661  -5.183953  -4.444036  -2.724833
+[1] -4.731530e+01 -5.391676e-12  2.632655e-13 -2.880623e+00  3.894571e-12
+[6]  2.775776e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 71.243   0.012  71.306 
+[1] "In eval_hessian: "
+   user  system elapsed 
+318.566   0.104 318.888 
+  13  2.2417825e+04 1.30e-01 1.11e+04  -1.0 5.55e+01    -  9.90e-01 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.0025658377  0.0003370030  0.0008130848  0.0020734400  0.0027815668
+[6]  0.0272308984
+[1] -7.885159e-11 -8.283152e-12 -1.560235e-12 -8.333684e-12  1.964905e-13
+[6]  5.891443e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 25.018   0.000  25.021 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.649987346   0.000000000   9.796242207   0.002658441   3.022422531
+ [6]   0.633074397   4.078261281   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.882215865   0.004245827
+[16]   0.008112921
+[1] -14.476400  -5.434914  -4.772584  -5.050572  -4.280217  -2.520876
+[1] -3.650875e+01 -3.067213e-11  6.111958e-15 -3.373889e+00  5.252769e-12
+[6]  2.459045e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 61.168   0.124  61.305 
+[1] "In eval_hessian: "
+   user  system elapsed 
+288.271   0.340 288.791 
+  14  2.2377377e+04 2.72e-02 5.62e+03  -1.0 1.38e+01    -  9.93e-01 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -9.710173e-05  3.990111e-05  1.024446e-04  2.528042e-04  2.786503e-04
+[6]  5.869811e-03
+[1] -3.988398e-12 -2.522047e-13  1.317591e-12  1.235547e-11  1.594658e-11
+[6]  7.529766e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 29.897   0.004  29.904 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -13.033075589   0.000000000   9.834224778   0.001664776   2.845662480
+ [6]   0.645956069   3.934046906   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.686892614   0.004468622
+[16]   0.013922127
+[1] -14.592996  -5.383456  -4.712521  -5.003421  -4.217828  -2.450782
+[1] -3.135626e+01 -1.091685e-11  5.591088e-14 -3.390995e+00  5.392298e-12
+[6]  2.277595e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 63.771   0.152  63.935 
+[1] "In eval_hessian: "
+   user  system elapsed 
+307.943   0.316 308.407 
+  15  2.3835114e+04 5.87e-03 1.65e+03  -1.0 6.85e+00    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -3.193656e-06  6.256274e-07  1.411662e-06  1.397061e-05  4.818675e-06
+[6]  1.458859e-03
+[1] -3.727637e-12 -1.915240e-13  9.815165e-13  9.830415e-12  1.192912e-11
+[6]  6.488410e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 34.275   0.000  34.290 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.921147119   0.000000000   9.627830770   0.001474364   2.841078928
+ [6]   0.647748784   3.962624255   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.651945571   0.004626569
+[16]   0.014901743
+[1] -14.624493  -5.392829  -4.722004  -5.018712  -4.228622  -2.461481
+[1] -3.012251e+01 -1.130797e-11 -3.490633e-13 -3.301922e+00  6.826271e-12
+[6]  2.261674e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 65.547   0.000  65.592 
+[1] "In eval_hessian: "
+   user  system elapsed 
+305.399   0.284 305.856 
+  16  2.4383278e+04 1.46e-03 5.25e+02  -1.0 2.46e+00    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -4.159704e-06  6.464459e-07  1.301466e-06  2.308158e-06  2.271125e-06
+[6]  4.411685e-04
+[1] -1.513697e-10 -3.212275e-11 -9.259822e-13 -2.462798e-11  1.196166e-13
+[6]  6.950547e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 30.807   0.004  30.818 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.83797587   0.00000000   9.53058819   0.00141192   2.85131456
+ [6]   0.64806942   3.99545924   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000  21.62424949   0.00466984
+[16]   0.01481773
+[1] -14.635476  -5.402815  -4.732040  -5.031327  -4.238626  -2.471753
+[1] -3.001089e+01 -1.119754e-11  5.613823e-13 -3.287761e+00  6.612286e-12
+[6]  2.285634e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 67.657   0.140  67.839 
+[1] "In eval_hessian: "
+   user  system elapsed 
+309.187   0.416 309.797 
+  17  2.4707412e+04 4.41e-04 1.73e+02  -1.0 1.00e+00    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.841936e-06  1.005561e-07  2.104594e-07  3.618180e-07  3.769827e-07
+[6]  1.596956e-04
+[1] -5.684697e-11 -1.086820e-11 -8.482822e-13 -9.084126e-12  1.217854e-13
+[6]  1.629927e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 36.380   0.004  36.396 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.806048706   0.000000000   9.498070767   0.001365087   2.856234557
+ [6]   0.648372214   4.016371180   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.591943516   0.004682663
+[16]   0.014640324
+[1] -14.640402  -5.407287  -4.736580  -5.037255  -4.242788  -2.475770
+[1] -2.990618e+01 -1.085337e-11 -4.964126e-14 -3.299049e+00  6.554074e-12
+[6]  2.299274e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 62.898   0.228  63.205 
+[1] "In eval_hessian: "
+   user  system elapsed 
+ 276.31    0.16  276.66 
+  18  2.4955662e+04 1.60e-04 5.17e+01  -1.0 9.82e-01    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -8.810850e-07  2.628548e-08  5.576544e-08  9.663934e-08  1.016441e-07
+[6]  5.621686e-05
+[1] -4.147951e-12 -2.423932e-13  1.251001e-12  2.815409e-11  3.448530e-11
+[6]  1.789040e-10
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 30.973   0.000  31.002 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.789734026   0.000000000   9.482158297   0.001331299   2.858393747
+ [6]   0.648615622   4.031116427   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.566558915   0.004693260
+[16]   0.014494907
+[1] -14.643246  -5.409654  -4.738795  -5.040665  -4.244783  -2.477765
+[1] -3.024542e+01 -1.146807e-11  5.138144e-14 -3.309375e+00  6.555841e-12
+[6]  2.307517e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 51.878   0.124  52.038 
+[1] "In eval_hessian: "
+   user  system elapsed 
+263.191   0.284 263.634 
+  19  2.5144104e+04 5.62e-05 1.10e+01  -1.0 9.44e-01    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -3.206248e-07  3.701652e-09  8.151523e-09  1.577117e-08  1.526641e-08
+[6]  1.833092e-05
+[1] -7.883359e-11 -1.475930e-11 -1.779804e-12 -1.134962e-11  3.781521e-13
+[6]  6.110251e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+  30.19    0.00   30.20 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.783646801   0.000000000   9.476784279   0.001312408   2.858934749
+ [6]   0.648761543   4.040055319   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.549103587   0.004701565
+[16]   0.014402335
+[1] -14.644589  -5.410393  -4.739592  -5.042313  -4.245676  -2.478473
+[1] -3.067481e+01 -1.033808e-11  2.728785e-13 -3.315880e+00  6.123049e-12
+[6]  2.311561e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 51.394   0.016  51.424 
+[1] "In eval_hessian: "
+   user  system elapsed 
+277.832   0.116 278.090 
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  20  2.5263934e+04 1.83e-05 2.40e-01  -1.0 8.50e-01    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.196819e-07  1.409781e-08  3.051733e-08  4.104180e-08  5.482429e-08
+[6]  4.834052e-06
+[1] -4.172218e-11 -7.848389e-12 -8.198682e-13 -6.631388e-12 -3.267082e-14
+[6]  1.713872e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 31.181   0.000  31.186 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.772024445   0.000000000   9.465945466   0.001290305   2.863051968
+ [6]   0.648926550   4.050610085   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.529466530   0.000955292
+[16]   0.002899378
+[1] -14.646310  -5.411838  -4.740960  -5.044266  -4.247383  -2.480026
+[1] -3.076355e+01 -1.146991e-11 -1.606481e-13 -3.308781e+00  6.994913e-12
+[6]  2.319365e+01
+[1] ""
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.371560e-07 -3.906553e-09 -2.285363e-09 -2.622654e-09 -1.105172e-09
+[6]  2.507109e-06
+[1] -7.536254e-11 -4.257039e-12  2.122790e-13 -3.795719e-12  1.003549e-12
+[6]  1.011080e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 33.167   0.000  33.210 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.277254e+01  0.000000e+00  9.466594e+00  1.290858e-03  2.862959e+00
+ [6]  6.489225e-01  4.050868e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152798e+01  9.554527e-04
+[16]  2.896884e-03
+[1] -14.646284  -5.411779  -4.740903  -5.044274  -4.247321  -2.479963
+[1] -3.077381e+01 -1.156006e-11  1.536229e-13 -3.309053e+00  6.649515e-12
+[6]  2.319340e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 52.167   0.112  52.289 
+[1] "In eval_hessian: "
+   user  system elapsed 
+282.922   0.296 283.439 
+  21  2.5306466e+04 2.51e-06 2.10e-01  -1.7 6.49e-01    -  1.00e+00 1.00e+00H  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -6.397480e-10  1.078688e-11  2.288998e-11  8.264752e-11  4.091957e-11
+[6]  2.352995e-07
+[1] -4.092487e-12 -4.692036e-13  5.854486e-13  1.592896e-11  2.027090e-11
+[6]  1.003881e-10
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 36.015   0.000  36.032 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.772923494   0.000000000   9.467111521   0.001291820   2.862935716
+ [6]   0.648914017   4.050939221   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.526876752   0.000943353
+[16]   0.002883780
+[1] -14.646258  -5.411737  -4.740862  -5.044282  -4.247276  -2.479921
+[1] -3.077442e+01 -4.516533e-11  4.183969e-13 -3.309120e+00  7.102354e-12
+[6]  2.319315e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 61.582   0.188  61.827 
+[1] "In eval_hessian: "
+   user  system elapsed 
+284.902   0.304 285.404 
+  22  2.5309145e+04 2.35e-07 3.70e-02  -1.7 2.00e-01    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.417156e-09  6.721672e-10  1.422725e-09  1.883833e-09  2.504976e-09
+[6]  4.988930e-08
+[1] -5.838396e-11 -1.348073e-12 -4.339524e-13 -2.043158e-12  2.602290e-13
+[6]  9.640212e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 28.831   0.000  28.873 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.277038e+01  0.000000e+00  9.464623e+00  1.287890e-03  2.863877e+00
+ [6]  6.489424e-01  4.052552e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152444e+01  1.339314e-04
+[16]  4.099879e-04
+[1] -14.646577  -5.412053  -4.741224  -5.044618  -4.247611  -2.480266
+[1] -3.076242e+01 -3.030130e-11  1.857164e-13 -3.307055e+00  6.548697e-12
+[6]  2.320811e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 53.554   0.064  53.648 
+[1] "In eval_hessian: "
+   user  system elapsed 
+285.162   0.252 285.571 
+  23  2.5307279e+04 4.99e-08 3.52e-05  -2.5 2.34e-02    -  1.00e+00 1.00e+00f  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -6.283585e-11  1.777009e-11  3.753774e-11  4.983552e-11  6.610747e-11
+[6]  1.359324e-09
+[1] -6.230304e-11 -8.436807e-12 -7.819329e-13 -6.598272e-12  1.554881e-13
+[6]  1.242885e-12
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 29.484   0.000  29.500 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.276996e+01  0.000000e+00  9.464215e+00  1.287241e-03  2.864027e+00
+ [6]  6.489471e-01  4.052810e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152407e+01  7.101133e-06
+[16]  2.174456e-05
+[1] -14.646629  -5.412104  -4.741283  -5.044672  -4.247666  -2.480322
+[1] -3.076053e+01 -1.101723e-11  3.071994e-13 -3.306726e+00  5.937861e-12
+[6]  2.321050e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 56.345   0.112  56.487 
+[1] "In eval_hessian: "
+   user  system elapsed 
+263.912   0.120 264.086 
+  24  2.5306963e+04 1.36e-09 1.85e-05  -3.8 2.39e-03    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.906253e-13  5.378510e-14  1.136244e-13  1.508641e-13  2.002495e-13
+[6]  4.112877e-12
+[1] -2.194955e-12 -2.921186e-13  1.367305e-12  4.086202e-12  4.927170e-12
+[6]  2.530931e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 28.055   0.004  28.060 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.276994e+01  0.000000e+00  9.464193e+00  1.287205e-03  2.864036e+00
+ [6]  6.489474e-01  4.052824e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152405e+01  7.711282e-08
+[16]  2.563919e-07
+[1] -14.646632  -5.412107  -4.741286  -5.044675  -4.247669  -2.480325
+[1] -3.076042e+01 -1.095683e-11  2.778055e-13 -3.306707e+00  5.988047e-12
+[6]  2.321063e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 57.239   0.108  57.354 
+[1] "In eval_hessian: "
+   user  system elapsed 
+279.926   0.256 280.327 
+  25  2.5306946e+04 2.53e-11 5.93e-08  -5.7 1.32e-04    -  1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 9.82322821771943"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -9.992007e-16 -2.775558e-17  1.214306e-17  2.446641e-17  5.551115e-17
+[6]  1.110223e-15
+[1] -6.862102e-11 -1.569370e-12 -4.021645e-13 -1.233817e-12  6.825608e-13
+[6]  2.524336e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 31.389   0.004  31.435 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.276994e+01  0.000000e+00  9.464193e+00  1.287204e-03  2.864036e+00
+ [6]  6.489474e-01  4.052824e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152405e+01 -5.709170e-09
+[16]  3.119665e-09
+[1] -14.646632  -5.412107  -4.741286  -5.044675  -4.247669  -2.480325
+[1] -3.076042e+01 -1.084938e-11  5.239558e-13 -3.306707e+00  6.380466e-12
+[6]  2.321063e+01
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 64.278   0.132  64.448 
+  26  2.5306946e+04 6.86e-11 1.23e-11  -7.0 1.55e-06    -  1.00e+00 1.00e+00h  1 
+
+Number of Iterations....: 26
+
+                                   (scaled)                 (unscaled)
+Objective...............:   4.2882752412294388e+02    2.5306945663976188e+04
+Dual infeasibility......:   1.2324362628560049e-11    7.2731333190891271e-10
+Constraint violation....:   6.8621023218979660e-11    6.8621023218979660e-11
+Complementarity.........:   9.0909664029281979e-08    5.3649679614776305e-06
+Overall NLP error.......:   9.0909664029281979e-08    5.3649679614776305e-06
+
+
+Number of objective function evaluations             = 28
+Number of objective gradient evaluations             = 27
+Number of equality constraint evaluations            = 28
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 27
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 26
+Total CPU secs in IPOPT (w/o function evaluations)   =    881.567
+Total CPU secs in NLP function evaluations           =  11274.375
+
+EXIT: Optimal Solution Found.
+[1] "time: "
+     user    system   elapsed 
+13218.760    13.479 13274.246 
+numeric(0)
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+numeric(0)
+[1] "kappa grad_share_delta: "
+[1] 3083174
+[1] "kappa grad_share_delta: "
+[1] 1459807
+[1] "kappa grad_share_delta: "
+[1] 1214420
+[1] "kappa grad_share_delta: "
+[1] 1117942
+[1] "kappa grad_share_delta: "
+[1] 2862856
+[1] "kappa grad_share_delta: "
+[1] 3735627
+numeric(0)
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 11945.5352271762"
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+numeric(0)
+[1] "kappa grad_share_delta: "
+[1] 3083174
+[1] "kappa grad_share_delta: "
+[1] 1459807
+[1] "kappa grad_share_delta: "
+[1] 1214420
+[1] "kappa grad_share_delta: "
+[1] 1117942
+[1] "kappa grad_share_delta: "
+[1] 2862856
+[1] "kappa grad_share_delta: "
+[1] 3735627
+numeric(0)
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 11945.5352271762"
+numeric(0)
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.276994e+01  0.000000e+00  9.464193e+00  1.287204e-03  2.864036e+00
+ [6]  6.489474e-01  4.052824e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152405e+01  0.000000e+00
+[16]  3.119665e-09
+[1] -14.646632  -5.412107  -4.741286  -5.044675  -4.247669  -2.480325
+[1] -3.076042e+01 -1.084938e-11  5.239558e-13 -3.306707e+00  6.380466e-12
+[6]  2.321063e+01
+[1] ""
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -7.771561e-16  1.773573e-15  6.127234e-12  1.229347e-11  1.694611e-11
+[6]  1.940250e-10
+[1] -10.2522329  -3.3364715  -1.1364704  -0.3607476   2.7308882  15.9847718
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 33.976   0.008  33.986 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 68.371   0.224  68.620 
+[1] "In eval_hessian: "
+   user  system elapsed 
+282.582   0.424 283.178 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -1.276994e+01  0.000000e+00  9.464193e+00  1.287204e-03  2.864036e+00
+ [6]  6.489474e-01  4.052824e+00  0.000000e+00  0.000000e+00  0.000000e+00
+[11]  0.000000e+00  0.000000e+00  0.000000e+00  2.152405e+01  0.000000e+00
+[16]  3.119665e-09
+[1] -14.646632  -5.412107  -4.741286  -5.044675  -4.247669  -2.480325
+[1] -3.076042e+01 -1.084938e-11  5.239558e-13 -3.306707e+00  6.380466e-12
+[6]  2.321063e+01
+[1] ""
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -7.771561e-16  1.773573e-15  6.127234e-12  1.229347e-11  1.694611e-11
+[6]  1.940250e-10
+[1] -10.2522329  -3.3364715  -1.1364704  -0.3607476   2.7308882  15.9847718
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 33.735   0.004  33.755 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 61.850   0.207  62.076 
+[1] "In eval_hessian: "
+   user  system elapsed 
+280.890   0.360 281.419 
+This is Ipopt version 3.12.4, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:  2608340
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:   971640
+
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 59.024   0.200  59.240 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 66.117   0.216  66.395 
+Total number of variables............................:    12389
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:    12307
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:    12381
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 4.115840e-07 6.153830e-03 1.307114e-02 1.695262e-02 2.294990e-02
+[6] 1.655418e-01
+[1] -10.2522329  -3.3364715  -1.1364704  -0.3607476   2.7308882  15.9847718
+[1] 11132.97
+[1] ""
+   user  system elapsed 
+ 33.073   0.000  33.084 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.76994149   0.00000000   9.46419270   0.00999999   2.86403570
+ [6]   0.64894738   4.05282425   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000  21.52404653   0.00999999
+[16]   0.00999999
+[1] -14.646632  -5.412107  -4.741286  -5.044675  -4.247669  -2.480325
+[1] -3.076042e+01 -1.084938e-11  5.239558e-13 -3.306707e+00  6.380466e-12
+[6]  2.321063e+01
+[1] ""
+[1] "In eval_hessian: "
+   user  system elapsed 
+274.038   0.316 274.546 
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  1.2030467e-05 1.13e+03 4.35e-08  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0 y
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.155282e-04 -1.260975e-05  4.331801e-06  1.824929e-05  3.640910e-05
+[6]  6.495320e-04
+[1] -8.674661e-11 -1.584205e-11 -5.033529e-12 -7.302981e-12  2.550848e-12
+[6]  1.159666e-10
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 28.345   0.000  28.379 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.776668450   0.000000000   9.465939966   0.001847777   2.857641078
+ [6]   0.642453220   4.082770237   0.000000000   0.000000000   0.000000000
+[11]   0.000000000   0.000000000   0.000000000  21.643803152   0.109791911
+[16]   0.109925757
+[1] -14.651791  -5.411165  -4.740023  -5.043709  -4.246879  -2.481967
+[1] -33.6832820  -6.5381845  -0.6843841  -3.7460160   5.0871473  21.5500335
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 52.717   0.056  52.810 
+[1] "In eval_hessian: "
+   user  system elapsed 
+240.674   0.204 240.939 
+   1  1.1650977e-05 6.50e-04 3.18e-02  -1.0 1.70e+01    -  9.89e-01 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.904171e-02 -4.931023e-04 -1.383640e-04 -4.215766e-04 -1.987930e-06
+[6]  6.377792e-03
+[1] -1.482192e-10 -1.597122e-11 -1.361578e-12 -7.871580e-12  8.452850e-12
+[6]  3.662137e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 22.763   0.000  22.764 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -13.14795232   0.00000000   9.50449511   0.01106133   3.20823907
+ [6]   0.50442389   5.48133733   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000  32.28431934   3.23150179
+[16]   5.55036480
+[1] -14.865670  -5.347678  -4.689311  -4.990920  -4.202494  -2.486857
+[1] -108.421401  -14.780774   -3.976164  -11.548001    4.365474   38.267921
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.170   0.108  44.283 
+[1] "In eval_hessian: "
+   user  system elapsed 
+211.070   0.176 211.248 
+   2  3.2918197e-05 2.90e-02 8.69e-01  -1.0 7.97e+01    -  9.62e-01 1.00e+00f  1 Nhj 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -0.3030653537 -0.0040386735 -0.0008621281 -0.0044120135 -0.0001281956
+[6]  0.0101206623
+[1] -2.935963e-11 -3.280598e-12  4.632739e-12  1.757245e-11  2.950529e-11
+[6]  1.714113e-10
+[1] 10000
+[1] ""
+   user  system elapsed 
+  22.92    0.00   22.92 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -13.31513779   0.00000000   9.19189843   0.04515221   3.53101004
+ [6]   0.07168884   7.51148106   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 195.97695057   6.37133938
+[16]  15.39508247
+[1] -15.261457  -5.286958  -4.624045  -4.918854  -4.111674  -2.069993
+[1] -428.27426  -42.94044  -11.12152  -21.81293   19.57070  213.59591
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 43.733   0.152  43.885 
+[1] "In eval_hessian: "
+   user  system elapsed 
+210.834   0.240 211.076 
+   3  3.7097159e-04 3.03e-01 3.61e+00  -1.0 4.33e+02    -  9.90e-01 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.279592e-02 -3.469188e-04 -7.414523e-05  1.029988e-03  5.106338e-06
+[6]  6.813892e-01
+[1] -7.609913e-11 -1.385647e-11 -4.369838e-12 -8.472320e-12  2.601475e-12
+[6]  2.499068e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 22.887   0.000  22.887 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -13.02692655   0.00000000   8.31851157   0.02911737   3.30492613
+ [6]   0.23084197   7.13443353   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 192.97001915   6.12679289
+[16]  15.87235452
+[1] -15.142543  -5.266406  -4.617175  -4.909793  -4.111543  -2.191512
+[1] -217.002594  -35.670558  -11.471561  -21.912916    7.359585  133.034046
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.137   0.064  44.202 
+[1] "In eval_hessian: "
+   user  system elapsed 
+208.868   0.152 209.022 
+   4  1.5783302e-04 6.81e-01 1.57e+00  -1.0 3.44e+02    -  1.00e+00 1.00e+00h  1 qS
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -2.592841e-03 -1.472543e-05 -3.786061e-06  2.543621e-04  7.810447e-06
+[6]  1.635674e-01
+[1] -7.764811e-11 -1.713119e-11 -5.936585e-12 -1.108839e-11  7.683854e-13
+[6]  3.385736e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 23.099   0.000  23.100 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85613018   0.00000000   7.88894081   0.02879973   3.40571266
+ [6]   0.24043303   7.25241660   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 163.64556066   6.17097498
+[16]  16.13772521
+[1] -15.155454  -5.286020  -4.635983  -4.929509  -4.130772  -2.209239
+[1] -199.998882  -35.756432  -12.135101  -22.016900    7.306542  141.766679
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.346   0.180  44.527 
+[1] "In eval_hessian: "
+   user  system elapsed 
+207.953   0.384 208.339 
+   5  1.6686071e-04 1.64e-01 5.78e-01  -1.0 6.98e+01  -4.5 1.00e+00 1.00e+00h  1 qsL
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.322066e-04 -9.787659e-08  1.473464e-08  2.917524e-05  2.940146e-07
+[6]  1.968149e-02
+[1] -1.529145e-09 -1.591545e-10 -8.776979e-12 -1.094113e-12  7.303402e-11
+[6]  2.471069e-09
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 22.818   0.000  22.818 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.89836442   0.00000000   7.92319653   0.02887894   3.40456605
+ [6]   0.24127601   7.26520134   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 157.89823619   6.19754868
+[16]  16.14534062
+[1] -15.155020  -5.287367  -4.631421  -4.926195  -4.127202  -2.206761
+[1] -191.373132  -35.577426  -11.713115  -22.131750    7.888036  145.343662
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 43.604   0.136  43.740 
+[1] "In eval_hessian: "
+   user  system elapsed 
+209.660   0.248 209.911 
+   6  1.7540499e-04 1.97e-02 7.85e-02  -1.7 3.58e+01    -  1.00e+00 1.00e+00h  1 qS
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -1.639846e-05  1.663024e-07  7.469058e-07  1.787485e-06  1.757021e-06
+[6]  3.958926e-04
+[1] -3.563549e-11 -2.092104e-12  3.474554e-12  6.457848e-12  1.136691e-11
+[6]  4.177991e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 22.835   0.000  22.837 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85134066   0.00000000   7.90776567   0.02889899   3.41525916
+ [6]   0.24056513   7.28111034   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 156.39334190   6.24921756
+[16]  16.33145673
+[1] -15.163415  -5.295429  -4.639405  -4.934029  -4.135498  -2.213600
+[1] -194.242580  -35.631906  -11.893541  -22.120986    8.193364  145.450042
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.437   0.200  44.638 
+[1] "In eval_hessian: "
+   user  system elapsed 
+212.495   0.288 212.785 
+   7  1.7650161e-04 3.96e-04 5.64e-02  -2.5 4.54e+00  -3.1 1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -3.085514e-08  6.458797e-10  1.709810e-09  2.803398e-09  3.512538e-09
+[6]  2.125192e-07
+[1] -1.072777e-10 -1.983746e-12  4.565237e-12  7.559945e-12  1.554312e-11
+[6]  8.617462e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 23.580   0.000  23.581 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85366956   0.00000000   7.90910333   0.02889877   3.41675734
+ [6]   0.24061188   7.28394584   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 156.35062824   6.24420114
+[16]  16.31934398
+[1] -15.163128  -5.295079  -4.639050  -4.933715  -4.135062  -2.213317
+[1] -194.384653  -35.629155  -11.891001  -22.121435    8.185105  145.471971
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.650   0.216  44.866 
+[1] "In eval_hessian: "
+   user  system elapsed 
+212.753   0.324 213.080 
+   8  1.7652508e-04 2.13e-07 1.30e-03  -2.5 1.42e-01  -3.6 1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -4.593426e-11  4.384028e-13  1.415354e-12  1.907478e-12  2.944225e-12
+[6]  3.140477e-11
+[1] -5.130119e-11 -1.234346e-11  3.067546e-12  6.405971e-12  1.632827e-11
+[6]  2.077769e-10
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 23.206   0.000  23.207 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85374550   0.00000000   7.90916010   0.02889873   3.41679541
+ [6]   0.24061359   7.28402129   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 156.35019568   6.24404014
+[16]  16.31891957
+[1] -15.163118  -5.295068  -4.639040  -4.933705  -4.135048  -2.213309
+[1] -194.385130  -35.629023  -11.890816  -22.121429    8.184763  145.472117
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.062   0.080  44.143 
+[1] "In eval_hessian: "
+   user  system elapsed 
+209.154   0.324 209.481 
+   9  1.7652461e-04 2.08e-10 7.00e-07  -3.8 1.11e-03  -3.2 1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -7.800760e-12 -2.899417e-14  1.773928e-14  6.756006e-13  3.872475e-13
+[6]  1.301056e-10
+[1] -6.724576e-11 -1.444533e-11 -5.776712e-12 -1.107658e-11  2.027267e-13
+[6]  1.551825e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 22.838   0.000  22.839 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85377262   0.00000000   7.90923594   0.02889867   3.41683956
+ [6]   0.24061478   7.28412308   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 156.34940521   6.24393365
+[16]  16.31864878
+[1] -15.163117  -5.295065  -4.639039  -4.933704  -4.135052  -2.213308
+[1] -194.384296  -35.628873  -11.890680  -22.121365    8.184703  145.471383
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 43.439   0.172  43.611 
+[1] "In eval_hessian: "
+   user  system elapsed 
+209.709   0.328 210.040 
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+  10  1.7652320e-04 1.30e-10 2.19e-07  -5.7 1.04e-03  -3.7 1.00e+00 1.00e+00h  1 
+[1] "kappa at theta_2 computation: 33.9610749105946"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -5.810596e-11 -2.410381e-13  1.505376e-13  6.529433e-12  3.919275e-12
+[6]  1.203363e-09
+[1] -1.011813e-10 -9.088730e-12 -3.697487e-12 -4.910238e-12  4.248157e-12
+[6]  2.660272e-11
+[1] 10000
+[1] ""
+   user  system elapsed 
+ 23.033   0.000  23.034 
+[1] "params: theta, summary of delta, summary of eta"
+ [1] -12.85384682   0.00000000   7.90946017   0.02889848   3.41696968
+ [6]   0.24061823   7.28442453   0.00000000   0.00000000   0.00000000
+[11]   0.00000000   0.00000000   0.00000000 156.34705019   6.24362738
+[16]  16.31787156
+[1] -15.163117  -5.295060  -4.639035  -4.933702  -4.135065  -2.213307
+[1] -194.381719  -35.628431  -11.890286  -22.121173    8.184555  145.469140
+[1] ""
+[1] "In eval_jac_g: "
+   user  system elapsed 
+ 44.012   0.248  44.260 
+  11  1.7651897e-04 1.20e-09 2.14e-07  -7.0 3.04e-03  -4.2 1.00e+00 1.00e+00h  1 S
+
+Number of Iterations....: 11
+
+                                   (scaled)                 (unscaled)
+Objective...............:   1.7651896897896618e-04    1.7651896897896618e-04
+Dual infeasibility......:   2.1362129051397292e-07    2.1362129051397292e-07
+Constraint violation....:   1.2033629093188836e-09    1.2033629093188836e-09
+Complementarity.........:   9.0995247199862875e-08    9.0995247199862875e-08
+Overall NLP error.......:   2.1362129051397292e-07    2.1362129051397292e-07
+
+
+Number of objective function evaluations             = 12
+Number of objective gradient evaluations             = 12
+Number of equality constraint evaluations            = 12
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 12
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 11
+Total CPU secs in IPOPT (w/o function evaluations)   =    436.477
+Total CPU secs in NLP function evaluations           =   3258.339
+
+EXIT: Optimal Solution Found.
+[1] "time: "
+    user   system  elapsed 
+4456.346    7.259 4464.475 
+numeric(0)
+[1] 37
+     user    system   elapsed 
+17675.106    20.738 17738.721 
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+numeric(0)
+[1] "kappa grad_share_delta: "
+[1] 3061196
+[1] "kappa grad_share_delta: "
+[1] 1409845
+[1] "kappa grad_share_delta: "
+[1] 1220991
+[1] "kappa grad_share_delta: "
+[1] 975321.6
+[1] "kappa grad_share_delta: "
+[1] 2868596
+[1] "kappa grad_share_delta: "
+[1] 3550956
+numeric(0)
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 8972.08697933191"
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+numeric(0)
+[1] "kappa grad_share_delta: "
+[1] 3061196
+[1] "kappa grad_share_delta: "
+[1] 1409845
+[1] "kappa grad_share_delta: "
+[1] 1220991
+[1] "kappa grad_share_delta: "
+[1] 975321.6
+[1] "kappa grad_share_delta: "
+[1] 2868596
+[1] "kappa grad_share_delta: "
+[1] 3550956
+numeric(0)
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 8972.08697933191"
+                                 [,1]
+density ridership           36.317663
+density metro                9.513347
+density intercept           33.081220
+density metro evening        4.146836
+local_government_office      0.000000
+food                         0.000000
+lodging                      0.000000
+museum                       0.000000
+movie_theater                0.000000
+density bus                  0.000000
+density tourist locations    3.702907
+density metro dummy          8.567226
+density metro evening dummy  4.670800
+[1] "Step 1 output: "
+[1] "theta1 output: "
+[1] "-12.7699414886804, 0, 9.46419269511909"
+[1] "0.00128720435483383, 2.86403570107302, 0.648947380623876, 4.05282425210382, 0, 0, 0, 0, 0, 0, 21.5240465274765, 0, 3.11966536962098e-09"
+[1] "theta1 t-stat:"
+[1] "-12.54, , 9.03"
+[1] "0.66, 3.55, , 2.04, , , , , , , 5.51, 0, 0"
+[1] "theta2 output: "
+numeric(0)
+[1] "theta2 t-stat:"
+numeric(0)
+[1] 25306.95
+[1] 26
+     user    system   elapsed 
+13218.760    13.479 13274.246 
+[1] "Step 2 output: "
+[1] "theta1 output: "
+[1] "-12.853846822527, 0, 7.90946017306501"
+[1] "0.028898479562825, 3.41696967578421, 0.240618227506812, 7.28442452989816, 0, 0, 0, 0, 0, 0, 156.347050189053, 6.24362737857334, 16.3178715632356"
+[1] "theta1 t-stat:"
+[1] "-13.07, , 5.55"
+[1] "14.54, 3.85, , 2.08, , , , , , , 7.11, 3.41, 2.21"
+[1] "theta2 output: "
+numeric(0)
+[1] "theta2 t-stat:"
+numeric(0)
+[1] 0.000176519
+[1] 37
+     user    system   elapsed 
+17675.106    20.738 17738.721 
+       [,1]   [,2]   [,3]   [,4]   [,5]   [,6]   [,7]   [,8]
+[1,]  1.000 -0.821  0.142 -0.096 -0.062 -0.241  0.433  0.315
+[2,] -0.821  1.000 -0.016  0.283  0.154  0.150 -0.400 -0.226
+[3,]  0.142 -0.016  1.000  0.163  0.042  0.070 -0.033  0.009
+[4,] -0.096  0.283  0.163  1.000 -0.026 -0.023 -0.821  0.044
+[5,] -0.062  0.154  0.042 -0.026  1.000 -0.040  0.023 -0.798
+[6,] -0.241  0.150  0.070 -0.023 -0.040  1.000 -0.088 -0.068
+[7,]  0.433 -0.400 -0.033 -0.821  0.023 -0.088  1.000  0.050
+[8,]  0.315 -0.226  0.009  0.044 -0.798 -0.068  0.050  1.000
+<0 x 0 matrix>
+      [,1]                                                 
+ [1,] "-12.7699414886804, -12.54, -12.853846822527, -13.07"
+ [2,] "0, , 0, "                                           
+ [3,] "9.46419269511909, 9.03, 7.90946017306501, 5.55"     
+ [4,] ", , , "                                             
+ [5,] ", , , "                                             
+ [6,] ", , , "                                             
+ [7,] ", , , "                                             
+ [8,] ", , , "                                             
+ [9,] ", , , "                                             
+[10,] ", , , "                                             
+[11,] ", , , "                                             
+[12,] "0.00128720435483383, 0.66, 0.028898479562825, 14.54"
+[13,] "2.86403570107302, 3.55, 3.41696967578421, 3.85"     
+[14,] "0.648947380623876, , 0.240618227506812, "           
+[15,] "4.05282425210382, 2.04, 7.28442452989816, 2.08"     
+[16,] "0, , 0, "                                           
+[17,] "0, , 0, "                                           
+[18,] "0, , 0, "                                           
+[19,] "0, , 0, "                                           
+[20,] "0, , 0, "                                           
+[21,] "0, , 0, "                                           
+[22,] "21.5240465274765, 5.51, 156.347050189053, 7.11"     
+[23,] "0, 0, 6.24362737857334, 3.41"                       
+[24,] "3.11966536962098e-09, 0, 16.3178715632356, 2.21"    
+[25,] ", , , "                                             
+[26,] "25306.9456639762, , 0.000176518968978966, "         
+[27,] "13218.76, , 17675.106, "                            
+[28,] "26, , 37, "                                         
+      [,1]                                           
+ [1,] "density ridership, 36.3176632410421"          
+ [2,] "density metro, 9.51334693543029"              
+ [3,] "density intercept, 33.0812204970594"          
+ [4,] "density metro evening, 4.14683576066591"      
+ [5,] "local_government_office, 0"                   
+ [6,] "food, 0"                                      
+ [7,] "lodging, 0"                                   
+ [8,] "museum, 0"                                    
+ [9,] "movie_theater, 0"                             
+[10,] "density bus, 0"                               
+[11,] "density tourist locations, 3.70290718106668"  
+[12,] "density metro dummy, 8.56722613311463"        
+[13,] "density metro evening dummy, 4.67080025162103"

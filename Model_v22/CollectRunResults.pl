@@ -3,18 +3,7 @@ use strict;
 my $root_dir = "/Users/ashishkabra/Dropbox/Ashish_Karan/Sustainable\ Transportation\ System/Data/Code/R/Model_v22";
 
 
-my @in_file_list = ("r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_nldis_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_nldis_pr6.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_stepf_2_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_stepf_2_pr6.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_stepf_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:10_full_stepf_pr6.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_nldis_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_nldis_pr6.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_stepf_2_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_stepf_2_pr6.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_stepf_pr3.txt",
-	"r70.5_noRD_bytw_metrodummies_logmetrocorrected_moments_1:20_full_stepf_pr6.txt");
+my @in_file_list = ("r70.5_noRD_hyperlocal_majoritystates_metrodummies_moments_1:20_full_nldis_pr6.txt");
 
 open(OUTFILE, '>temp.csv') or die "no file";
 

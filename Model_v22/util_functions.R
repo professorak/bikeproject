@@ -394,3 +394,14 @@ pos <- function(x) {
 }
 
 
+sort_sto_state_local <- function(in_vec) {
+  local_stations <- in_vec[1]
+  sto_state_local <- in_vec[2]
+  sto_state_local_vec <- splitchar(sto_state_local)
+  local_stations_vec <- splitchar(local_stations)
+  ord <- order(local_stations_vec)
+  return(c(paste(local_stations_vec[ord],collapse="_"),
+           paste(sto_state_local_vec[ord],collapse="_")))  
+}
+
+

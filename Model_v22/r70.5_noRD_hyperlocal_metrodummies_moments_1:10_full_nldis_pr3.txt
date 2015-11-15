@@ -1,0 +1,143 @@
+[1] "Removing too low wieghts states:"
+[1] "Percentage of total observations removed: 0.509 %"
+[1] "Removing too low demand states:"
+[1] "Percentage of 0 demand states: 1.151 %"
+[1] "Percentage of too low demand states truncated at 1e-5: 1.151 %"
+[1] "Percentage of really high demand states truncated at 2 : 0 %"
+[1] TRUE
+[1] TRUE
+739.5307  -10.34901  6.607367  ;; 0.1660145  -4.151257  0.1535916  ;; 0.02159495  -4.122495  0.02136508  ;; 0.003124807  -4.121321  0.003119935  ;; 0.0004566471  -4.121262  0.0004565428  ;; 6.671112e-05  -4.121258  6.67089e-05  ;; 9.738439e-06  -4.121258  9.738392e-06  ;; 1.42103e-06  -4.121258  [1] "itr:  9"
+745.6166  -10.71546  6.615552  ;; 0.166204  -4.510413  0.153754  ;; 0.02180499  -4.490296  0.02157066  ;; 0.003213176  -4.489678  0.003208025  ;; 0.0004804331  -4.489652  0.0004803177  ;; 7.195519e-05  -4.489651  7.195261e-05  ;; 1.077782e-05  -4.489651  1.077776e-05  ;; 1.61429e-06  -4.489651  [1] "itr:  9"
+749.5556  -11.38344  6.620814  ;; 0.1320147  -5.174225  0.1239989  ;; 0.0146932  -5.160256  0.0145863  ;; 0.001813466  -5.159944  0.001811824  ;; 0.0002265114  -5.159934  0.0002264858  ;; 2.833373e-05  -5.159934  2.833333e-05  ;; 3.544806e-06  -5.159934  [1] "itr:  8"
+751.5883  -11.78813  6.623518  ;; 0.09186671  -5.58097  0.08788881  ;; 0.007176797  -5.570056  0.007151167  ;; 0.0006017345  -5.569861  0.0006015535  ;; 5.070142e-05  -5.569856  5.070013e-05  ;; 4.273088e-06  -5.569856  [1] "itr:  7"
+740.9095  -10.0369  6.609227  ;; 0.136538  -3.836625  0.1279868  ;; 0.01466784  -3.807844  0.01456131  ;; 0.00168723  -3.806768  0.001685809  ;; 0.0001923519  -3.806719  0.0001923334  ;; 2.169657e-05  -3.806717  2.169634e-05  ;; 2.429626e-06  -3.806717  [1] "itr:  8"
+745.0477  -10.45213  6.61479  ;; 0.1204106  -4.251707  0.1136952  ;; 0.0116215  -4.229133  0.01155449  ;; 0.001233117  -4.228456  0.001232357  ;; 0.0001315646  -4.228432  0.000131556  ;; 1.403246e-05  -4.228431  1.403236e-05  ;; 1.496177e-06  -4.228431  [1] "itr:  8"
+   user  system elapsed 
+557.331   0.024 561.016 
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+ [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+ [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+ [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+[10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+[13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+[16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+[19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+[22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+[25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+[28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+[31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+[34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+[37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+[40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+[43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+[46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+[49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+[52] "dis_center"            "census_density"        "metro_den_on_a"       
+[55] "metro_den_on_b"        "metro_den_on_c"        "metro_den_on_1"       
+[58] "metro_den_on_2"        "metro_den_on_3"        "metro_den_on_4"       
+[61] "metro_den_off_a"       "metro_den_off_b"       "metro_den_off_c"      
+[64] "metro_den_off_1"       "metro_den_off_2"       "metro_den_off_3"      
+[67] "metro_den_off_4"       "dummy_metro_den_on_a"  "dummy_metro_den_on_b" 
+[70] "dummy_metro_den_on_c"  "dummy_metro_den_on_1"  "dummy_metro_den_on_2" 
+[73] "dummy_metro_den_off_a" "dummy_metro_den_off_b" "dummy_metro_den_off_c"
+[76] "dummy_metro_den_off_1" "dummy_metro_den_off_2" "touristlocs_den_1"    
+[79] "touristlocs_den_2"     "touristlocs_den_3"     "touristlocs_den_4"    
+[82] "touristlocs_den_c"    
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 59768.62
+[1] "kappa at theta_2 computation: 9.78175872434736"
+numeric(0)
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.3097750   0.0000000 -25.0012900   0.0000000   0.2101448   0.2411672
+ [7]   0.2101448   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+[13]   0.0000000   4.5870590   0.1000000   0.1000000
+[1] -13.8461522  -4.6357090  -3.8575574  -4.5241345  -3.3024731  -0.9934647
+[1] -5.115455e+01 -5.110289e-12  7.652802e-13  6.519337e+00  8.592133e-12
+[6]  8.970035e+01
+[1] ""
+[1] "kappa at theta_2 computation: 9.78175872434736"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -6.047653e-07 -5.060632e-12 -3.239770e-13 -2.553447e-10 -1.389167e-14
+[6]  1.665335e-16
+[1] 0 0 0 0 0 0
+[1] 3399.43
+[1] ""
+   user  system elapsed 
+ 75.737   0.004  76.426 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+140.154   2.810 143.325 
+[1] "In eval_hessian: "
+   user  system elapsed 
+517.565   4.797 522.926 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.3097750   0.0000000 -25.0012900   0.0000000   0.2101448   0.2411672
+ [7]   0.2101448   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+[13]   0.0000000   4.5870590   0.1000000   0.1000000
+[1] -13.8461522  -4.6357090  -3.8575574  -4.5241345  -3.3024731  -0.9934647
+[1] -5.115455e+01 -5.110289e-12  7.652802e-13  6.519337e+00  8.592133e-12
+[6]  8.970035e+01
+[1] ""
+[1] "kappa at theta_2 computation: 9.78175872434736"
+numeric(0)
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -6.047653e-07 -5.060632e-12 -3.239770e-13 -2.553447e-10 -1.389167e-14
+[6]  1.665335e-16
+[1] 0 0 0 0 0 0
+[1] 3399.43
+[1] ""
+   user  system elapsed 
+ 61.165   0.005  61.244 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+139.299   2.479 141.863 
+[1] "In eval_hessian: "
+   user  system elapsed 
+501.622   4.355 506.257 
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.4, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:  7598504
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:  3494297
+
+[1] "In eval_jac_g: "
+
+error: arma::memory::acquire(): out of memory
+

@@ -313,15 +313,8 @@ gc()
 
 
 ###save commands
-# save(wdcMerged, file="wdcMerged_lin_weather_aggmonths.RData")
-# save(current_serv_lvl, file="current_serv_lvl_lin_weather_aggmonths.RData")
-# save(user_serv_lvl, file="user_serv_lvl_lin_weather_aggmonths.RData")
-# save(points, file="points_lin_weather_aggmonths.RData")
-# save(wdcMerged, file="wdcMerged_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr6.RData")
-# save(current_serv_lvl, file="current_serv_lvl_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr6.RData")
-# save(user_serv_lvl, file="user_serv_lvl_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr6.RData")
-# save(points, file="points_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr6.RData")
-# save(wdcMerged, file="wdcMerged_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr3.RData")
-# save(current_serv_lvl, file="current_serv_lvl_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr3.RData")
-# save(user_serv_lvl, file="user_serv_lvl_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr3.RData")
-# save(points, file="points_lin_weather_aggmonths_norealloc_stkoutthresh_five_pr3.RData")
+# save(wdcMerged, file="wdcMerged_lin_dis1to10_aggmonths_hyperlocalstate_norealloc_stkoutthresh_five_pr6.RData")
+# save(current_serv_lvl, file="current_serv_lvl_lin_dis1to10_aggmonths_hyperlocalstate_norealloc_stkoutthresh_five_pr6.RData")
+# save(user_serv_lvl, file="user_serv_lvl_lin_dis1to10_aggmonths_hyperlocalstate_norealloc_stkoutthresh_five_pr6.RData")
+# save(points, file="points_lin_dis1to10_aggmonths_hyperlocalstate_norealloc_stkoutthresh_five_pr6.RData")
+

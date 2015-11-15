@@ -1,5 +1,6 @@
 
-compute_delta_list_cntrt_map_new <- function(theta1, wdcMerged, points) {
+compute_delta_list_cntrt_map_new <- function(theta1, wdcMerged, points,
+                                             ftol=1e-14, htol=1e-16) {
   #just a wrapper around the optimization routine to compute optimal delta
   #operated over eval_share_diff and eval_grad_share_diff 
   no_st <- length(unique(wdcMerged$station_id_index))  
@@ -35,8 +36,7 @@ compute_delta_list_cntrt_map_new <- function(theta1, wdcMerged, points) {
       
     }    
     stocked_list <- which(wdcMergedday$stocked_out==FALSE)
-    ftol <- 1e-14
-    htol <- 1e-16
+    
     itr = 1
     repeat{
       ret <- eval_share_log_list_new(x0,theta1,wdcMergedday,points,tw_groupin)
@@ -61,7 +61,9 @@ compute_delta_list_cntrt_map_new <- function(theta1, wdcMerged, points) {
       #cat(norm(log(x0[stocked_list])-log(x0prev),"2")/length(x0[stocked_list])," ;; ")
       cat(max(abs(log(x0[stocked_list])-log(x0prev)))," ;; ")
     }
-    if(obj>1e-5) stop("convergecne not reached")
+    if(ftol < 1e-10) {
+      if(obj>1e-5) stop("convergecne not reached")  
+    }    
     print(paste("itr: ", itr))
     #print( res )
     delta_day <- log(x0)     
