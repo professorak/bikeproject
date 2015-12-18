@@ -1,0 +1,141 @@
+Call:
+lm(formula = log(out_dem_rate) ~ factor(tw) + Conditions + Temperature_group + 
+    Humidity_high + Wind.Speed_high, data = wdcMerged_weather_df, 
+    weights = non_stockedout_obs)
+
+Weighted Residuals:
+    Min      1Q  Median      3Q     Max 
+-436.31   -9.06    7.09   21.15  122.34 
+
+Coefficients:
+                                       Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            -2.50706    0.07894 -31.758  < 2e-16 ***
+factor(tw)1                            -0.38809    0.07059  -5.498 4.18e-08 ***
+factor(tw)2                            -0.96331    0.07104 -13.561  < 2e-16 ***
+factor(tw)3                            -1.37257    0.07075 -19.400  < 2e-16 ***
+factor(tw)4                            -1.53476    0.07074 -21.697  < 2e-16 ***
+factor(tw)5                            -1.70214    0.07090 -24.009  < 2e-16 ***
+factor(tw)6                            -1.28231    0.07117 -18.019  < 2e-16 ***
+factor(tw)7                            -0.17889    0.07084  -2.525  0.01161 *  
+factor(tw)8                             0.90954    0.07040  12.919  < 2e-16 ***
+factor(tw)9                             0.81148    0.07131  11.379  < 2e-16 ***
+factor(tw)10                            0.28194    0.07149   3.944 8.22e-05 ***
+factor(tw)11                            0.29927    0.07193   4.160 3.27e-05 ***
+factor(tw)12                            0.43554    0.07243   6.014 2.04e-09 ***
+factor(tw)13                            0.50077    0.07233   6.923 5.42e-12 ***
+factor(tw)14                            0.41121    0.07390   5.565 2.87e-08 ***
+factor(tw)15                            0.43102    0.07351   5.864 5.04e-09 ***
+factor(tw)16                            0.51031    0.07300   6.991 3.38e-12 ***
+factor(tw)17                            0.75261    0.07295  10.317  < 2e-16 ***
+factor(tw)18                            1.08019    0.07278  14.841  < 2e-16 ***
+factor(tw)19                            1.07283    0.07217  14.864  < 2e-16 ***
+factor(tw)20                            0.81638    0.07357  11.096  < 2e-16 ***
+factor(tw)21                            0.47811    0.07158   6.679 2.87e-11 ***
+factor(tw)22                            0.34792    0.07124   4.884 1.10e-06 ***
+factor(tw)23                            0.28088    0.06816   4.121 3.88e-05 ***
+ConditionsFog                          -1.49674    0.16148  -9.269  < 2e-16 ***
+ConditionsHeavy Fog                    -1.06364    0.67132  -1.584  0.11321    
+ConditionsHeavy Rain Showers           -0.13424    0.48653  -0.276  0.78264    
+ConditionsLight Drizzle                 0.09743    0.12617   0.772  0.44005    
+ConditionsLight Rain                   -0.65144    0.04591 -14.190  < 2e-16 ***
+ConditionsLight Rain Showers           -0.23790    0.08419  -2.826  0.00475 ** 
+ConditionsLight Thunderstorms and Rain -0.44090    0.30648  -1.439  0.15037    
+ConditionsMist                         -1.02905    0.34647  -2.970  0.00300 ** 
+ConditionsMostly Cloudy                -0.14200    0.02425  -5.857 5.25e-09 ***
+ConditionsOvercast                     -0.39072    0.08538  -4.576 4.93e-06 ***
+ConditionsPartial Fog                  -1.16140    1.36151  -0.853  0.39372    
+ConditionsPartly Cloudy                 0.02382    0.04266   0.558  0.57655    
+ConditionsRain                         -1.80420    0.22018  -8.194 3.74e-16 ***
+ConditionsScattered Clouds             -0.05806    0.03931  -1.477  0.13980    
+ConditionsShallow Fog                   0.16299    0.14122   1.154  0.24854    
+ConditionsHeavy Thunderstorms and Rain -1.07266    0.50731  -2.114  0.03457 *  
+ConditionsLight Thunderstorm            0.10755    0.36695   0.293  0.76946    
+ConditionsThunderstorm                 -0.26256    0.36144  -0.726  0.46763    
+ConditionsThunderstorms and Rain        0.12534    0.57891   0.217  0.82861    
+ConditionsLight Fog                    -0.16593    0.52036  -0.319  0.74984    
+ConditionsPatches of Fog               -0.59381    0.42863  -1.385  0.16604    
+Temperature_group2                      0.30051    0.03619   8.304  < 2e-16 ***
+Temperature_group3                      0.21140    0.11332   1.865  0.06221 .  
+Humidity_high1                         -0.11371    0.04631  -2.455  0.01414 *  
+Humidity_high2                         -0.22545    0.05364  -4.203 2.72e-05 ***
+Wind.Speed_high1                        0.06017    0.02990   2.012  0.04428 *  
+Wind.Speed_high2                       -0.07402    0.25683  -0.288  0.77321    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 46.29 on 2889 degrees of freedom
+  (96 observations deleted due to missingness)
+Multiple R-squared:  0.765,	Adjusted R-squared:  0.7609 
+F-statistic: 188.1 on 50 and 2889 DF,  p-value: < 2.2e-16
+
+[1] "summary(fit_in_dem)"
+
+Call:
+lm(formula = log(in_dem_rate) ~ factor(tw) + Conditions + Temperature_group + 
+    Humidity_high + Wind.Speed_high, data = wdcMerged_weather_df, 
+    weights = non_stockedfull_obs)
+
+Weighted Residuals:
+    Min      1Q  Median      3Q     Max 
+-541.58  -13.55    8.15   25.81  139.54 
+
+Coefficients:
+                                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                            -2.6477651  0.0753947 -35.119  < 2e-16 ***
+factor(tw)1                            -0.4082069  0.0687494  -5.938 3.24e-09 ***
+factor(tw)2                            -0.8700254  0.0694247 -12.532  < 2e-16 ***
+factor(tw)3                            -1.4194553  0.0693892 -20.456  < 2e-16 ***
+factor(tw)4                            -1.6899400  0.0695822 -24.287  < 2e-16 ***
+factor(tw)5                            -1.6826250  0.0698472 -24.090  < 2e-16 ***
+factor(tw)6                            -1.4154302  0.0700658 -20.201  < 2e-16 ***
+factor(tw)7                            -0.5381181  0.0695466  -7.738 1.39e-14 ***
+factor(tw)8                             0.5144071  0.0685899   7.500 8.46e-14 ***
+factor(tw)9                             0.8377222  0.0682340  12.277  < 2e-16 ***
+factor(tw)10                            0.3439655  0.0687160   5.006 5.90e-07 ***
+factor(tw)11                            0.2130181  0.0691039   3.083 0.002072 ** 
+factor(tw)12                            0.2955658  0.0692485   4.268 2.03e-05 ***
+factor(tw)13                            0.4228608  0.0691575   6.114 1.10e-09 ***
+factor(tw)14                            0.3541820  0.0704534   5.027 5.28e-07 ***
+factor(tw)15                            0.3288440  0.0698831   4.706 2.65e-06 ***
+factor(tw)16                            0.3973596  0.0692301   5.740 1.05e-08 ***
+factor(tw)17                            0.5756064  0.0690837   8.332  < 2e-16 ***
+factor(tw)18                            0.9097903  0.0687850  13.227  < 2e-16 ***
+factor(tw)19                            1.0375192  0.0685802  15.129  < 2e-16 ***
+factor(tw)20                            0.9143572  0.0705825  12.954  < 2e-16 ***
+factor(tw)21                            0.5588014  0.0693237   8.061 1.10e-15 ***
+factor(tw)22                            0.3234290  0.0690772   4.682 2.97e-06 ***
+factor(tw)23                            0.2108184  0.0659243   3.198 0.001399 ** 
+ConditionsFog                          -1.5029380  0.1563712  -9.611  < 2e-16 ***
+ConditionsHeavy Fog                    -0.9138022  0.6748563  -1.354 0.175820    
+ConditionsHeavy Rain Showers           -0.0660196  0.4903217  -0.135 0.892902    
+ConditionsLight Drizzle                 0.1195092  0.1249536   0.956 0.338936    
+ConditionsLight Rain                   -0.5592904  0.0461613 -12.116  < 2e-16 ***
+ConditionsLight Rain Showers           -0.1138657  0.0822002  -1.385 0.166091    
+ConditionsLight Thunderstorms and Rain -0.4512094  0.2845382  -1.586 0.112903    
+ConditionsMist                         -1.0172353  0.3455624  -2.944 0.003269 ** 
+ConditionsMostly Cloudy                -0.0990474  0.0233494  -4.242 2.29e-05 ***
+ConditionsOvercast                     -0.3126164  0.0818239  -3.821 0.000136 ***
+ConditionsPartial Fog                  -0.5938062  1.3479769  -0.441 0.659596    
+ConditionsPartly Cloudy                 0.0504619  0.0404773   1.247 0.212619    
+ConditionsRain                         -1.4207399  0.2232123  -6.365 2.26e-10 ***
+ConditionsScattered Clouds             -0.0438511  0.0370977  -1.182 0.237285    
+ConditionsShallow Fog                   0.2174616  0.1434153   1.516 0.129551    
+ConditionsHeavy Thunderstorms and Rain  0.1176912  0.4924646   0.239 0.811135    
+ConditionsLight Thunderstorm           -0.0748148  0.3479631  -0.215 0.829776    
+ConditionsThunderstorm                 -0.1894101  0.3467667  -0.546 0.584958    
+ConditionsThunderstorms and Rain       -0.0825727  0.4819499  -0.171 0.863976    
+ConditionsLight Fog                    -0.3451070  0.4881960  -0.707 0.479684    
+ConditionsPatches of Fog               -0.5466215  0.3957102  -1.381 0.167273    
+Temperature_group2                      0.2694383  0.0367171   7.338 2.80e-13 ***
+Temperature_group3                      0.1978605  0.1032330   1.917 0.055382 .  
+Humidity_high1                         -0.0552135  0.0414646  -1.332 0.183102    
+Humidity_high2                         -0.1771488  0.0492944  -3.594 0.000331 ***
+Wind.Speed_high1                        0.0627201  0.0279369   2.245 0.024839 *  
+Wind.Speed_high2                        0.0003012  0.2501898   0.001 0.999040    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 56.32 on 2889 degrees of freedom
+  (96 observations deleted due to missingness)
+Multiple R-squared:  0.7699,	Adjusted R-squared:  0.7659 
+F-statistic: 193.3 on 50 and 2889 DF,  p-value: < 2.2e-16
