@@ -2,8 +2,18 @@ use strict;
 
 my $root_dir = "/Users/ashishkabra/Dropbox/Ashish_Karan/Sustainable\ Transportation\ System/Data/Code/R/Model_v22";
 
-
-my @in_file_list = ("r70.5_noRD_hyperlocal_majoritystates_metrodummies_moments_1:20_full_nldis_pr6.txt");
+my @in_file_list = ("r82.7.1_noRD_googlevar1,4,5_tw0_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r82.7.1_noRD_googlevar1,4,5_tw1_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r82.7.1_noRD_googlevar1,4,5_tw2_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r82.7.1_noRD_googlevar1,4,5_tw3_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r82.7.1_noRD_googlevar1,4,5_tw4_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r82.7.1_noRD_googlevar1,4,5_tw5_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw0_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw1_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw2_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw3_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw4_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt",
+	"r81.7.1_noRD_googlevar1,4,5_tw5_hyperlocal_majoritystates_preweatherreg_metrodummies_moments_1:20_full_nldis_pr6.txt");
 
 open(OUTFILE, '>temp.csv') or die "no file";
 

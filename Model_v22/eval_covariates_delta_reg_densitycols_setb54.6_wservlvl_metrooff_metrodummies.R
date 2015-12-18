@@ -61,7 +61,8 @@ eval_covariates_delta_reg <- function(deltain,theta1,wdcMerged,points) {
   }
   #X <- Xbase
   #add service level vector to convert Xbase to X
-  X <- cbind(Xbase, serv_lvl=wdcMerged$serv_lvl[stocked_list])
+  X <- cbind(Xbase, serv_lvl=wdcMerged$serv_lvl[stocked_list], 
+    serv_lvl_sq=wdcMerged$serv_lvl[stocked_list]*wdcMerged$serv_lvl[stocked_list])
   
   #add two service level instruments, local density attributes of a station, stockout indicator for nearby station
   #to get Z

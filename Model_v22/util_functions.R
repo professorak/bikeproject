@@ -405,3 +405,8 @@ sort_sto_state_local <- function(in_vec) {
 }
 
 
+get_median_non_NA <- function(x) {
+  x <- x[!is.na(x)]
+  return(round(median(x)))
+}
+

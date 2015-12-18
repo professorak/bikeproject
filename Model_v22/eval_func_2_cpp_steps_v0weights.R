@@ -49,3 +49,35 @@ eval_lambda_new <- function(deltain_tw, theta1, wdcMergedday, points, tw_groupin
   
   return(lambda_t)    
 }
+
+eval_lambda_full_weighted <- function(deltain_stin, theta1, wdcMerged, points) {
+  return(eval_lambda_full_unweighted(deltain_stin, theta1, wdcMerged, points) * 
+    wdcMerged$obs_weight)
+}
+
+eval_lambda_full_unweighted <- function(deltain_stin, theta1, wdcMerged, points) {
+  
+  #expand deltain to all observations, it is currently #stocked in observations
+  deltain <- rep(-30, nrow(wdcMerged))
+  deltain[which(wdcMerged$stocked_out==F)] <- deltain_stin
+  
+  tw_group_list <- unique(wdcMerged$tw_group)
+  obj <- c()
+  for(i in 1:length(tw_group_list)) {
+    tw_groupin = tw_group_list[i]
+    wdcMergedday <- subset(wdcMerged, tw_group==tw_groupin)
+    deltain_tw = deltain[which(wdcMerged$tw_group==tw_groupin)]    
+    obj <- c(obj, 
+             eval_lambda_tw_groupin(deltain_tw, theta1, wdcMergedday, 
+                                    points, tw_groupin))
+  }
+  return(obj)
+}
+
+eval_lambda_tw_groupin <- function(deltain, theta1, wdcMergedday, points, tw_groupin) {
+  stocked_list <- which(wdcMergedday$stocked_out==FALSE)
+  dem_T <- eval_lambda_new(deltain, theta1, wdcMergedday, points, tw_groupin)[stocked_list]  
+  return(dem_T)
+}
+
+

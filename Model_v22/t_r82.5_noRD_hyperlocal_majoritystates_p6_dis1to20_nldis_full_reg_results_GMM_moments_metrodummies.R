@@ -79,9 +79,10 @@ density_google_places_points_cols <- c(which(colnames(points)=="local_government
 weighing_GMM_mat <<- NULL
 
 length_stklist <- length(which(wdcMerged$stocked_out==F))
-theta1 <- c(-2.309775e+00,0, -2.500129e+01,0,
-            2.101448e-01,2.411672e-01,2.101448e-01,0.000000e+00,0.000000e+00,
-            0.000000e+00,0.000000e+00,0.000000e+00,0.000000e+00,4.587059e+00,0.1,0.1)
+theta1 <- c(-4.143957390,0, -10.889405045,0.003926818,
+            2.576148672,0.140495068,1.411365767,0.000000e+00,0.000000e+00,
+            0.000000e+00,0.000000e+00,0.000000e+00,0.000000e+00,82.601824447,3.478006008,
+            2.684443469)
 
 active_coef <- c(1:length(theta1))[-c(2,density_google_places_theta_cols,
                                       density_add_den_cols[1])]
@@ -246,8 +247,8 @@ var_covar_theta_2 <- eval_theta2_variance(theta1,deltain_stin,wdcMerged,points,a
 serv_cols <- which(rownames(theta2) %like% "serv_lvl")
 round(theta2_save[serv_cols]/sqrt(diag(var_covar_theta_2)[serv_cols]),2)
 st_err_theta2 <- sqrt(diag(var_covar_theta_2))
-round(correlation_theta_2_estimates <- diag(as.matrix(1/st_err_theta2[serv_cols])) %*% var_covar_theta_2[serv_cols,serv_cols] %*% 
-        diag(as.matrix(1/st_err_theta2[serv_cols])),3)
+round(correlation_theta_2_estimates <- diag(c(as.matrix(1/st_err_theta2[serv_cols])), nrow=length(serv_cols)) %*% var_covar_theta_2[serv_cols,serv_cols] %*% 
+        diag(c(as.matrix(1/st_err_theta2[serv_cols])), nrow=length(serv_cols)),3)
 
 serv_lvl_scale <- scalecols_X[rownames(theta2)[serv_cols]]
 

@@ -1,0 +1,968 @@
+[1] "Keeping states that make up 80% of observation weight in stXtw_group"
+[1] "Removing too low wieghts states:"
+[1] "Percentage of total observations removed: 0.001 %"
+[1] "Removing too low demand states:"
+[1] "Percentage of 0 demand states: 0.457 %"
+[1] "Percentage of too low demand states truncated at 1e-5: 0.457 %"
+[1] "Percentage of really high demand states truncated at 2 : 0 %"
+[1] TRUE
+[1] TRUE
+1809.507  -11.91926  7.501362  ;; 0.06363219  -5.114028  0.06168964  ;; 0.003386269  -5.100549  0.003380548  ;; 0.0001799064  -5.100257  0.0001798902  ;; 9.240216e-06  -5.100249  [1] "itr:  6"
+1936.352  -11.60772  7.569077  ;; 0.05317698  -4.824588  0.05181129  ;; 0.002380249  -4.812047  0.002377421  ;; 0.0001086641  -4.811841  0.0001086582  ;; 4.916034e-06  -4.811837  [1] "itr:  6"
+1945.687  -12.22831  7.573884  ;; 0.03726858  -5.44454  0.03659089  ;; 0.001229685  -5.436971  0.001228929  ;; 4.138733e-05  -5.436887  4.138648e-05  ;; 1.389533e-06  -5.436885  [1] "itr:  6"
+1948.728  -12.35323  7.575445  ;; 0.03315988  -5.55871  0.03262196  ;; 0.0009037866  -5.552125  0.0009033785  ;; 2.421933e-05  -5.552063  2.421904e-05  ;; 6.60197e-07  -5.552063  [1] "itr:  6"
+1920.442  -10.89536  7.560831  ;; 0.06433461  -4.106621  0.06234983  ;; 0.003104182  -4.08622  0.003099374  ;; 0.0001540883  -4.085724  0.0001540764  ;; 8.081235e-06  -4.08571  8.081202e-06  ;; 4.229109e-07  -4.08571  [1] "itr:  7"
+1937.071  -11.51871  7.569449  ;; 0.0482022  -4.707254  0.04707651  ;; 0.001731521  -4.694863  0.001730024  ;; 5.812836e-05  -4.694662  5.812667e-05  ;; 1.840298e-06  -4.694658  [1] "itr:  6"
+   user  system elapsed 
+525.426   0.564 527.354 
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+[1] "kappa(t(Z_sqweighted) %*% Z_sqweighted): "
+[1] 18249.15
+[1] "kappa at theta_2 computation: 173924.218720779"
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] 10000
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.209610451   0.000000000 -19.652334322   0.005236991   2.126639610   0.131087592
+ [7]   1.531821634   0.000000000   0.000000000   0.000000000   0.000000000   0.000000000
+[13]   0.000000000  86.656651201   3.786142329   3.121391077
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+[1] "kappa at theta_2 computation: 173924.218720779"
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -4.295239e-07 -1.201071e-10 -1.466677e-11 -6.069400e-10 -1.199232e-12  3.388132e-21
+[1] 0 0 0 0 0 0
+[1] 10000
+[1] ""
+   user  system elapsed 
+104.309   0.329 104.924 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+221.366   5.854 227.786 
+[1] "In eval_hessian: "
+    user   system  elapsed 
+1850.337   11.113 1866.195 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.209610451   0.000000000 -19.652334322   0.005236991   2.126639610   0.131087592
+ [7]   1.531821634   0.000000000   0.000000000   0.000000000   0.000000000   0.000000000
+[13]   0.000000000  86.656651201   3.786142329   3.121391077
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+[1] "kappa at theta_2 computation: 173924.218720779"
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] -4.295239e-07 -1.201071e-10 -1.466677e-11 -6.069400e-10 -1.199232e-12  3.388132e-21
+[1] 0 0 0 0 0 0
+[1] 10000
+[1] ""
+   user  system elapsed 
+105.083   0.385 105.786 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+222.387   5.856 228.826 
+[1] "In eval_hessian: "
+    user   system  elapsed 
+1855.971   11.270 1872.247 
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:  9966937
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:  3141225
+
+[1] "In eval_jac_g: "
+   user  system elapsed 
+223.462   5.784 229.787 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+223.094   5.992 229.843 
+Total number of variables............................:    35743
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:    35609
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:    35735
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+[1] "kappa at theta_2 computation: 173924.218720779"
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 2.298131e-07 8.558919e-03 1.769174e-02 2.456527e-02 3.297792e-02 3.317860e-01
+[1] 0 0 0 0 0 0
+[1] 11913.02
+[1] ""
+   user  system elapsed 
+104.431   0.436 105.139 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.20961045   0.00000000 -19.65233432   0.00999999   2.12663961   0.13108759
+ [7]   1.53182163   0.00000000   0.00000000   0.00000000   0.00000000   0.00000000
+[13]   0.00000000  86.65665120   3.78614233   3.12139108
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  1.3500124e+06 1.91e+03 1.00e+02  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0 
+
+Number of Iterations....: 0
+
+                                   (scaled)                 (unscaled)
+Objective...............:   1.1794365376912037e+04    1.3500123633661002e+06
+Dual infeasibility......:   1.0000000000000000e+02    1.1446248443420327e+04
+Constraint violation....:   4.7629992979116947e-01    1.9130222008959408e+03
+Complementarity.........:   1.0000000000000100e+06    1.1446248443420443e+08
+Overall NLP error.......:   1.0000000000000100e+06    1.1446248443420443e+08
+
+
+Number of objective function evaluations             = 1
+Number of objective gradient evaluations             = 1
+Number of equality constraint evaluations            = 1
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 1
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 0
+Total CPU secs in IPOPT (w/o function evaluations)   =    259.565
+Total CPU secs in NLP function evaluations           =    327.603
+
+EXIT: Maximum Number of Iterations Exceeded.
+[1] "time: "
+    user   system  elapsed 
+4946.964   49.233 5006.368 
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+                         [,1]
+Intercept        -9.638870401
+tract_tw_fac1_1   0.261459395
+tract_tw_fac1_2   0.196999359
+tract_tw_fac1_3   0.204080112
+tract_tw_fac1_4  -0.346662968
+tract_tw_fac1_5  -0.474228916
+tract_tw_fac2_1   0.255924752
+tract_tw_fac2_2   0.013045414
+tract_tw_fac2_3   0.024900628
+tract_tw_fac2_4  -0.359779696
+tract_tw_fac2_5  -0.323056950
+tract_tw_fac3_1   0.019004041
+tract_tw_fac3_2  -0.302208481
+tract_tw_fac3_3  -0.509865935
+tract_tw_fac3_4   0.472262763
+tract_tw_fac3_5   0.114351887
+tract_tw_fac4_1   0.028058381
+tract_tw_fac4_2  -0.004384655
+tract_tw_fac4_3  -0.264893411
+tract_tw_fac4_4   0.091935491
+tract_tw_fac4_5  -0.044200161
+tract_tw_fac5_1   0.011866230
+tract_tw_fac5_2  -0.281860871
+tract_tw_fac5_3  -0.443153355
+tract_tw_fac5_4   0.350484938
+tract_tw_fac5_5   0.125818894
+tract_tw_fac6_1   0.085240602
+tract_tw_fac6_2  -0.290057684
+tract_tw_fac6_3  -0.459519646
+tract_tw_fac6_4   0.230522310
+tract_tw_fac6_5   0.097743894
+tract_tw_fac7_1   0.213414985
+tract_tw_fac7_2  -0.418444475
+tract_tw_fac7_3  -0.724193700
+tract_tw_fac7_4   0.279734302
+tract_tw_fac7_5   0.178030128
+tract_tw_fac8_1   0.180338035
+tract_tw_fac8_2   0.069611132
+tract_tw_fac8_3  -0.209653052
+tract_tw_fac8_4  -0.245260207
+tract_tw_fac8_5  -0.203476031
+tract_tw_fac9_1   0.284076990
+tract_tw_fac9_2  -0.292630372
+tract_tw_fac9_3  -0.472520430
+tract_tw_fac9_4   0.110171708
+tract_tw_fac9_5   0.065571949
+tract_tw_fac10_1  0.056815215
+tract_tw_fac10_2 -0.614598050
+tract_tw_fac10_3 -0.889410688
+tract_tw_fac10_4  1.064684369
+tract_tw_fac10_5  0.484117965
+tract_tw_fac11_1 -0.010805656
+tract_tw_fac11_2 -0.556780129
+tract_tw_fac11_3 -0.858064312
+tract_tw_fac11_4  0.825412668
+tract_tw_fac11_5  0.491136360
+tract_tw_fac12_1  0.201663189
+tract_tw_fac12_2 -0.520011443
+tract_tw_fac12_3 -0.647273247
+tract_tw_fac12_4  0.510794699
+tract_tw_fac12_5  0.126961203
+tract_tw_fac13_1  0.150243098
+tract_tw_fac13_2 -0.551921692
+tract_tw_fac13_3 -0.532956951
+tract_tw_fac13_4  0.583664844
+tract_tw_fac13_5  0.134026515
+tract_tw_fac14_1  0.189358364
+tract_tw_fac14_2 -0.691928918
+tract_tw_fac14_3 -0.964954567
+tract_tw_fac14_4  0.976450488
+tract_tw_fac14_5  0.721294917
+tract_tw_fac15_1  0.066200547
+tract_tw_fac15_2 -0.661420177
+tract_tw_fac15_3 -0.521998507
+tract_tw_fac15_4  0.702062489
+tract_tw_fac15_5  0.189819665
+tract_tw_fac16_1  0.092886471
+tract_tw_fac16_2 -0.415430964
+tract_tw_fac16_3 -0.691874640
+tract_tw_fac16_4  0.649388440
+tract_tw_fac16_5  0.319543037
+tract_tw_fac17_1  0.092523875
+tract_tw_fac17_2 -0.871358272
+tract_tw_fac17_3 -0.732822157
+tract_tw_fac17_4  1.181431572
+tract_tw_fac17_5  0.513516475
+tract_tw_fac18_1  0.049010226
+tract_tw_fac18_2 -1.059864963
+tract_tw_fac18_3 -0.803179628
+tract_tw_fac18_4  1.461965466
+tract_tw_fac18_5  0.919267420
+tract_tw_fac19_1  0.088875518
+tract_tw_fac19_2 -0.732458322
+tract_tw_fac19_3 -1.043278123
+tract_tw_fac19_4  1.421985643
+tract_tw_fac19_5  0.728430526
+tract_tw_fac20_1  0.336270410
+tract_tw_fac20_2 -0.930247986
+tract_tw_fac20_3 -1.059997060
+tract_tw_fac20_4  1.478506849
+tract_tw_fac20_5  0.646528324
+dis_center       -0.064337467
+serv_lvl         13.440533736
+serv_lvl_sq      -7.986788457
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "kappa grad_share_delta: "
+[1] 4907920
+[1] "kappa grad_share_delta: "
+[1] 3287676
+[1] "kappa grad_share_delta: "
+[1] 1010839
+[1] "kappa grad_share_delta: "
+[1] 863935.7
+[1] "kappa grad_share_delta: "
+[1] 2989051
+[1] "kappa grad_share_delta: "
+[1] 2473761
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 2081891.23774964"
+                                                
+-1.10 -2.33 12.27  2.58  1.24  5.33  1.52  0.82 
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "kappa grad_share_delta: "
+[1] 4907920
+[1] "kappa grad_share_delta: "
+[1] 3287676
+[1] "kappa grad_share_delta: "
+[1] 1010839
+[1] "kappa grad_share_delta: "
+[1] 863935.7
+[1] "kappa grad_share_delta: "
+[1] 2989051
+[1] "kappa grad_share_delta: "
+[1] 2473761
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 2081891.23774964"
+   serv_lvl serv_lvl_sq 
+  13.440534   -7.986788 
+Warning:  print_info_string  is not a recognized option, we try to pass it to Ipopt as  string 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.20961045   0.00000000 -19.65233432   0.00999999   2.12663961   0.13108759
+ [7]   1.53182163   0.00000000   0.00000000   0.00000000   0.00000000   0.00000000
+[13]   0.00000000  86.65665120   3.78614233   3.12139108
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+[1] "kappa at theta_2 computation: 344596.67947084"
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 2.298131e-07 8.558919e-03 1.769174e-02 2.456527e-02 3.297792e-02 3.317860e-01
+[1] -205.124106  -35.428934  -10.797175  -21.164448    5.019569   55.237509
+[1] 11913.02
+[1] ""
+   user  system elapsed 
+104.724   0.299 105.337 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+222.005   5.731 228.334 
+[1] "In eval_hessian: "
+    user   system  elapsed 
+1860.241   11.289 1876.756 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.20961045   0.00000000 -19.65233432   0.00999999   2.12663961   0.13108759
+ [7]   1.53182163   0.00000000   0.00000000   0.00000000   0.00000000   0.00000000
+[13]   0.00000000  86.65665120   3.78614233   3.12139108
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+[1] "kappa at theta_2 computation: 344596.67947084"
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 2.298131e-07 8.558919e-03 1.769174e-02 2.456527e-02 3.297792e-02 3.317860e-01
+[1] -205.124106  -35.428934  -10.797175  -21.164448    5.019569   55.237509
+[1] 11913.02
+[1] ""
+   user  system elapsed 
+104.358   0.526 105.180 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+221.656   5.734 228.007 
+[1] "In eval_hessian: "
+    user   system  elapsed 
+1853.313   11.408 1869.305 
+This is Ipopt version 3.12.3, running with linear solver mumps.
+NOTE: Other linear solvers might be more efficient (see Ipopt documentation).
+
+Number of nonzeros in equality constraint Jacobian...:  9967340
+Number of nonzeros in inequality constraint Jacobian.:        0
+Number of nonzeros in Lagrangian Hessian.............:  3141225
+
+[1] "In eval_jac_g: "
+   user  system elapsed 
+224.122   5.864 230.674 
+[1] "In eval_jac_g: "
+   user  system elapsed 
+222.929   5.831 229.392 
+Total number of variables............................:    35743
+                     variables with only lower bounds:        0
+                variables with lower and upper bounds:    35609
+                     variables with only upper bounds:        0
+Total number of equality constraints.................:    35735
+Total number of inequality constraints...............:        0
+        inequality constraints with only lower bounds:        0
+   inequality constraints with lower and upper bounds:        0
+        inequality constraints with only upper bounds:        0
+
+[1] "kappa at theta_2 computation: 344596.67947084"
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "In eval_g: summary of constraints. delta constraints, eta constraint, density constraint"
+[1] 2.298131e-07 8.558919e-03 1.769174e-02 2.456527e-02 3.297792e-02 3.317860e-01
+[1] -205.124106  -35.428934  -10.797175  -21.164448    5.019569   55.237509
+[1] 11913.02
+[1] ""
+   user  system elapsed 
+104.675   0.355 105.298 
+[1] "params: theta, summary of delta, summary of eta"
+ [1]  -2.20961045   0.00000000 -19.65233432   0.00999999   2.12663961   0.13108759
+ [7]   1.53182163   0.00000000   0.00000000   0.00000000   0.00000000   0.00000000
+[13]   0.00000000  86.65665120   3.78614233   3.12139108
+[1] -14.852692  -5.338783  -4.639572  -4.912123  -4.066382  -1.992649
+[1] -4.483506e+02 -5.899002e-09 -1.597899e-09 -2.304188e+01  1.049075e-09  1.368128e+02
+[1] ""
+iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
+   0  5.7571152e-05 1.91e+03 3.42e-08  -1.0 0.00e+00    -  0.00e+00 0.00e+00   0 y
+
+Number of Iterations....: 0
+
+                                   (scaled)                 (unscaled)
+Objective...............:   5.7571152121482499e-05    5.7571152121482499e-05
+Dual infeasibility......:   3.4166804324759547e-08    3.4166804324759547e-08
+Constraint violation....:   2.0512410623994163e+02    1.9130222008959408e+03
+Complementarity.........:   1.0000000000000100e+06    1.0000000000000100e+06
+Overall NLP error.......:   1.0000000000000100e+06    1.0000000000000100e+06
+
+
+Number of objective function evaluations             = 1
+Number of objective gradient evaluations             = 1
+Number of equality constraint evaluations            = 1
+Number of inequality constraint evaluations          = 0
+Number of equality constraint Jacobian evaluations   = 1
+Number of inequality constraint Jacobian evaluations = 0
+Number of Lagrangian Hessian evaluations             = 0
+Total CPU secs in IPOPT (w/o function evaluations)   =    262.610
+Total CPU secs in NLP function evaluations           =    327.698
+
+EXIT: Maximum Number of Iterations Exceeded.
+[1] "time: "
+    user   system  elapsed 
+4956.951   49.302 5016.346 
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+                          [,1]
+Intercept        -9.2134516273
+tract_tw_fac1_1   0.3207404601
+tract_tw_fac1_2   0.1774683171
+tract_tw_fac1_3   0.2006039644
+tract_tw_fac1_4  -0.3529146617
+tract_tw_fac1_5  -0.5232822297
+tract_tw_fac2_1   0.3724583240
+tract_tw_fac2_2  -0.0559477410
+tract_tw_fac2_3  -0.1299424893
+tract_tw_fac2_4  -0.2923890375
+tract_tw_fac2_5  -0.2810938453
+tract_tw_fac3_1   0.0235371119
+tract_tw_fac3_2  -0.2896301463
+tract_tw_fac3_3  -0.5321401459
+tract_tw_fac3_4   0.4913742295
+tract_tw_fac3_5   0.1128296592
+tract_tw_fac4_1  -0.0261272366
+tract_tw_fac4_2  -0.0116028021
+tract_tw_fac4_3  -0.3697612201
+tract_tw_fac4_4   0.0802301098
+tract_tw_fac4_5   0.0604715871
+tract_tw_fac5_1   0.0023236476
+tract_tw_fac5_2  -0.3994020692
+tract_tw_fac5_3  -0.5640322521
+tract_tw_fac5_4   0.4738192085
+tract_tw_fac5_5   0.2580844034
+tract_tw_fac6_1   0.0919538921
+tract_tw_fac6_2  -0.3037655614
+tract_tw_fac6_3  -0.5078509450
+tract_tw_fac6_4   0.2705814529
+tract_tw_fac6_5   0.1113034432
+tract_tw_fac7_1   0.1568900573
+tract_tw_fac7_2  -0.4759636885
+tract_tw_fac7_3  -0.7870983290
+tract_tw_fac7_4   0.4737639051
+tract_tw_fac7_5   0.2255274930
+tract_tw_fac8_1   0.2120225665
+tract_tw_fac8_2  -0.0008421109
+tract_tw_fac8_3  -0.2822671780
+tract_tw_fac8_4  -0.2117485064
+tract_tw_fac8_5  -0.1547658842
+tract_tw_fac9_1   0.2592416469
+tract_tw_fac9_2  -0.3634466690
+tract_tw_fac9_3  -0.5443521377
+tract_tw_fac9_4   0.1855295068
+tract_tw_fac9_5   0.2165433650
+tract_tw_fac10_1  0.0936435466
+tract_tw_fac10_2 -0.6879104313
+tract_tw_fac10_3 -0.8841635927
+tract_tw_fac10_4  1.0862638939
+tract_tw_fac10_5  0.4884136893
+tract_tw_fac11_1 -0.0002972662
+tract_tw_fac11_2 -0.5456328467
+tract_tw_fac11_3 -0.8951455864
+tract_tw_fac11_4  0.8501752202
+tract_tw_fac11_5  0.5077515095
+tract_tw_fac12_1  0.1974552152
+tract_tw_fac12_2 -0.5898525201
+tract_tw_fac12_3 -0.6952271619
+tract_tw_fac12_4  0.6765044383
+tract_tw_fac12_5  0.1770130028
+tract_tw_fac13_1  0.1480983195
+tract_tw_fac13_2 -0.5592656144
+tract_tw_fac13_3 -0.5335440881
+tract_tw_fac13_4  0.5927239129
+tract_tw_fac13_5  0.1293859499
+tract_tw_fac14_1  0.1435874530
+tract_tw_fac14_2 -0.7118806386
+tract_tw_fac14_3 -0.8981277427
+tract_tw_fac14_4  0.9278160332
+tract_tw_fac14_5  0.6287428688
+tract_tw_fac15_1  0.0819767253
+tract_tw_fac15_2 -0.7724502378
+tract_tw_fac15_3 -0.5045897411
+tract_tw_fac15_4  0.7733384611
+tract_tw_fac15_5  0.2297472059
+tract_tw_fac16_1  0.1406473339
+tract_tw_fac16_2 -0.4145107557
+tract_tw_fac16_3 -0.6952936815
+tract_tw_fac16_4  0.6682856604
+tract_tw_fac16_5  0.3248892221
+tract_tw_fac17_1  0.1152362494
+tract_tw_fac17_2 -0.9047405216
+tract_tw_fac17_3 -0.6268085205
+tract_tw_fac17_4  1.2003935731
+tract_tw_fac17_5  0.5031103892
+tract_tw_fac18_1  0.0705975131
+tract_tw_fac18_2 -1.0389176725
+tract_tw_fac18_3 -0.7788807628
+tract_tw_fac18_4  1.4342822827
+tract_tw_fac18_5  0.8560384522
+tract_tw_fac19_1  0.0748308890
+tract_tw_fac19_2 -0.7256781023
+tract_tw_fac19_3 -1.0530459829
+tract_tw_fac19_4  1.3818273989
+tract_tw_fac19_5  0.6698075993
+tract_tw_fac20_1  0.3299342937
+tract_tw_fac20_2 -0.9003647481
+tract_tw_fac20_3 -1.0880905605
+tract_tw_fac20_4  1.4412150859
+tract_tw_fac20_5  0.6309141789
+dis_center       -0.0695768401
+serv_lvl         12.2522256020
+serv_lvl_sq      -7.1276099698
+NULL
+[1] 0
+     user    system   elapsed 
+ 9903.915    98.535 10022.714 
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "kappa grad_share_delta: "
+[1] 4907920
+[1] "kappa grad_share_delta: "
+[1] 3287676
+[1] "kappa grad_share_delta: "
+[1] 1010839
+[1] "kappa grad_share_delta: "
+[1] 863935.7
+[1] "kappa grad_share_delta: "
+[1] 2989051
+[1] "kappa grad_share_delta: "
+[1] 2473761
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 3293895.44105584"
+                                                
+-1.12 -2.43 12.29  2.42  1.44  5.39  1.44  0.93 
+       [,1]   [,2]   [,3]   [,4]   [,5]   [,6]   [,7]   [,8]
+[1,]  1.000 -0.972 -0.175 -0.223 -0.137 -0.127  0.085  0.073
+[2,] -0.972  1.000  0.198  0.184  0.138  0.131 -0.011 -0.048
+[3,] -0.175  0.198  1.000  0.092  0.053  0.189 -0.050 -0.024
+[4,] -0.223  0.184  0.092  1.000  0.066  0.007 -0.964 -0.060
+[5,] -0.137  0.138  0.053  0.066  1.000  0.022 -0.039 -0.955
+[6,] -0.127  0.131  0.189  0.007  0.022  1.000 -0.003 -0.020
+[7,]  0.085 -0.011 -0.050 -0.964 -0.039 -0.003  1.000  0.054
+[8,]  0.073 -0.048 -0.024 -0.060 -0.955 -0.020  0.054  1.000
+  [1] "Intercept"             "tract_tw_fac1_1"       "tract_tw_fac1_2"      
+  [4] "tract_tw_fac1_3"       "tract_tw_fac1_4"       "tract_tw_fac1_5"      
+  [7] "tract_tw_fac2_1"       "tract_tw_fac2_2"       "tract_tw_fac2_3"      
+ [10] "tract_tw_fac2_4"       "tract_tw_fac2_5"       "tract_tw_fac3_1"      
+ [13] "tract_tw_fac3_2"       "tract_tw_fac3_3"       "tract_tw_fac3_4"      
+ [16] "tract_tw_fac3_5"       "tract_tw_fac4_1"       "tract_tw_fac4_2"      
+ [19] "tract_tw_fac4_3"       "tract_tw_fac4_4"       "tract_tw_fac4_5"      
+ [22] "tract_tw_fac5_1"       "tract_tw_fac5_2"       "tract_tw_fac5_3"      
+ [25] "tract_tw_fac5_4"       "tract_tw_fac5_5"       "tract_tw_fac6_1"      
+ [28] "tract_tw_fac6_2"       "tract_tw_fac6_3"       "tract_tw_fac6_4"      
+ [31] "tract_tw_fac6_5"       "tract_tw_fac7_1"       "tract_tw_fac7_2"      
+ [34] "tract_tw_fac7_3"       "tract_tw_fac7_4"       "tract_tw_fac7_5"      
+ [37] "tract_tw_fac8_1"       "tract_tw_fac8_2"       "tract_tw_fac8_3"      
+ [40] "tract_tw_fac8_4"       "tract_tw_fac8_5"       "tract_tw_fac9_1"      
+ [43] "tract_tw_fac9_2"       "tract_tw_fac9_3"       "tract_tw_fac9_4"      
+ [46] "tract_tw_fac9_5"       "tract_tw_fac10_1"      "tract_tw_fac10_2"     
+ [49] "tract_tw_fac10_3"      "tract_tw_fac10_4"      "tract_tw_fac10_5"     
+ [52] "tract_tw_fac11_1"      "tract_tw_fac11_2"      "tract_tw_fac11_3"     
+ [55] "tract_tw_fac11_4"      "tract_tw_fac11_5"      "tract_tw_fac12_1"     
+ [58] "tract_tw_fac12_2"      "tract_tw_fac12_3"      "tract_tw_fac12_4"     
+ [61] "tract_tw_fac12_5"      "tract_tw_fac13_1"      "tract_tw_fac13_2"     
+ [64] "tract_tw_fac13_3"      "tract_tw_fac13_4"      "tract_tw_fac13_5"     
+ [67] "tract_tw_fac14_1"      "tract_tw_fac14_2"      "tract_tw_fac14_3"     
+ [70] "tract_tw_fac14_4"      "tract_tw_fac14_5"      "tract_tw_fac15_1"     
+ [73] "tract_tw_fac15_2"      "tract_tw_fac15_3"      "tract_tw_fac15_4"     
+ [76] "tract_tw_fac15_5"      "tract_tw_fac16_1"      "tract_tw_fac16_2"     
+ [79] "tract_tw_fac16_3"      "tract_tw_fac16_4"      "tract_tw_fac16_5"     
+ [82] "tract_tw_fac17_1"      "tract_tw_fac17_2"      "tract_tw_fac17_3"     
+ [85] "tract_tw_fac17_4"      "tract_tw_fac17_5"      "tract_tw_fac18_1"     
+ [88] "tract_tw_fac18_2"      "tract_tw_fac18_3"      "tract_tw_fac18_4"     
+ [91] "tract_tw_fac18_5"      "tract_tw_fac19_1"      "tract_tw_fac19_2"     
+ [94] "tract_tw_fac19_3"      "tract_tw_fac19_4"      "tract_tw_fac19_5"     
+ [97] "tract_tw_fac20_1"      "tract_tw_fac20_2"      "tract_tw_fac20_3"     
+[100] "tract_tw_fac20_4"      "tract_tw_fac20_5"      "dis_center"           
+[103] "census_density"        "metro_den_on_a"        "metro_den_on_b"       
+[106] "metro_den_on_c"        "metro_den_on_1"        "metro_den_on_2"       
+[109] "metro_den_on_3"        "metro_den_on_4"        "metro_den_off_a"      
+[112] "metro_den_off_b"       "metro_den_off_c"       "metro_den_off_1"      
+[115] "metro_den_off_2"       "metro_den_off_3"       "metro_den_off_4"      
+[118] "dummy_metro_den_on_a"  "dummy_metro_den_on_b"  "dummy_metro_den_on_c" 
+[121] "dummy_metro_den_on_1"  "dummy_metro_den_on_2"  "dummy_metro_den_off_a"
+[124] "dummy_metro_den_off_b" "dummy_metro_den_off_c" "dummy_metro_den_off_1"
+[127] "dummy_metro_den_off_2" "touristlocs_den_1"     "touristlocs_den_2"    
+[130] "touristlocs_den_3"     "touristlocs_den_4"     "touristlocs_den_c"    
+[133] "in_dem_rate_lagtw"     "in_dem_rate_lagtw_sq" 
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "kappa grad_share_delta: "
+[1] 4907920
+[1] "kappa grad_share_delta: "
+[1] 3287676
+[1] "kappa grad_share_delta: "
+[1] 1010839
+[1] "kappa grad_share_delta: "
+[1] 863935.7
+[1] "kappa grad_share_delta: "
+[1] 2989051
+[1] "kappa grad_share_delta: "
+[1] 2473761
+   serv_lvl serv_lvl_sq 
+   12.25223    -7.12761 
+[1] "kappa t(G_hat) %*% A_N %*% G_hat: 3293895.44105584"
+   serv_lvl serv_lvl_sq  dis_center 
+       7.90       -5.96       -8.29 
+       [,1]   [,2]   [,3]
+[1,]  1.000 -0.999  0.447
+[2,] -0.999  1.000 -0.438
+[3,]  0.447 -0.438  1.000
+
+
+[1] "Step 1 output: "
+[1] "theta1 output: "
+[1] "-2.20961045069201, 0, -19.6523343222199"
+[1] "0.00999999, 2.12663960984702, 0.131087591513272, 1.53182163420034, 0, 0, 0, 0, 0, 0, 86.6566512013304, 3.78614232898306, 3.12139107706004"
+[1] "theta1 t-stat:"
+[1] "-1.1, , -2.33"
+[1] "12.27, 2.58, , 1.24, , , , , , , 5.33, 1.52, 0.82"
+[1] "theta2 output: "
+   serv_lvl serv_lvl_sq  dis_center 
+  13.440534   -7.986788    2.906283 
+[1] "theta2 t-stat:"
+   serv_lvl serv_lvl_sq  dis_center 
+       7.71       -5.82       -8.10 
+[1] 1350012
+[1] 0
+    user   system  elapsed 
+4946.964   49.233 5006.368 
+[1] "Step 2 output: "
+[1] "theta1 output: "
+[1] "-2.20961045069201, 0, -19.6523343222199"
+[1] "0.00999999, 2.12663960984702, 0.131087591513272, 1.53182163420034, 0, 0, 0, 0, 0, 0, 86.6566512013304, 3.78614232898306, 3.12139107706004"
+[1] "theta1 t-stat:"
+[1] "-1.12, , -2.43"
+[1] "12.29, 2.42, , 1.44, , , , , , , 5.39, 1.44, 0.93"
+[1] "theta2 output: "
+   serv_lvl serv_lvl_sq  dis_center 
+  12.252226   -7.127610    2.649332 
+[1] "theta2 t-stat:"
+   serv_lvl serv_lvl_sq  dis_center 
+       7.21       -5.32       -8.96 
+[1] 5.757115e-05
+[1] 0
+     user    system   elapsed 
+ 9903.915    98.535 10022.714 
+       [,1]   [,2]   [,3]   [,4]   [,5]   [,6]   [,7]   [,8]
+[1,]  1.000 -0.972 -0.175 -0.223 -0.137 -0.127  0.085  0.073
+[2,] -0.972  1.000  0.198  0.184  0.138  0.131 -0.011 -0.048
+[3,] -0.175  0.198  1.000  0.092  0.053  0.189 -0.050 -0.024
+[4,] -0.223  0.184  0.092  1.000  0.066  0.007 -0.964 -0.060
+[5,] -0.137  0.138  0.053  0.066  1.000  0.022 -0.039 -0.955
+[6,] -0.127  0.131  0.189  0.007  0.022  1.000 -0.003 -0.020
+[7,]  0.085 -0.011 -0.050 -0.964 -0.039 -0.003  1.000  0.054
+[8,]  0.073 -0.048 -0.024 -0.060 -0.955 -0.020  0.054  1.000
+       [,1]   [,2]   [,3]
+[1,]  1.000 -0.999  0.447
+[2,] -0.999  1.000 -0.438
+[3,]  0.447 -0.438  1.000
+      [,1]                                                
+ [1,] "-2.20961045069201, -1.1, -2.20961045069201, -1.12"    
+ [2,] "0, , 0, "                                             
+ [3,] "-19.6523343222199, -2.33, -19.6523343222199, -2.43"   
+ [4,] ", , , "                                               
+ [5,] ", , , "                                               
+ [6,] "13.4405337356262, 7.71, 12.2522256019698, 7.21"       
+ [7,] "-7.98678845699819, -5.82, -7.12760996984766, -5.32"   
+ [8,] "-0.0643374674202277, -8.1, -0.0695768400545535, -8.96"
+ [9,] ", , , "                                               
+[10,] ", , , "                                               
+[11,] ", , , "                                               
+[12,] "0.00999999, 12.27, 0.00999999, 12.29"                 
+[13,] "2.12663960984702, 2.58, 2.12663960984702, 2.42"       
+[14,] "0.131087591513272, , 0.131087591513272, "             
+[15,] "1.53182163420034, 1.24, 1.53182163420034, 1.44"       
+[16,] "0, , 0, "                                             
+[17,] "0, , 0, "                                             
+[18,] "0, , 0, "                                             
+[19,] "0, , 0, "                                             
+[20,] "0, , 0, "                                             
+[21,] "0, , 0, "                                             
+[22,] "86.6566512013304, 5.33, 86.6566512013304, 5.39"       
+[23,] "3.78614232898306, 1.52, 3.78614232898306, 1.44"       
+[24,] "3.12139107706004, 0.82, 3.12139107706004, 0.93"       
+[25,] ", , , "                                               
+[26,] "1350012.3633661, , 5.75711521214825e-05, "            
+[27,] "4946.964, , 9903.915, "                               
+[28,] "0, , 0, "                                             
+      [,1]                                           
+ [1,] "density ridership, 29.8464826421735"          
+ [2,] "density metro, 15.4914665293771"              
+ [3,] "density intercept, 38.1523745152615"          
+ [4,] "density metro evening, 3.05461692192465"      
+ [5,] "local_government_office, 0"                   
+ [6,] "food, 0"                                      
+ [7,] "lodging, 0"                                   
+ [8,] "museum, 0"                                    
+ [9,] "movie_theater, 0"                             
+[10,] "density bus, 0"                               
+[11,] "density tourist locations, 2.43713775437534"  
+[12,] "density metro dummy, 9.02423589293778"        
+[13,] "density metro evening dummy, 1.99368574395015"    
+
+
+Variance of demand explained with means and weights
+ [1,] "density ridership"           "," "0.110508828190568"          
+ [2,] "density metro"               "," "0.0900858619614002"         
+ [3,] "density intercept"           "," "0.158464444862403"          
+ [4,] "density metro evening"       "," "0.0294186747047616"         
+ [5,] "local_government_office"     "," "0"                          
+ [6,] "food"                        "," "0"                          
+ [7,] "lodging"                     "," "0"                          
+ [8,] "museum"                      "," "0"                          
+ [9,] "movie_theater"               "," "0"                          
+[10,] "density bus"                 "," "0"                          
+[11,] "density tourist locations"   "," "0.0385814988221407"         
+[12,] "density metro dummy"         "," "0.027454938051134"          
+[13,] "density metro evening dummy" "," "0.0113407464768826" 
+
+
+Variance of demand explained just from means
+
+                                        demand_variance_explained_vec
+ [1,] "density ridership"           "," "0.118041148116683"          
+ [2,] "density metro"               "," "0.077092677404899"          
+ [3,] "density intercept"           "," "0.15036908865678"           
+ [4,] "density metro evening"       "," "0.0214069692423491"         
+ [5,] "local_government_office"     "," "0"                          
+ [6,] "food"                        "," "0"                          
+ [7,] "lodging"                     "," "0"                          
+ [8,] "museum"                      "," "0"                          
+ [9,] "movie_theater"               "," "0"                          
+[10,] "density bus"                 "," "0"                          
+[11,] "density tourist locations"   "," "0.0166904474723858"         
+[12,] "density metro dummy"         "," "0.0228610388081998"         
+[13,] "density metro evening dummy" "," "0.00832523012144418"
+
+
+R2 computed with wieghts = 2.515225
+R2 computed without wieghts = 1.294463
+
+
+

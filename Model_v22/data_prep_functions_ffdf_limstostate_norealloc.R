@@ -56,7 +56,7 @@ readcsvdemand <- function(wdcRaw=NULL,filelist) {
       if(!file.exists(save_dir)) {
         filename <- file.path(csv_dir,file, fsep = .Platform$file.sep)
         setClass("myDate")
-        setAs("character","myDate", function(from) as.POSIXct(from, format='%Y-%m-%d %H:%M:%S') )
+        setAs("character","myDate", function(from) as.POSIXct(from, format='%Y-%m-%d %H:%M:%S',tz="Europe/London") )
         
         wdcRaw <- read.csv.ffdf(file=filename,head=FALSE,sep=",",
                                 nrows=-1,colClasses=c(V1="integer",V2="myDate",
@@ -71,31 +71,13 @@ readcsvdemand <- function(wdcRaw=NULL,filelist) {
       #wdcRawOrg_city <- as.data.frame(wdcRawOrg_city)
       wdcRawOrg_all <- rbind(wdcRawOrg_all,wdcRawOrg_city)
     }
-  }
-  #   if(is.null(wdcRaw)) {
-  #     for(file in filelist) {
-  #       filename <- file.path(csv_dir,file, fsep = .Platform$file.sep)
-  #       setClass("myDate")
-  #       setAs("character","myDate", function(from) as.POSIXct(from, format='%Y-%m-%d %H:%M:%S') )
-  #   
-  #       wdcRaw <- read.csv.ffdf(file=filename,head=FALSE,sep=",",
-  #           nrows=-1,colClasses=c(V1="integer",V2="myDate",
-  #           V3="integer",V4="integer",V5="integer"))  
-  #       colnames(wdcRaw) <- c("station_id" ,"time" ,"bikes" ,"spaces_available" ,"unbalanced")
-  #       wdcRawOrg_city <- subset(wdcRaw, station_id %in% st_list & bikes!=-1)
-  #       #wdcRawOrg_city <- as.data.frame(wdcRawOrg_city)
-  #       wdcRawOrg_all <- rbind(wdcRawOrg_all,wdcRawOrg_city)
-  #     }
-  #   }
-  else {
+  } else {
     print("in else")
     wdcRawOrg_city <- subset(wdcRaw, station_id %in% st_list & bikes!=-1)
     #wdcRawOrg_city <- as.data.frame(wdcRawOrg_city)
     wdcRawOrg_all <- rbind(wdcRawOrg_all,wdcRawOrg_city)
   }
-  #wdcRawOrg_all$n_time <- as.POSIXlt(wdcRawOrg_all$time,"%Y-%m-%d %H:%M:%S",tz="")
-  wdcRawOrg_all$n_time_int <- as.ff(as.numeric(wdcRawOrg_all$time[]))  
-  
+  wdcRawOrg_all$n_time_int <- as.ff(as.numeric(wdcRawOrg_all$time[]))
   #remove duplicates from combining datasets
   wdcRawOrg_all$dup <- duplicated.ffdf(as.ffdf(wdcRawOrg_all[,c("station_id","n_time","bikes")]))
   wdcRawOrg <- subset.ffdf(wdcRawOrg_all,dup == "FALSE")
@@ -104,13 +86,14 @@ readcsvdemand <- function(wdcRaw=NULL,filelist) {
   
   #doing the following way as POSIXlt cannot be as ff vector
   wdcRawOrg$tw <- as.ff(as.POSIXlt(wdcRawOrg$time[],"%Y-%m-%d %H:%M:%S",
-                                   tz="")$hour)
+                                   tz="Europe/Paris")$hour)
+  wdcRawOrg$seconds <- as.ff(as.numeric(wdcRawOrg$time[])) %% 3600
   wdcRawOrg$month <- as.ff(as.POSIXlt(wdcRawOrg$time[],"%Y-%m-%d %H:%M:%S",
-                                      tz="")$mon + 1)
+                                      tz="Europe/Paris")$mon + 1)
   wdcRawOrg$day <- as.ff(as.POSIXlt(wdcRawOrg$time[],"%Y-%m-%d %H:%M:%S",
-                                    tz="")$yday)
+                                    tz="Europe/Paris")$yday)
   wdcRawOrg$wday <- as.ff(as.POSIXlt(wdcRawOrg$time[],"%Y-%m-%d %H:%M:%S",
-                                     tz="")$wday)
+                                     tz="Europe/Paris")$wday)
   #by station id, generate time diff and change bikes
   #order by station, time 
   wdcRawOrg$groupbyfactor <- as.character(wdcRawOrg$station_id)

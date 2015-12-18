@@ -65,6 +65,79 @@ removemodify_outlier_states_keep_majoritystates <- function(wdcMerged) {
   return(wdcMerged)
 }
 
+removemodify_outlier_states_keep_majoritystates_no0dem <- function(wdcMerged) {
+    
+  #keeping obervations so that only enough states are kept to have 80% of the observations 
+  print("Keeping states that make up 80% of observation weight in stXtw_group")
+  
+  perc_cumsum_threshold <- 0.8
+  
+  #for each station_id_index X tw_group.
+  #order by obs_count
+  
+  wdcMerged <- wdcMerged[order(wdcMerged$tw_group,wdcMerged$station_id_index, wdcMerged$stocked_out,-wdcMerged$obs_weight),]
+  wdcMerged$tot_obs_weight <- 
+    ave(wdcMerged$obs_weight, wdcMerged$tw_group, wdcMerged$station_id_index, FUN=sum)
+  wdcMerged$cumsum_obs_weight <- 
+    ave(wdcMerged$obs_weight, wdcMerged$tw_group, wdcMerged$station_id_index, FUN=cumsum)
+  wdcMerged$cumsum_percentile_obs_weight <- wdcMerged$cumsum_obs_weight/wdcMerged$tot_obs_weight
+  wdcMerged$lag_cumsum_percentile_obs_weight <- 
+    ave(wdcMerged$cumsum_percentile_obs_weight, wdcMerged$tw_group, wdcMerged$station_id_index, 
+        FUN=function(x){return(c(0,x[-length(x)]))})
+  
+  wdcMerged <- subset(wdcMerged, lag_cumsum_percentile_obs_weight<perc_cumsum_threshold)
+  
+  
+  
+  #remove too low wieghts states
+  print("Removing too low wieghts states:")
+  print(paste0("Percentage of total observations removed: ",
+               round(sum(wdcMerged$obs_weight[which(wdcMerged$obs_weight<=10 & wdcMerged$index>1)])/sum(wdcMerged$obs_weight)*100,3)," %"))
+  wdcMerged <- subset(wdcMerged, obs_weight>10 | index==1)
+  wdcMerged <- droplevels(wdcMerged)
+  
+  #truncating really low demand
+  print("Removing too low demand states:")
+  print(paste0("Percentage of 0 demand states: ",
+               round(sum(wdcMerged$obs_weight[which(wdcMerged$out_dem_mean<=0 & 
+                                                      wdcMerged$stocked_out==FALSE)])/sum(wdcMerged$obs_weight)*100,3)," %"))
+  wdcMerged <- subset(wdcMerged, out_dem_mean>0 | index==1 | wdcMerged$stocked_out==T)
+  
+  print(paste0("Percentage of too low demand states truncated at ",
+  round(min(wdcMerged$out_dem_mean[which(wdcMerged$out_dem_mean>0 & 
+  wdcMerged$stocked_out==FALSE)]),5)
+  , ": ",
+  round(sum(wdcMerged$obs_weight[which(wdcMerged$out_dem_mean<=0 & 
+  wdcMerged$stocked_out==FALSE)])/sum(wdcMerged$obs_weight)*100,3)," %"))
+  
+  wdcMerged$out_dem_mean[which(wdcMerged$out_dem_mean<=0 & 
+                                 wdcMerged$stocked_out==FALSE)] <- 
+    min(wdcMerged$out_dem_mean[which(wdcMerged$out_dem_mean>0 & 
+                                       wdcMerged$stocked_out==FALSE)])
+  
+  #truncating really high demand
+  print(paste0("Percentage of really high demand states truncated at 2 : ",
+               round(sum(wdcMerged$obs_weight[which(wdcMerged$out_dem_mean>2 & 
+                                                      wdcMerged$stocked_out==FALSE)])/sum(wdcMerged$obs_weight)*100,5)," %"))
+  
+  wdcMerged$out_dem_mean[which(wdcMerged$out_dem_mean>2 & 
+                                 wdcMerged$stocked_out==FALSE)] <- 2
+  
+  wdcMerged$out_dem_sum <- wdcMerged$out_dem_mean * wdcMerged$obs_weight
+  
+  
+  #check all tw's have all stations
+  tw_group_list <- unique(wdcMerged$tw_group)
+  no_st <- max(wdcMerged$station_id_index)
+  for(i in 1:length(tw_group_list)) {
+    tw_groupin = tw_group_list[i]
+    idx <- which(wdcMerged$tw_group==tw_groupin)
+    if(length(unique(wdcMerged$station_id_index[idx]))!=no_st) {
+      print(paste0("in tw:", tw_groupin, "all stations are not present"))
+    }
+  }  
+  return(wdcMerged)
+}
 
 removemodify_outlier_states <- function(wdcMerged) {
   #remove too low wieghts states

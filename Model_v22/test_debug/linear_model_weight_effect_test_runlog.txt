@@ -1,0 +1,966 @@
+lm(formula = log(wdcMerged$out_dem_mean)[stocked_list] ~ X[, 
+    "Intercept"] + X[, other_vars] + X[, tract_tw_vars] + X[, 
+    distance_vars] + X[, density_vars] + Instr_df[, c("serv_lvl", 
+    "serv_lvl_sq")] + 0, weights = wdcMerged$obs_weight[stocked_list])
+
+Weighted Residuals:
+     Min       1Q   Median       3Q      Max 
+-190.655   -8.452    3.280   11.514   97.019 
+
+Coefficients:
+                                                      Estimate Std. Error t value Pr(>|t|)    
+X[, "Intercept"]                                    -3.9524347  0.0586910 -67.343  < 2e-16 ***
+X[, other_vars]                                      0.1864331  0.0056493  33.001  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac1_1                    0.1657608  0.0457311   3.625 0.000290 ***
+X[, tract_tw_vars]tract_tw_fac1_2                    0.0818430  0.0495197   1.653 0.098394 .  
+X[, tract_tw_vars]tract_tw_fac1_3                   -0.1785077  0.0635342  -2.810 0.004963 ** 
+X[, tract_tw_vars]tract_tw_fac1_4                   -0.0015767  0.0522419  -0.030 0.975923    
+X[, tract_tw_vars]tract_tw_fac1_5                   -0.2496919  0.0647365  -3.857 0.000115 ***
+X[, tract_tw_vars]tract_tw_fac2_1                   -0.0611531  0.0780842  -0.783 0.433533    
+X[, tract_tw_vars]tract_tw_fac2_2                    0.1198578  0.0919362   1.304 0.192342    
+X[, tract_tw_vars]tract_tw_fac2_3                   -0.2092018  0.1080971  -1.935 0.052960 .  
+X[, tract_tw_vars]tract_tw_fac2_4                    0.0271958  0.0959705   0.283 0.776890    
+X[, tract_tw_vars]tract_tw_fac2_5                   -0.0619421  0.1107641  -0.559 0.576012    
+X[, tract_tw_vars]tract_tw_fac3_1                    0.1854432  0.1166101   1.590 0.111780    
+X[, tract_tw_vars]tract_tw_fac3_2                   -0.0297456  0.1097072  -0.271 0.786288    
+X[, tract_tw_vars]tract_tw_fac3_3                   -0.2627330  0.1284544  -2.045 0.040829 *  
+X[, tract_tw_vars]tract_tw_fac3_4                   -0.0480980  0.1010615  -0.476 0.634129    
+X[, tract_tw_vars]tract_tw_fac3_5                   -0.1213902  0.1241321  -0.978 0.328125    
+X[, tract_tw_vars]tract_tw_fac4_1                   -0.1485284  0.0607474  -2.445 0.014489 *  
+X[, tract_tw_vars]tract_tw_fac4_2                    0.1024192  0.0560575   1.827 0.067702 .  
+X[, tract_tw_vars]tract_tw_fac4_3                    0.2124813  0.0589008   3.607 0.000310 ***
+X[, tract_tw_vars]tract_tw_fac4_4                    0.0414836  0.0552057   0.751 0.452395    
+X[, tract_tw_vars]tract_tw_fac4_5                   -0.1262581  0.0759322  -1.663 0.096366 .  
+X[, tract_tw_vars]tract_tw_fac5_1                    0.0036548  0.0510444   0.072 0.942920    
+X[, tract_tw_vars]tract_tw_fac5_2                   -0.2126662  0.0550949  -3.860 0.000114 ***
+X[, tract_tw_vars]tract_tw_fac5_3                   -0.0715720  0.0565544  -1.266 0.205686    
+X[, tract_tw_vars]tract_tw_fac5_4                    0.0032227  0.0554620   0.058 0.953664    
+X[, tract_tw_vars]tract_tw_fac5_5                   -0.0655846  0.0551847  -1.188 0.234661    
+X[, tract_tw_vars]tract_tw_fac6_1                   -0.1334713  0.0653881  -2.041 0.041236 *  
+X[, tract_tw_vars]tract_tw_fac6_2                    0.0147464  0.0671675   0.220 0.826226    
+X[, tract_tw_vars]tract_tw_fac6_3                   -0.0172731  0.0695901  -0.248 0.803972    
+X[, tract_tw_vars]tract_tw_fac6_4                   -0.0307630  0.0722229  -0.426 0.670151    
+X[, tract_tw_vars]tract_tw_fac6_5                    0.0028407  0.0720358   0.039 0.968544    
+X[, tract_tw_vars]tract_tw_fac7_1                    0.0378159  0.1068790   0.354 0.723476    
+X[, tract_tw_vars]tract_tw_fac7_2                   -0.3028071  0.1120743  -2.702 0.006899 ** 
+X[, tract_tw_vars]tract_tw_fac7_3                   -0.2267807  0.1002880  -2.261 0.023747 *  
+X[, tract_tw_vars]tract_tw_fac7_4                    0.1095944  0.1009773   1.085 0.277780    
+X[, tract_tw_vars]tract_tw_fac7_5                    0.0601690  0.1176848   0.511 0.609163    
+X[, tract_tw_vars]tract_tw_fac8_1                    0.0634755  0.0421512   1.506 0.132102    
+X[, tract_tw_vars]tract_tw_fac8_2                    0.0449236  0.0485936   0.924 0.355245    
+X[, tract_tw_vars]tract_tw_fac8_3                   -0.0269392  0.0467595  -0.576 0.564536    
+X[, tract_tw_vars]tract_tw_fac8_4                   -0.0007360  0.0464502  -0.016 0.987359    
+X[, tract_tw_vars]tract_tw_fac8_5                   -0.1903497  0.0533389  -3.569 0.000359 ***
+X[, tract_tw_vars]tract_tw_fac9_1                   -0.0210510  0.0336826  -0.625 0.531988    
+X[, tract_tw_vars]tract_tw_fac9_2                   -0.1535167  0.0367859  -4.173 3.01e-05 ***
+X[, tract_tw_vars]tract_tw_fac9_3                    0.0019615  0.0380350   0.052 0.958871    
+X[, tract_tw_vars]tract_tw_fac9_4                   -0.0104975  0.0357642  -0.294 0.769126    
+X[, tract_tw_vars]tract_tw_fac9_5                   -0.0134449  0.0414256  -0.325 0.745519    
+X[, tract_tw_vars]tract_tw_fac10_1                   0.0310959  0.0469965   0.662 0.508191    
+X[, tract_tw_vars]tract_tw_fac10_2                  -0.1627052  0.0463593  -3.510 0.000449 ***
+X[, tract_tw_vars]tract_tw_fac10_3                  -0.0720398  0.0505796  -1.424 0.154372    
+X[, tract_tw_vars]tract_tw_fac10_4                   0.0522465  0.0410145   1.274 0.202723    
+X[, tract_tw_vars]tract_tw_fac10_5                  -0.0514706  0.0485724  -1.060 0.289303    
+X[, tract_tw_vars]tract_tw_fac11_1                  -0.0180850  0.0568655  -0.318 0.750463    
+X[, tract_tw_vars]tract_tw_fac11_2                   0.0726856  0.0581640   1.250 0.211430    
+X[, tract_tw_vars]tract_tw_fac11_3                  -0.1192534  0.0521804  -2.285 0.022295 *  
+X[, tract_tw_vars]tract_tw_fac11_4                  -0.0161892  0.0397005  -0.408 0.683435    
+X[, tract_tw_vars]tract_tw_fac11_5                  -0.0992776  0.0466864  -2.126 0.033470 *  
+X[, tract_tw_vars]tract_tw_fac12_1                   0.0250198  0.0453020   0.552 0.580755    
+X[, tract_tw_vars]tract_tw_fac12_2                   0.1307639  0.0461829   2.831 0.004637 ** 
+X[, tract_tw_vars]tract_tw_fac12_3                  -0.0991370  0.0413450  -2.398 0.016499 *  
+X[, tract_tw_vars]tract_tw_fac12_4                  -0.0351751  0.0428743  -0.820 0.411981    
+X[, tract_tw_vars]tract_tw_fac12_5                  -0.0647444  0.0402039  -1.610 0.107319    
+X[, tract_tw_vars]tract_tw_fac13_1                   0.2086861  0.0434645   4.801 1.58e-06 ***
+X[, tract_tw_vars]tract_tw_fac13_2                  -0.0800296  0.0419616  -1.907 0.056501 .  
+X[, tract_tw_vars]tract_tw_fac13_3                   0.0266679  0.0439745   0.606 0.544226    
+X[, tract_tw_vars]tract_tw_fac13_4                  -0.1722576  0.0359379  -4.793 1.65e-06 ***
+X[, tract_tw_vars]tract_tw_fac13_5                  -0.0306939  0.0404536  -0.759 0.448011    
+X[, tract_tw_vars]tract_tw_fac14_1                   0.0547946  0.0380947   1.438 0.150336    
+X[, tract_tw_vars]tract_tw_fac14_2                  -0.0863082  0.0371976  -2.320 0.020332 *  
+X[, tract_tw_vars]tract_tw_fac14_3                   0.0614713  0.0413534   1.486 0.137159    
+X[, tract_tw_vars]tract_tw_fac14_4                  -0.0417658  0.0347316  -1.203 0.229166    
+X[, tract_tw_vars]tract_tw_fac14_5                  -0.0646896  0.0363809  -1.778 0.075393 .  
+X[, tract_tw_vars]tract_tw_fac15_1                   0.0969036  0.0368305   2.631 0.008515 ** 
+X[, tract_tw_vars]tract_tw_fac15_2                   0.1445132  0.0389204   3.713 0.000205 ***
+X[, tract_tw_vars]tract_tw_fac15_3                  -0.0734900  0.0349264  -2.104 0.035373 *  
+X[, tract_tw_vars]tract_tw_fac15_4                  -0.1747909  0.0314125  -5.564 2.65e-08 ***
+X[, tract_tw_vars]tract_tw_fac15_5                  -0.1057703  0.0326680  -3.238 0.001206 ** 
+X[, tract_tw_vars]tract_tw_fac16_1                  -0.0254127  0.0346121  -0.734 0.462823    
+X[, tract_tw_vars]tract_tw_fac16_2                  -0.0184666  0.0340297  -0.543 0.587366    
+X[, tract_tw_vars]tract_tw_fac16_3                  -0.0679748  0.0356835  -1.905 0.056796 .  
+X[, tract_tw_vars]tract_tw_fac16_4                   0.0140415  0.0344335   0.408 0.683434    
+X[, tract_tw_vars]tract_tw_fac16_5                   0.0281768  0.0332915   0.846 0.397354    
+X[, tract_tw_vars]tract_tw_fac17_1                  -0.1294333  0.0371054  -3.488 0.000487 ***
+X[, tract_tw_vars]tract_tw_fac17_2                   0.0348555  0.0364671   0.956 0.339176    
+X[, tract_tw_vars]tract_tw_fac17_3                  -0.0295346  0.0352873  -0.837 0.402613    
+X[, tract_tw_vars]tract_tw_fac17_4                   0.0520701  0.0334768   1.555 0.119857    
+X[, tract_tw_vars]tract_tw_fac17_5                   0.0253174  0.0330950   0.765 0.444282    
+X[, tract_tw_vars]tract_tw_fac18_1                   0.0439885  0.0585171   0.752 0.452224    
+X[, tract_tw_vars]tract_tw_fac18_2                  -0.0611087  0.0697280  -0.876 0.380826    
+X[, tract_tw_vars]tract_tw_fac18_3                  -0.1627393  0.0654684  -2.486 0.012932 *  
+X[, tract_tw_vars]tract_tw_fac18_4                   0.0717604  0.0549797   1.305 0.191828    
+X[, tract_tw_vars]tract_tw_fac18_5                  -0.0230672  0.0622552  -0.371 0.710993    
+X[, tract_tw_vars]tract_tw_fac19_1                   0.0147276  0.0310767   0.474 0.635566    
+X[, tract_tw_vars]tract_tw_fac19_2                  -0.1325557  0.0350019  -3.787 0.000153 ***
+X[, tract_tw_vars]tract_tw_fac19_3                  -0.1900160  0.0356961  -5.323 1.03e-07 ***
+X[, tract_tw_vars]tract_tw_fac19_4                   0.1205863  0.0291896   4.131 3.62e-05 ***
+X[, tract_tw_vars]tract_tw_fac19_5                  -0.0186862  0.0314884  -0.593 0.552896    
+X[, tract_tw_vars]tract_tw_fac20_1                   0.0262029  0.0410595   0.638 0.523368    
+X[, tract_tw_vars]tract_tw_fac20_2                  -0.0515346  0.0400686  -1.286 0.198395    
+X[, tract_tw_vars]tract_tw_fac20_3                  -0.0517883  0.0455932  -1.136 0.256016    
+X[, tract_tw_vars]tract_tw_fac20_4                   0.0045132  0.0393250   0.115 0.908631    
+X[, tract_tw_vars]tract_tw_fac20_5                   0.0490541  0.0461830   1.062 0.288167    
+X[, distance_vars]dis_nearest                       -0.4446342  0.2505331  -1.775 0.075947 .  
+X[, distance_vars]dis_nearest_sq                     0.3757143  0.5880035   0.639 0.522849    
+X[, density_vars]census_density                      0.0188215  0.0017909  10.509  < 2e-16 ***
+X[, density_vars]metro_den_on_a                      0.1657393  0.0441187   3.757 0.000172 ***
+X[, density_vars]metro_den_on_b                     -0.0017141  0.0370205  -0.046 0.963071    
+X[, density_vars]metro_den_on_c                     -0.0298995  0.0167879  -1.781 0.074919 .  
+X[, density_vars]metro_den_on_1                      0.0228598  0.0149667   1.527 0.126677    
+X[, density_vars]metro_den_on_2                      0.0030872  0.0005506   5.607 2.08e-08 ***
+X[, density_vars]metro_den_on_3                      0.0025692  0.0001975  13.011  < 2e-16 ***
+X[, density_vars]metro_den_on_4                      0.0023358  0.0001364  17.125  < 2e-16 ***
+X[, density_vars]metro_den_off_a                     0.0899320  0.0975521   0.922 0.356594    
+X[, density_vars]metro_den_off_b                     0.1153883  0.0766044   1.506 0.132002    
+X[, density_vars]metro_den_off_c                    -0.0279669  0.0316255  -0.884 0.376532    
+X[, density_vars]metro_den_off_1                     0.0304648  0.0296706   1.027 0.304537    
+X[, density_vars]metro_den_off_2                     0.0038934  0.0013466   2.891 0.003839 ** 
+X[, density_vars]metro_den_off_3                     0.0017533  0.0004235   4.140 3.47e-05 ***
+X[, density_vars]metro_den_off_4                     0.0019434  0.0003182   6.108 1.02e-09 ***
+X[, density_vars]dummy_metro_den_on_a               -2.5629627  0.6550066  -3.913 9.14e-05 ***
+X[, density_vars]dummy_metro_den_on_b               -0.1512909  0.5667773  -0.267 0.789523    
+X[, density_vars]dummy_metro_den_on_c                0.3504859  0.2560787   1.369 0.171113    
+X[, density_vars]dummy_metro_den_on_1               -0.1816084  0.2276936  -0.798 0.425108    
+X[, density_vars]dummy_metro_den_on_2                0.0508967  0.0159972   3.182 0.001466 ** 
+X[, density_vars]dummy_metro_den_off_a              -1.8806282  1.4389815  -1.307 0.191250    
+X[, density_vars]dummy_metro_den_off_b              -2.0604673  1.1767871  -1.751 0.079967 .  
+X[, density_vars]dummy_metro_den_off_c               0.2106484  0.4864693   0.433 0.665007    
+X[, density_vars]dummy_metro_den_off_1              -0.2756873  0.4554509  -0.605 0.544979    
+X[, density_vars]dummy_metro_den_off_2              -0.0750079  0.0376400  -1.993 0.046294 *  
+X[, density_vars]touristlocs_den_1                   0.2074717  0.1102527   1.882 0.059874 .  
+X[, density_vars]touristlocs_den_2                   0.8967278  0.0737146  12.165  < 2e-16 ***
+X[, density_vars]touristlocs_den_3                   0.4003433  0.0249133  16.069  < 2e-16 ***
+X[, density_vars]touristlocs_den_4                   0.3132718  0.0182763  17.141  < 2e-16 ***
+X[, density_vars]touristlocs_den_c                  -4.6861512  0.9196481  -5.096 3.49e-07 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl     0.6180822  0.1075343   5.748 9.12e-09 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq -0.1724969  0.0824925  -2.091 0.036530 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 19.57 on 35464 degrees of freedom
+Multiple R-squared:   0.89,	Adjusted R-squared:  0.8895 
+F-statistic:  2109 on 136 and 35464 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+
+Call:
+lm(formula = log(wdcMerged$out_dem_mean)[stocked_list] ~ X[, 
+    "Intercept"] + X[, other_vars] + X[, tract_tw_vars] + X[, 
+    distance_vars] + X[, density_vars] + Instr_df[, c("serv_lvl", 
+    "serv_lvl_sq")] + 0)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.4774 -0.5202  0.1715  0.7236  3.4202 
+
+Coefficients:
+                                                      Estimate Std. Error t value Pr(>|t|)    
+X[, "Intercept"]                                    -4.4897551  0.0668044 -67.207  < 2e-16 ***
+X[, other_vars]                                      0.2518475  0.0073271  34.372  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac1_1                    0.1473132  0.0693012   2.126 0.033536 *  
+X[, tract_tw_vars]tract_tw_fac1_2                    0.1175461  0.0730835   1.608 0.107761    
+X[, tract_tw_vars]tract_tw_fac1_3                    0.0259169  0.0891116   0.291 0.771178    
+X[, tract_tw_vars]tract_tw_fac1_4                    0.0596752  0.0839753   0.711 0.477319    
+X[, tract_tw_vars]tract_tw_fac1_5                   -0.3928150  0.1074706  -3.655 0.000257 ***
+X[, tract_tw_vars]tract_tw_fac2_1                   -0.0773045  0.0790466  -0.978 0.328100    
+X[, tract_tw_vars]tract_tw_fac2_2                   -0.0268902  0.0983788  -0.273 0.784598    
+X[, tract_tw_vars]tract_tw_fac2_3                   -0.0545278  0.1041537  -0.524 0.600607    
+X[, tract_tw_vars]tract_tw_fac2_4                    0.0721611  0.0976586   0.739 0.459965    
+X[, tract_tw_vars]tract_tw_fac2_5                    0.0050783  0.1125672   0.045 0.964017    
+X[, tract_tw_vars]tract_tw_fac3_1                    0.0173694  0.1223026   0.142 0.887065    
+X[, tract_tw_vars]tract_tw_fac3_2                   -0.0358153  0.1183687  -0.303 0.762216    
+X[, tract_tw_vars]tract_tw_fac3_3                   -0.1834957  0.1164520  -1.576 0.115099    
+X[, tract_tw_vars]tract_tw_fac3_4                    0.1261961  0.1004166   1.257 0.208861    
+X[, tract_tw_vars]tract_tw_fac3_5                   -0.0128738  0.1124249  -0.115 0.908834    
+X[, tract_tw_vars]tract_tw_fac4_1                   -0.0377019  0.0958523  -0.393 0.694076    
+X[, tract_tw_vars]tract_tw_fac4_2                    0.1733381  0.0853956   2.030 0.042382 *  
+X[, tract_tw_vars]tract_tw_fac4_3                    0.2685410  0.0906348   2.963 0.003050 ** 
+X[, tract_tw_vars]tract_tw_fac4_4                   -0.0080158  0.0969514  -0.083 0.934107    
+X[, tract_tw_vars]tract_tw_fac4_5                   -0.2628051  0.1240321  -2.119 0.034110 *  
+X[, tract_tw_vars]tract_tw_fac5_1                   -0.1085126  0.0714505  -1.519 0.128844    
+X[, tract_tw_vars]tract_tw_fac5_2                   -0.0902246  0.0723488  -1.247 0.212377    
+X[, tract_tw_vars]tract_tw_fac5_3                    0.0872341  0.0742782   1.174 0.240233    
+X[, tract_tw_vars]tract_tw_fac5_4                   -0.0258662  0.0713192  -0.363 0.716845    
+X[, tract_tw_vars]tract_tw_fac5_5                    0.0192758  0.0732199   0.263 0.792352    
+X[, tract_tw_vars]tract_tw_fac6_1                   -0.2108296  0.0657073  -3.209 0.001335 ** 
+X[, tract_tw_vars]tract_tw_fac6_2                    0.1067757  0.0677525   1.576 0.115042    
+X[, tract_tw_vars]tract_tw_fac6_3                    0.0657165  0.0698942   0.940 0.347107    
+X[, tract_tw_vars]tract_tw_fac6_4                   -0.0093359  0.0704149  -0.133 0.894523    
+X[, tract_tw_vars]tract_tw_fac6_5                    0.1019979  0.0763474   1.336 0.181567    
+X[, tract_tw_vars]tract_tw_fac7_1                    0.0250700  0.0914631   0.274 0.784010    
+X[, tract_tw_vars]tract_tw_fac7_2                   -0.2894160  0.0935231  -3.095 0.001972 ** 
+X[, tract_tw_vars]tract_tw_fac7_3                   -0.3852998  0.0902288  -4.270 1.96e-05 ***
+X[, tract_tw_vars]tract_tw_fac7_4                    0.3457609  0.1028683   3.361 0.000777 ***
+X[, tract_tw_vars]tract_tw_fac7_5                    0.0670597  0.1054021   0.636 0.524632    
+X[, tract_tw_vars]tract_tw_fac8_1                    0.0457211  0.0492131   0.929 0.352874    
+X[, tract_tw_vars]tract_tw_fac8_2                    0.0078448  0.0569773   0.138 0.890491    
+X[, tract_tw_vars]tract_tw_fac8_3                   -0.1191685  0.0564909  -2.110 0.034907 *  
+X[, tract_tw_vars]tract_tw_fac8_4                    0.0509859  0.0552682   0.923 0.356265    
+X[, tract_tw_vars]tract_tw_fac8_5                   -0.0289481  0.0590804  -0.490 0.624153    
+X[, tract_tw_vars]tract_tw_fac9_1                   -0.0770928  0.0517943  -1.488 0.136644    
+X[, tract_tw_vars]tract_tw_fac9_2                   -0.1275538  0.0602783  -2.116 0.034345 *  
+X[, tract_tw_vars]tract_tw_fac9_3                    0.0820581  0.0629495   1.304 0.192394    
+X[, tract_tw_vars]tract_tw_fac9_4                    0.0503153  0.0572276   0.879 0.379291    
+X[, tract_tw_vars]tract_tw_fac9_5                   -0.0146804  0.0631385  -0.233 0.816142    
+X[, tract_tw_vars]tract_tw_fac10_1                   0.0370262  0.0523448   0.707 0.479352    
+X[, tract_tw_vars]tract_tw_fac10_2                  -0.0645617  0.0528754  -1.221 0.222089    
+X[, tract_tw_vars]tract_tw_fac10_3                  -0.0247763  0.0555002  -0.446 0.655297    
+X[, tract_tw_vars]tract_tw_fac10_4                   0.0279998  0.0471640   0.594 0.552737    
+X[, tract_tw_vars]tract_tw_fac10_5                  -0.0381953  0.0522451  -0.731 0.464736    
+X[, tract_tw_vars]tract_tw_fac11_1                   0.1054172  0.0776972   1.357 0.174863    
+X[, tract_tw_vars]tract_tw_fac11_2                   0.2146801  0.0766500   2.801 0.005101 ** 
+X[, tract_tw_vars]tract_tw_fac11_3                  -0.0274576  0.0719941  -0.381 0.702918    
+X[, tract_tw_vars]tract_tw_fac11_4                  -0.1743253  0.0554118  -3.146 0.001657 ** 
+X[, tract_tw_vars]tract_tw_fac11_5                  -0.1529833  0.0636438  -2.404 0.016233 *  
+X[, tract_tw_vars]tract_tw_fac12_1                  -0.0113208  0.0738419  -0.153 0.878154    
+X[, tract_tw_vars]tract_tw_fac12_2                   0.0944436  0.0733071   1.288 0.197640    
+X[, tract_tw_vars]tract_tw_fac12_3                   0.0415118  0.0706113   0.588 0.556608    
+X[, tract_tw_vars]tract_tw_fac12_4                  -0.0881899  0.0714897  -1.234 0.217360    
+X[, tract_tw_vars]tract_tw_fac12_5                  -0.0585673  0.0684531  -0.856 0.392234    
+X[, tract_tw_vars]tract_tw_fac13_1                   0.1037480  0.0558842   1.856 0.063393 .  
+X[, tract_tw_vars]tract_tw_fac13_2                  -0.1007099  0.0550755  -1.829 0.067471 .  
+X[, tract_tw_vars]tract_tw_fac13_3                   0.0784612  0.0579986   1.353 0.176124    
+X[, tract_tw_vars]tract_tw_fac13_4                  -0.1320636  0.0521452  -2.533 0.011326 *  
+X[, tract_tw_vars]tract_tw_fac13_5                   0.0801067  0.0524711   1.527 0.126849    
+X[, tract_tw_vars]tract_tw_fac14_1                   0.0606018  0.0480272   1.262 0.207021    
+X[, tract_tw_vars]tract_tw_fac14_2                  -0.0757091  0.0480868  -1.574 0.115398    
+X[, tract_tw_vars]tract_tw_fac14_3                   0.2137507  0.0515995   4.142 3.44e-05 ***
+X[, tract_tw_vars]tract_tw_fac14_4                  -0.0581839  0.0429882  -1.353 0.175910    
+X[, tract_tw_vars]tract_tw_fac14_5                  -0.1195903  0.0452906  -2.641 0.008282 ** 
+X[, tract_tw_vars]tract_tw_fac15_1                   0.1367886  0.0598034   2.287 0.022184 *  
+X[, tract_tw_vars]tract_tw_fac15_2                   0.0396729  0.0588064   0.675 0.499912    
+X[, tract_tw_vars]tract_tw_fac15_3                  -0.0053334  0.0573516  -0.093 0.925909    
+X[, tract_tw_vars]tract_tw_fac15_4                  -0.0800646  0.0517430  -1.547 0.121787    
+X[, tract_tw_vars]tract_tw_fac15_5                  -0.1243268  0.0544269  -2.284 0.022360 *  
+X[, tract_tw_vars]tract_tw_fac16_1                   0.0012231  0.0481523   0.025 0.979736    
+X[, tract_tw_vars]tract_tw_fac16_2                  -0.0458930  0.0466136  -0.985 0.324856    
+X[, tract_tw_vars]tract_tw_fac16_3                  -0.0333946  0.0480115  -0.696 0.486713    
+X[, tract_tw_vars]tract_tw_fac16_4                  -0.0840944  0.0463813  -1.813 0.069823 .  
+X[, tract_tw_vars]tract_tw_fac16_5                   0.0754401  0.0468225   1.611 0.107147    
+X[, tract_tw_vars]tract_tw_fac17_1                  -0.1276538  0.0483211  -2.642 0.008251 ** 
+X[, tract_tw_vars]tract_tw_fac17_2                  -0.0205888  0.0481617  -0.427 0.669022    
+X[, tract_tw_vars]tract_tw_fac17_3                  -0.0593856  0.0477997  -1.242 0.214103    
+X[, tract_tw_vars]tract_tw_fac17_4                   0.1342106  0.0424021   3.165 0.001551 ** 
+X[, tract_tw_vars]tract_tw_fac17_5                   0.0322695  0.0448213   0.720 0.471555    
+X[, tract_tw_vars]tract_tw_fac18_1                   0.0762333  0.0482170   1.581 0.113876    
+X[, tract_tw_vars]tract_tw_fac18_2                  -0.0501325  0.0548572  -0.914 0.360790    
+X[, tract_tw_vars]tract_tw_fac18_3                  -0.1655541  0.0568881  -2.910 0.003615 ** 
+X[, tract_tw_vars]tract_tw_fac18_4                   0.1131019  0.0457818   2.470 0.013499 *  
+X[, tract_tw_vars]tract_tw_fac18_5                   0.0041384  0.0507934   0.081 0.935065    
+X[, tract_tw_vars]tract_tw_fac19_1                  -0.0551372  0.0516195  -1.068 0.285462    
+X[, tract_tw_vars]tract_tw_fac19_2                   0.0030368  0.0496851   0.061 0.951263    
+X[, tract_tw_vars]tract_tw_fac19_3                  -0.1005964  0.0544761  -1.847 0.064811 .  
+X[, tract_tw_vars]tract_tw_fac19_4                   0.1196701  0.0456049   2.624 0.008692 ** 
+X[, tract_tw_vars]tract_tw_fac19_5                  -0.0778301  0.0529575  -1.470 0.141660    
+X[, tract_tw_vars]tract_tw_fac20_1                  -0.0342207  0.0450976  -0.759 0.447968    
+X[, tract_tw_vars]tract_tw_fac20_2                   0.0092760  0.0425676   0.218 0.827499    
+X[, tract_tw_vars]tract_tw_fac20_3                  -0.0015239  0.0467561  -0.033 0.974000    
+X[, tract_tw_vars]tract_tw_fac20_4                  -0.0303494  0.0402386  -0.754 0.450712    
+X[, tract_tw_vars]tract_tw_fac20_5                   0.0031707  0.0491958   0.064 0.948612    
+X[, distance_vars]dis_nearest                       -0.3387155  0.3054891  -1.109 0.267539    
+X[, distance_vars]dis_nearest_sq                     0.3265652  0.6992186   0.467 0.640472    
+X[, density_vars]census_density                      0.0563323  0.0021651  26.018  < 2e-16 ***
+X[, density_vars]metro_den_on_a                      0.0396873  0.0587858   0.675 0.499606    
+X[, density_vars]metro_den_on_b                     -0.0457697  0.0455910  -1.004 0.315425    
+X[, density_vars]metro_den_on_c                     -0.0281166  0.0159494  -1.763 0.077933 .  
+X[, density_vars]metro_den_on_1                      0.0260041  0.0135999   1.912 0.055875 .  
+X[, density_vars]metro_den_on_2                      0.0002960  0.0007896   0.375 0.707735    
+X[, density_vars]metro_den_on_3                      0.0034959  0.0002677  13.060  < 2e-16 ***
+X[, density_vars]metro_den_on_4                      0.0025920  0.0001813  14.299  < 2e-16 ***
+X[, density_vars]metro_den_off_a                     0.1346471  0.1305413   1.031 0.302336    
+X[, density_vars]metro_den_off_b                    -0.1073367  0.1024632  -1.048 0.294847    
+X[, density_vars]metro_den_off_c                    -0.0618736  0.0387016  -1.599 0.109888    
+X[, density_vars]metro_den_off_1                     0.0640865  0.0348589   1.838 0.066004 .  
+X[, density_vars]metro_den_off_2                     0.0007854  0.0017907   0.439 0.660981    
+X[, density_vars]metro_den_off_3                     0.0031713  0.0005850   5.421 5.95e-08 ***
+X[, density_vars]metro_den_off_4                     0.0027088  0.0004060   6.672 2.56e-11 ***
+X[, density_vars]dummy_metro_den_on_a               -0.6761177  0.8726992  -0.775 0.438497    
+X[, density_vars]dummy_metro_den_on_b                0.4634438  0.6923894   0.669 0.503283    
+X[, density_vars]dummy_metro_den_on_c                0.2434485  0.2446130   0.995 0.319626    
+X[, density_vars]dummy_metro_den_on_1               -0.1837733  0.2083305  -0.882 0.377716    
+X[, density_vars]dummy_metro_den_on_2                0.1171501  0.0215064   5.447 5.15e-08 ***
+X[, density_vars]dummy_metro_den_off_a              -2.2156262  1.9400559  -1.142 0.253444    
+X[, density_vars]dummy_metro_den_off_b               1.2644760  1.5553076   0.813 0.416219    
+X[, density_vars]dummy_metro_den_off_c               0.6173592  0.5925782   1.042 0.297503    
+X[, density_vars]dummy_metro_den_off_1              -0.7506913  0.5329598  -1.409 0.158982    
+X[, density_vars]dummy_metro_den_off_2               0.0453776  0.0482592   0.940 0.347076    
+X[, density_vars]touristlocs_den_1                   0.8018659  0.1782660   4.498 6.88e-06 ***
+X[, density_vars]touristlocs_den_2                   1.0328549  0.0970416  10.643  < 2e-16 ***
+X[, density_vars]touristlocs_den_3                   0.4625351  0.0338093  13.681  < 2e-16 ***
+X[, density_vars]touristlocs_den_4                   0.5105743  0.0220799  23.124  < 2e-16 ***
+X[, density_vars]touristlocs_den_c                  -5.4259571  0.8122037  -6.681 2.42e-11 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl    -0.2203966  0.0993049  -2.219 0.026466 *  
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq  0.5398114  0.0897737   6.013 1.84e-09 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.097 on 35464 degrees of freedom
+Multiple R-squared:  0.8329,	Adjusted R-squared:  0.8323 
+F-statistic:  1300 on 136 and 35464 DF,  p-value: < 2.2e-16
+
+
+
+
+
+lm(formula = log(wdcMerged$out_dem_mean)[stocked_list] ~ X[, 
+    "Intercept"] + X[, other_vars] + X[, tract_tw_vars] + X[, 
+    distance_vars] + X[, density_vars] + Instr_df[, c("serv_lvl", 
+    "serv_lvl_sq")] + 0, weights = (wdcMerged$obs_weight^2)[stocked_list])
+
+Weighted Residuals:
+     Min       1Q   Median       3Q      Max 
+-12110.9   -129.2     45.3    176.0   6527.5 
+
+Coefficients:
+                                                      Estimate Std. Error t value Pr(>|t|)    
+X[, "Intercept"]                                    -3.8903871  0.0669405 -58.117  < 2e-16 ***
+X[, other_vars]                                      0.1541551  0.0047232  32.638  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac1_1                    0.1511498  0.0359929   4.199 2.68e-05 ***
+X[, tract_tw_vars]tract_tw_fac1_2                    0.0334558  0.0385098   0.869 0.384984    
+X[, tract_tw_vars]tract_tw_fac1_3                   -0.2859789  0.0545701  -5.241 1.61e-07 ***
+X[, tract_tw_vars]tract_tw_fac1_4                   -0.0068919  0.0392827  -0.175 0.860733    
+X[, tract_tw_vars]tract_tw_fac1_5                   -0.2277957  0.0500296  -4.553 5.30e-06 ***
+X[, tract_tw_vars]tract_tw_fac2_1                    0.0856720  0.0987586   0.867 0.385680    
+X[, tract_tw_vars]tract_tw_fac2_2                    0.2985997  0.1030162   2.899 0.003751 ** 
+X[, tract_tw_vars]tract_tw_fac2_3                   -0.5591297  0.1578229  -3.543 0.000396 ***
+X[, tract_tw_vars]tract_tw_fac2_4                    0.0038308  0.1186021   0.032 0.974234    
+X[, tract_tw_vars]tract_tw_fac2_5                    0.0392672  0.1371535   0.286 0.774649    
+X[, tract_tw_vars]tract_tw_fac3_1                    0.5811282  0.1136737   5.112 3.20e-07 ***
+X[, tract_tw_vars]tract_tw_fac3_2                    0.3015355  0.0946056   3.187 0.001437 ** 
+X[, tract_tw_vars]tract_tw_fac3_3                   -0.9025494  0.1868761  -4.830 1.37e-06 ***
+X[, tract_tw_vars]tract_tw_fac3_4                   -0.1887405  0.1103802  -1.710 0.087291 .  
+X[, tract_tw_vars]tract_tw_fac3_5                   -0.4175674  0.1721701  -2.425 0.015300 *  
+X[, tract_tw_vars]tract_tw_fac4_1                   -0.2447713  0.0482745  -5.070 3.99e-07 ***
+X[, tract_tw_vars]tract_tw_fac4_2                    0.0628702  0.0443989   1.416 0.156776    
+X[, tract_tw_vars]tract_tw_fac4_3                    0.2654688  0.0491857   5.397 6.81e-08 ***
+X[, tract_tw_vars]tract_tw_fac4_4                    0.0600058  0.0380132   1.579 0.114448    
+X[, tract_tw_vars]tract_tw_fac4_5                   -0.2538226  0.0563154  -4.507 6.59e-06 ***
+X[, tract_tw_vars]tract_tw_fac5_1                   -0.0486650  0.0366217  -1.329 0.183904    
+X[, tract_tw_vars]tract_tw_fac5_2                   -0.2038791  0.0448235  -4.548 5.42e-06 ***
+X[, tract_tw_vars]tract_tw_fac5_3                   -0.2919498  0.0449805  -6.491 8.66e-11 ***
+X[, tract_tw_vars]tract_tw_fac5_4                    0.1207731  0.0399395   3.024 0.002497 ** 
+X[, tract_tw_vars]tract_tw_fac5_5                   -0.1653863  0.0401115  -4.123 3.75e-05 ***
+X[, tract_tw_vars]tract_tw_fac6_1                   -0.1704945  0.0738270  -2.309 0.020928 *  
+X[, tract_tw_vars]tract_tw_fac6_2                   -0.1450305  0.0830407  -1.746 0.080733 .  
+X[, tract_tw_vars]tract_tw_fac6_3                   -0.0116985  0.0872499  -0.134 0.893340    
+X[, tract_tw_vars]tract_tw_fac6_4                    0.0705604  0.0988452   0.714 0.475326    
+X[, tract_tw_vars]tract_tw_fac6_5                   -0.0229193  0.0842575  -0.272 0.785612    
+X[, tract_tw_vars]tract_tw_fac7_1                    0.1919075  0.1455475   1.319 0.187338    
+X[, tract_tw_vars]tract_tw_fac7_2                   -0.4573023  0.1899581  -2.407 0.016072 *  
+X[, tract_tw_vars]tract_tw_fac7_3                   -0.0046059  0.1246020  -0.037 0.970513    
+X[, tract_tw_vars]tract_tw_fac7_4                    0.0224992  0.0966677   0.233 0.815958    
+X[, tract_tw_vars]tract_tw_fac7_5                   -0.0832334  0.1676117  -0.497 0.619485    
+X[, tract_tw_vars]tract_tw_fac8_1                    0.0347248  0.0375923   0.924 0.355638    
+X[, tract_tw_vars]tract_tw_fac8_2                    0.1149971  0.0406365   2.830 0.004659 ** 
+X[, tract_tw_vars]tract_tw_fac8_3                    0.0644691  0.0390253   1.652 0.098547 .  
+X[, tract_tw_vars]tract_tw_fac8_4                   -0.0239710  0.0396721  -0.604 0.545696    
+X[, tract_tw_vars]tract_tw_fac8_5                   -0.3138357  0.0499946  -6.277 3.48e-10 ***
+X[, tract_tw_vars]tract_tw_fac9_1                   -0.0177937  0.0233626  -0.762 0.446285    
+X[, tract_tw_vars]tract_tw_fac9_2                   -0.1583987  0.0241739  -6.552 5.74e-11 ***
+X[, tract_tw_vars]tract_tw_fac9_3                   -0.0604946  0.0254819  -2.374 0.017601 *  
+X[, tract_tw_vars]tract_tw_fac9_4                   -0.0155721  0.0240934  -0.646 0.518074    
+X[, tract_tw_vars]tract_tw_fac9_5                   -0.0425898  0.0298011  -1.429 0.152974    
+X[, tract_tw_vars]tract_tw_fac10_1                   0.0033206  0.0511215   0.065 0.948211    
+X[, tract_tw_vars]tract_tw_fac10_2                  -0.2654953  0.0449297  -5.909 3.47e-09 ***
+X[, tract_tw_vars]tract_tw_fac10_3                  -0.0302756  0.0523997  -0.578 0.563415    
+X[, tract_tw_vars]tract_tw_fac10_4                   0.0776569  0.0402971   1.927 0.053974 .  
+X[, tract_tw_vars]tract_tw_fac10_5                  -0.0726114  0.0529131  -1.372 0.169987    
+X[, tract_tw_vars]tract_tw_fac11_1                  -0.0724003  0.0490381  -1.476 0.139842    
+X[, tract_tw_vars]tract_tw_fac11_2                   0.0162349  0.0514890   0.315 0.752529    
+X[, tract_tw_vars]tract_tw_fac11_3                  -0.1736472  0.0445936  -3.894 9.88e-05 ***
+X[, tract_tw_vars]tract_tw_fac11_4                   0.0708795  0.0340775   2.080 0.037537 *  
+X[, tract_tw_vars]tract_tw_fac11_5                  -0.0717136  0.0414207  -1.731 0.083399 .  
+X[, tract_tw_vars]tract_tw_fac12_1                   0.0829106  0.0327688   2.530 0.011405 *  
+X[, tract_tw_vars]tract_tw_fac12_2                   0.1323138  0.0352821   3.750 0.000177 ***
+X[, tract_tw_vars]tract_tw_fac12_3                  -0.3155986  0.0275999 -11.435  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac12_4                  -0.0047333  0.0304312  -0.156 0.876395    
+X[, tract_tw_vars]tract_tw_fac12_5                  -0.0191090  0.0293073  -0.652 0.514392    
+X[, tract_tw_vars]tract_tw_fac13_1                   0.2527072  0.0356349   7.092 1.35e-12 ***
+X[, tract_tw_vars]tract_tw_fac13_2                   0.0215267  0.0327780   0.657 0.511352    
+X[, tract_tw_vars]tract_tw_fac13_3                  -0.0887376  0.0365004  -2.431 0.015056 *  
+X[, tract_tw_vars]tract_tw_fac13_4                  -0.2780134  0.0252416 -11.014  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac13_5                  -0.1362140  0.0329467  -4.134 3.57e-05 ***
+X[, tract_tw_vars]tract_tw_fac14_1                   0.0344996  0.0353224   0.977 0.328722    
+X[, tract_tw_vars]tract_tw_fac14_2                  -0.0911333  0.0330702  -2.756 0.005859 ** 
+X[, tract_tw_vars]tract_tw_fac14_3                  -0.0337336  0.0395585  -0.853 0.393802    
+X[, tract_tw_vars]tract_tw_fac14_4                  -0.0958202  0.0321374  -2.982 0.002870 ** 
+X[, tract_tw_vars]tract_tw_fac14_5                  -0.0490062  0.0349647  -1.402 0.161046    
+X[, tract_tw_vars]tract_tw_fac15_1                   0.0269094  0.0262160   1.026 0.304688    
+X[, tract_tw_vars]tract_tw_fac15_2                   0.2928118  0.0313609   9.337  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac15_3                  -0.1075747  0.0256149  -4.200 2.68e-05 ***
+X[, tract_tw_vars]tract_tw_fac15_4                  -0.2619691  0.0224694 -11.659  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac15_5                  -0.1855212  0.0228257  -8.128 4.52e-16 ***
+X[, tract_tw_vars]tract_tw_fac16_1                   0.0173168  0.0282699   0.613 0.540176    
+X[, tract_tw_vars]tract_tw_fac16_2                  -0.0130756  0.0287593  -0.455 0.649359    
+X[, tract_tw_vars]tract_tw_fac16_3                  -0.0888101  0.0294296  -3.018 0.002549 ** 
+X[, tract_tw_vars]tract_tw_fac16_4                   0.0162077  0.0289319   0.560 0.575345    
+X[, tract_tw_vars]tract_tw_fac16_5                  -0.0381588  0.0273087  -1.397 0.162328    
+X[, tract_tw_vars]tract_tw_fac17_1                  -0.1768732  0.0292151  -6.054 1.43e-09 ***
+X[, tract_tw_vars]tract_tw_fac17_2                  -0.0749966  0.0307792  -2.437 0.014831 *  
+X[, tract_tw_vars]tract_tw_fac17_3                   0.0718021  0.0266914   2.690 0.007147 ** 
+X[, tract_tw_vars]tract_tw_fac17_4                   0.0064062  0.0259502   0.247 0.805013    
+X[, tract_tw_vars]tract_tw_fac17_5                   0.0884433  0.0248458   3.560 0.000372 ***
+X[, tract_tw_vars]tract_tw_fac18_1                  -0.0930543  0.0832391  -1.118 0.263611    
+X[, tract_tw_vars]tract_tw_fac18_2                  -0.0524386  0.1063479  -0.493 0.621955    
+X[, tract_tw_vars]tract_tw_fac18_3                  -0.1577490  0.0881978  -1.789 0.073691 .  
+X[, tract_tw_vars]tract_tw_fac18_4                   0.1034230  0.0703737   1.470 0.141672    
+X[, tract_tw_vars]tract_tw_fac18_5                  -0.0028902  0.0896388  -0.032 0.974278    
+X[, tract_tw_vars]tract_tw_fac19_1                   0.0560646  0.0208730   2.686 0.007235 ** 
+X[, tract_tw_vars]tract_tw_fac19_2                  -0.2225490  0.0265437  -8.384  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac19_3                  -0.2907360  0.0259468 -11.205  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac19_4                   0.0994178  0.0214641   4.632 3.64e-06 ***
+X[, tract_tw_vars]tract_tw_fac19_5                   0.0427364  0.0215490   1.983 0.047351 *  
+X[, tract_tw_vars]tract_tw_fac20_1                   0.0854444  0.0331633   2.576 0.009985 ** 
+X[, tract_tw_vars]tract_tw_fac20_2                  -0.0589305  0.0367398  -1.604 0.108724    
+X[, tract_tw_vars]tract_tw_fac20_3                  -0.2022581  0.0480715  -4.207 2.59e-05 ***
+X[, tract_tw_vars]tract_tw_fac20_4                   0.0627928  0.0387065   1.622 0.104752    
+X[, tract_tw_vars]tract_tw_fac20_5                   0.1435198  0.0420288   3.415 0.000639 ***
+X[, distance_vars]dis_nearest                       -0.5817181  0.2208882  -2.634 0.008454 ** 
+X[, distance_vars]dis_nearest_sq                     1.1083657  0.5297101   2.092 0.036410 *  
+X[, density_vars]census_density                      0.0003813  0.0015789   0.242 0.809151    
+X[, density_vars]metro_den_on_a                      0.0802237  0.0363506   2.207 0.027325 *  
+X[, density_vars]metro_den_on_b                      0.0009860  0.0370041   0.027 0.978743    
+X[, density_vars]metro_den_on_c                     -0.0538985  0.0213994  -2.519 0.011784 *  
+X[, density_vars]metro_den_on_1                      0.0457362  0.0198977   2.299 0.021535 *  
+X[, density_vars]metro_den_on_2                      0.0057269  0.0004182  13.694  < 2e-16 ***
+X[, density_vars]metro_den_on_3                      0.0019818  0.0001588  12.481  < 2e-16 ***
+X[, density_vars]metro_den_on_4                      0.0019530  0.0001102  17.722  < 2e-16 ***
+X[, density_vars]metro_den_off_a                     0.0058256  0.0760748   0.077 0.938960    
+X[, density_vars]metro_den_off_b                     0.2599571  0.0779944   3.333 0.000860 ***
+X[, density_vars]metro_den_off_c                    -0.0573157  0.0415050  -1.381 0.167308    
+X[, density_vars]metro_den_off_1                     0.0641430  0.0405413   1.582 0.113621    
+X[, density_vars]metro_den_off_2                     0.0061539  0.0010456   5.885 4.01e-09 ***
+X[, density_vars]metro_den_off_3                     0.0006702  0.0003399   1.972 0.048674 *  
+X[, density_vars]metro_den_off_4                     0.0016250  0.0002692   6.037 1.59e-09 ***
+X[, density_vars]dummy_metro_den_on_a               -1.3577488  0.5429794  -2.501 0.012404 *  
+X[, density_vars]dummy_metro_den_on_b               -0.2089227  0.5673857  -0.368 0.712712    
+X[, density_vars]dummy_metro_den_on_c                0.7794902  0.3249020   2.399 0.016438 *  
+X[, density_vars]dummy_metro_den_on_1               -0.5114444  0.3012702  -1.698 0.089587 .  
+X[, density_vars]dummy_metro_den_on_2               -0.0395297  0.0127796  -3.093 0.001982 ** 
+X[, density_vars]dummy_metro_den_off_a              -0.8258665  1.1305956  -0.730 0.465108    
+X[, density_vars]dummy_metro_den_off_b              -4.3570887  1.2040282  -3.619 0.000296 ***
+X[, density_vars]dummy_metro_den_off_c               0.8201274  0.6373947   1.287 0.198212    
+X[, density_vars]dummy_metro_den_off_1              -0.8395420  0.6215696  -1.351 0.176806    
+X[, density_vars]dummy_metro_den_off_2              -0.2610281  0.0313225  -8.334  < 2e-16 ***
+X[, density_vars]touristlocs_den_1                  -0.0538559  0.0828770  -0.650 0.515807    
+X[, density_vars]touristlocs_den_2                   0.9374022  0.0632398  14.823  < 2e-16 ***
+X[, density_vars]touristlocs_den_3                   0.3794672  0.0203029  18.690  < 2e-16 ***
+X[, density_vars]touristlocs_den_4                   0.2349302  0.0154297  15.226  < 2e-16 ***
+X[, density_vars]touristlocs_den_c                  -4.1527697  1.5966211  -2.601 0.009300 ** 
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl     1.7275517  0.1494988  11.556  < 2e-16 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq -0.9701245  0.1017901  -9.531  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 692.8 on 35464 degrees of freedom
+Multiple R-squared:  0.9241,	Adjusted R-squared:  0.9238 
+F-statistic:  3175 on 136 and 35464 DF,  p-value: < 2.2e-16
+
+
+
+
+
+Call:
+lm(formula = log(wdcMerged$out_dem_mean)[stocked_list] ~ X[, 
+    "Intercept"] + X[, other_vars] + X[, tract_tw_vars] + X[, 
+    distance_vars] + X[, density_vars] + Instr_df[, c("serv_lvl", 
+    "serv_lvl_sq")] + 0, weights = (wdcMerged$obs_weight^3)[stocked_list])
+
+Weighted Residuals:
+    Min      1Q  Median      3Q     Max 
+-796100   -1856     523    2773  448806 
+
+Coefficients:
+                                                      Estimate Std. Error t value Pr(>|t|)    
+X[, "Intercept"]                                    -4.1073762  0.0910743 -45.099  < 2e-16 ***
+X[, other_vars]                                      0.1466721  0.0045161  32.478  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac1_1                    0.1353907  0.0349788   3.871 0.000109 ***
+X[, tract_tw_vars]tract_tw_fac1_2                    0.0302288  0.0371058   0.815 0.415270    
+X[, tract_tw_vars]tract_tw_fac1_3                   -0.3457973  0.0570563  -6.061 1.37e-09 ***
+X[, tract_tw_vars]tract_tw_fac1_4                    0.0076128  0.0376444   0.202 0.839739    
+X[, tract_tw_vars]tract_tw_fac1_5                   -0.2621417  0.0500795  -5.235 1.66e-07 ***
+X[, tract_tw_vars]tract_tw_fac2_1                    0.3696094  0.1366038   2.706 0.006819 ** 
+X[, tract_tw_vars]tract_tw_fac2_2                    0.4598059  0.1324852   3.471 0.000520 ***
+X[, tract_tw_vars]tract_tw_fac2_3                   -1.1813323  0.2662509  -4.437 9.15e-06 ***
+X[, tract_tw_vars]tract_tw_fac2_4                    0.0866142  0.1628206   0.532 0.594756    
+X[, tract_tw_vars]tract_tw_fac2_5                    0.2006894  0.1952704   1.028 0.304074    
+X[, tract_tw_vars]tract_tw_fac3_1                    0.9180197  0.1100689   8.340  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac3_2                    0.4304056  0.0870282   4.946 7.63e-07 ***
+X[, tract_tw_vars]tract_tw_fac3_3                   -1.6323933  0.3060754  -5.333 9.70e-08 ***
+X[, tract_tw_vars]tract_tw_fac3_4                   -0.1354230  0.1266407  -1.069 0.284920    
+X[, tract_tw_vars]tract_tw_fac3_5                   -0.5152982  0.2792787  -1.845 0.065031 .  
+X[, tract_tw_vars]tract_tw_fac4_1                   -0.3041132  0.0474757  -6.406 1.52e-10 ***
+X[, tract_tw_vars]tract_tw_fac4_2                    0.0738410  0.0422016   1.750 0.080175 .  
+X[, tract_tw_vars]tract_tw_fac4_3                    0.3784312  0.0517670   7.310 2.72e-13 ***
+X[, tract_tw_vars]tract_tw_fac4_4                    0.0877624  0.0340739   2.576 0.010009 *  
+X[, tract_tw_vars]tract_tw_fac4_5                   -0.5305101  0.0511943 -10.363  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac5_1                   -0.1143922  0.0316702  -3.612 0.000304 ***
+X[, tract_tw_vars]tract_tw_fac5_2                   -0.1140421  0.0399667  -2.853 0.004328 ** 
+X[, tract_tw_vars]tract_tw_fac5_3                   -0.3681682  0.0400770  -9.187  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac5_4                    0.1489182  0.0326481   4.561 5.10e-06 ***
+X[, tract_tw_vars]tract_tw_fac5_5                   -0.2119146  0.0340213  -6.229 4.75e-10 ***
+X[, tract_tw_vars]tract_tw_fac6_1                   -0.2985863  0.0886944  -3.366 0.000762 ***
+X[, tract_tw_vars]tract_tw_fac6_2                   -0.2336544  0.1133672  -2.061 0.039306 *  
+X[, tract_tw_vars]tract_tw_fac6_3                    0.0384050  0.1194506   0.322 0.747823    
+X[, tract_tw_vars]tract_tw_fac6_4                    0.3721623  0.1526658   2.438 0.014784 *  
+X[, tract_tw_vars]tract_tw_fac6_5                   -0.1118650  0.1051135  -1.064 0.287231    
+X[, tract_tw_vars]tract_tw_fac7_1                    0.2641692  0.1735754   1.522 0.128036    
+X[, tract_tw_vars]tract_tw_fac7_2                   -0.5380734  0.3285215  -1.638 0.101459    
+X[, tract_tw_vars]tract_tw_fac7_3                    0.1028206  0.1460538   0.704 0.481443    
+X[, tract_tw_vars]tract_tw_fac7_4                   -0.0377776  0.0887800  -0.426 0.670461    
+X[, tract_tw_vars]tract_tw_fac7_5                   -0.2288077  0.2589903  -0.883 0.376993    
+X[, tract_tw_vars]tract_tw_fac8_1                    0.0423747  0.0349757   1.212 0.225694    
+X[, tract_tw_vars]tract_tw_fac8_2                    0.1612937  0.0371441   4.342 1.41e-05 ***
+X[, tract_tw_vars]tract_tw_fac8_3                    0.0848224  0.0369722   2.294 0.021784 *  
+X[, tract_tw_vars]tract_tw_fac8_4                   -0.0337893  0.0375125  -0.901 0.367728    
+X[, tract_tw_vars]tract_tw_fac8_5                   -0.3071615  0.0488817  -6.284 3.34e-10 ***
+X[, tract_tw_vars]tract_tw_fac9_1                   -0.0271389  0.0191537  -1.417 0.156521    
+X[, tract_tw_vars]tract_tw_fac9_2                   -0.1687606  0.0197902  -8.527  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac9_3                   -0.1150248  0.0207939  -5.532 3.19e-08 ***
+X[, tract_tw_vars]tract_tw_fac9_4                   -0.0237957  0.0198047  -1.202 0.229559    
+X[, tract_tw_vars]tract_tw_fac9_5                   -0.0658475  0.0252229  -2.611 0.009042 ** 
+X[, tract_tw_vars]tract_tw_fac10_1                  -0.0809966  0.0593552  -1.365 0.172385    
+X[, tract_tw_vars]tract_tw_fac10_2                  -0.3104461  0.0437006  -7.104 1.24e-12 ***
+X[, tract_tw_vars]tract_tw_fac10_3                  -0.0086011  0.0584972  -0.147 0.883106    
+X[, tract_tw_vars]tract_tw_fac10_4                   0.1395757  0.0412375   3.385 0.000713 ***
+X[, tract_tw_vars]tract_tw_fac10_5                  -0.0800262  0.0578612  -1.383 0.166652    
+X[, tract_tw_vars]tract_tw_fac11_1                  -0.0707256  0.0493831  -1.432 0.152100    
+X[, tract_tw_vars]tract_tw_fac11_2                   0.0311748  0.0541469   0.576 0.564791    
+X[, tract_tw_vars]tract_tw_fac11_3                  -0.2121733  0.0446055  -4.757 1.98e-06 ***
+X[, tract_tw_vars]tract_tw_fac11_4                   0.0938724  0.0341105   2.752 0.005926 ** 
+X[, tract_tw_vars]tract_tw_fac11_5                  -0.0550145  0.0434110  -1.267 0.205058    
+X[, tract_tw_vars]tract_tw_fac12_1                   0.0958047  0.0287293   3.335 0.000855 ***
+X[, tract_tw_vars]tract_tw_fac12_2                   0.0751353  0.0318583   2.358 0.018358 *  
+X[, tract_tw_vars]tract_tw_fac12_3                  -0.4602228  0.0230348 -19.979  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac12_4                   0.0314356  0.0266436   1.180 0.238066    
+X[, tract_tw_vars]tract_tw_fac12_5                   0.0840650  0.0265189   3.170 0.001526 ** 
+X[, tract_tw_vars]tract_tw_fac13_1                   0.1931400  0.0315368   6.124 9.20e-10 ***
+X[, tract_tw_vars]tract_tw_fac13_2                   0.0490351  0.0281492   1.742 0.081522 .  
+X[, tract_tw_vars]tract_tw_fac13_3                  -0.1546023  0.0343305  -4.503 6.71e-06 ***
+X[, tract_tw_vars]tract_tw_fac13_4                  -0.3058692  0.0205835 -14.860  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac13_5                  -0.2083517  0.0298002  -6.992 2.77e-12 ***
+X[, tract_tw_vars]tract_tw_fac14_1                   0.0264353  0.0370084   0.714 0.475042    
+X[, tract_tw_vars]tract_tw_fac14_2                  -0.1205686  0.0344570  -3.499 0.000467 ***
+X[, tract_tw_vars]tract_tw_fac14_3                  -0.0377492  0.0435070  -0.868 0.385587    
+X[, tract_tw_vars]tract_tw_fac14_4                  -0.1558441  0.0331882  -4.696 2.67e-06 ***
+X[, tract_tw_vars]tract_tw_fac14_5                  -0.0544037  0.0402527  -1.352 0.176526    
+X[, tract_tw_vars]tract_tw_fac15_1                  -0.0366818  0.0226350  -1.621 0.105116    
+X[, tract_tw_vars]tract_tw_fac15_2                   0.4763393  0.0305168  15.609  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac15_3                  -0.1359663  0.0229835  -5.916 3.33e-09 ***
+X[, tract_tw_vars]tract_tw_fac15_4                  -0.3139089  0.0197716 -15.877  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac15_5                  -0.2728535  0.0196522 -13.884  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac16_1                   0.0636492  0.0270730   2.351 0.018727 *  
+X[, tract_tw_vars]tract_tw_fac16_2                   0.0048087  0.0283528   0.170 0.865324    
+X[, tract_tw_vars]tract_tw_fac16_3                  -0.1179700  0.0282921  -4.170 3.06e-05 ***
+X[, tract_tw_vars]tract_tw_fac16_4                  -0.0148692  0.0283889  -0.524 0.600443    
+X[, tract_tw_vars]tract_tw_fac16_5                  -0.0794241  0.0266563  -2.980 0.002889 ** 
+X[, tract_tw_vars]tract_tw_fac17_1                  -0.2502281  0.0267251  -9.363  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac17_2                  -0.2163954  0.0301611  -7.175 7.39e-13 ***
+X[, tract_tw_vars]tract_tw_fac17_3                   0.1595148  0.0236874   6.734 1.67e-11 ***
+X[, tract_tw_vars]tract_tw_fac17_4                   0.0233696  0.0227887   1.025 0.305138    
+X[, tract_tw_vars]tract_tw_fac17_5                   0.1495809  0.0219274   6.822 9.15e-12 ***
+X[, tract_tw_vars]tract_tw_fac18_1                  -0.2656678  0.1044666  -2.543 0.010992 *  
+X[, tract_tw_vars]tract_tw_fac18_2                   0.0387190  0.1608983   0.241 0.809833    
+X[, tract_tw_vars]tract_tw_fac18_3                  -0.1814737  0.1191391  -1.523 0.127715    
+X[, tract_tw_vars]tract_tw_fac18_4                   0.1424134  0.0849466   1.677 0.093648 .  
+X[, tract_tw_vars]tract_tw_fac18_5                   0.0335563  0.1298262   0.258 0.796045    
+X[, tract_tw_vars]tract_tw_fac19_1                   0.0618557  0.0179452   3.447 0.000568 ***
+X[, tract_tw_vars]tract_tw_fac19_2                  -0.2358333  0.0240442  -9.808  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac19_3                  -0.3391596  0.0230699 -14.701  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac19_4                   0.0902115  0.0195629   4.611 4.01e-06 ***
+X[, tract_tw_vars]tract_tw_fac19_5                   0.0554168  0.0190867   2.903 0.003693 ** 
+X[, tract_tw_vars]tract_tw_fac20_1                   0.0989827  0.0285053   3.472 0.000516 ***
+X[, tract_tw_vars]tract_tw_fac20_2                   0.0003013  0.0344031   0.009 0.993012    
+X[, tract_tw_vars]tract_tw_fac20_3                  -0.3482308  0.0527132  -6.606 4.00e-11 ***
+X[, tract_tw_vars]tract_tw_fac20_4                   0.1335273  0.0366081   3.647 0.000265 ***
+X[, tract_tw_vars]tract_tw_fac20_5                   0.1547247  0.0377942   4.094 4.25e-05 ***
+X[, distance_vars]dis_nearest                       -0.3946953  0.2153918  -1.832 0.066892 .  
+X[, distance_vars]dis_nearest_sq                     1.0694922  0.5220651   2.049 0.040511 *  
+X[, density_vars]census_density                     -0.0002025  0.0015477  -0.131 0.895914    
+X[, density_vars]metro_den_on_a                      0.0280784  0.0354873   0.791 0.428819    
+X[, density_vars]metro_den_on_b                     -0.0277429  0.0397926  -0.697 0.485690    
+X[, density_vars]metro_den_on_c                     -0.0877093  0.0245300  -3.576 0.000350 ***
+X[, density_vars]metro_den_on_1                      0.0636720  0.0226345   2.813 0.004910 ** 
+X[, density_vars]metro_den_on_2                      0.0073404  0.0003795  19.344  < 2e-16 ***
+X[, density_vars]metro_den_on_3                      0.0017152  0.0001475  11.626  < 2e-16 ***
+X[, density_vars]metro_den_on_4                      0.0017511  0.0001018  17.202  < 2e-16 ***
+X[, density_vars]metro_den_off_a                    -0.1977003  0.0871563  -2.268 0.023314 *  
+X[, density_vars]metro_den_off_b                     0.1706066  0.0983767   1.734 0.082888 .  
+X[, density_vars]metro_den_off_c                    -0.2064369  0.0701962  -2.941 0.003275 ** 
+X[, density_vars]metro_den_off_1                     0.2120088  0.0696077   3.046 0.002323 ** 
+X[, density_vars]metro_den_off_2                     0.0055409  0.0009110   6.082 1.20e-09 ***
+X[, density_vars]metro_den_off_3                     0.0003914  0.0003201   1.223 0.221414    
+X[, density_vars]metro_den_off_4                     0.0015839  0.0002501   6.334 2.42e-10 ***
+X[, density_vars]dummy_metro_den_on_a               -0.6711873  0.5317124  -1.262 0.206845    
+X[, density_vars]dummy_metro_den_on_b                0.1490999  0.6101449   0.244 0.806947    
+X[, density_vars]dummy_metro_den_on_c                1.3098098  0.3721610   3.519 0.000433 ***
+X[, density_vars]dummy_metro_den_on_1               -0.7304932  0.3424179  -2.133 0.032904 *  
+X[, density_vars]dummy_metro_den_on_2               -0.0900362  0.0118656  -7.588 3.33e-14 ***
+X[, density_vars]dummy_metro_den_off_a               2.2129183  1.3117901   1.687 0.091623 .  
+X[, density_vars]dummy_metro_den_off_b              -3.0030447  1.5111859  -1.987 0.046907 *  
+X[, density_vars]dummy_metro_den_off_c               3.2573120  1.0713204   3.040 0.002364 ** 
+X[, density_vars]dummy_metro_den_off_1              -3.1860949  1.0610959  -3.003 0.002678 ** 
+X[, density_vars]dummy_metro_den_off_2              -0.3615407  0.0293219 -12.330  < 2e-16 ***
+X[, density_vars]touristlocs_den_1                  -0.1269856  0.0816672  -1.555 0.119975    
+X[, density_vars]touristlocs_den_2                   1.0630627  0.0634272  16.760  < 2e-16 ***
+X[, density_vars]touristlocs_den_3                   0.4040371  0.0192898  20.946  < 2e-16 ***
+X[, density_vars]touristlocs_den_4                   0.2266311  0.0142019  15.958  < 2e-16 ***
+X[, density_vars]touristlocs_den_c                  -4.2626986  3.3486698  -1.273 0.203043    
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl     2.4571133  0.2152433  11.416  < 2e-16 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq -1.4438851  0.1370592 -10.535  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 37400 on 35464 degrees of freedom
+Multiple R-squared:  0.9369,	Adjusted R-squared:  0.9366 
+F-statistic:  3869 on 136 and 35464 DF,  p-value: < 2.2e-16
+
+
+
+
+
+Call:
+lm(formula = log(wdcMerged$out_dem_mean)[stocked_list] ~ X[, 
+    "Intercept"] + X[, other_vars] + X[, tract_tw_vars] + X[, 
+    distance_vars] + X[, density_vars] + Instr_df[, c("serv_lvl", 
+    "serv_lvl_sq")] + 0, weights = log(wdcMerged$obs_weight[stocked_list]))
+
+Weighted Residuals:
+     Min       1Q   Median       3Q      Max 
+-12.4359  -1.2152   0.4207   1.7062   7.2309 
+
+Coefficients:
+                                                      Estimate Std. Error t value Pr(>|t|)    
+X[, "Intercept"]                                    -4.394e+00  6.504e-02 -67.549  < 2e-16 ***
+X[, other_vars]                                      2.391e-01  7.033e-03  33.993  < 2e-16 ***
+X[, tract_tw_vars]tract_tw_fac1_1                    1.530e-01  6.461e-02   2.368 0.017901 *  
+X[, tract_tw_vars]tract_tw_fac1_2                    1.199e-01  6.876e-02   1.744 0.081207 .  
+X[, tract_tw_vars]tract_tw_fac1_3                   -1.275e-02  8.408e-02  -0.152 0.879453    
+X[, tract_tw_vars]tract_tw_fac1_4                    4.008e-02  7.798e-02   0.514 0.607295    
+X[, tract_tw_vars]tract_tw_fac1_5                   -3.598e-01  9.867e-02  -3.646 0.000267 ***
+X[, tract_tw_vars]tract_tw_fac2_1                   -8.273e-02  7.764e-02  -1.066 0.286623    
+X[, tract_tw_vars]tract_tw_fac2_2                    5.962e-04  9.657e-02   0.006 0.995075    
+X[, tract_tw_vars]tract_tw_fac2_3                   -7.360e-02  1.024e-01  -0.719 0.472239    
+X[, tract_tw_vars]tract_tw_fac2_4                    6.332e-02  9.570e-02   0.662 0.508206    
+X[, tract_tw_vars]tract_tw_fac2_5                   -2.116e-02  1.106e-01  -0.191 0.848283    
+X[, tract_tw_vars]tract_tw_fac3_1                    3.939e-02  1.209e-01   0.326 0.744597    
+X[, tract_tw_vars]tract_tw_fac3_2                   -5.353e-02  1.167e-01  -0.459 0.646325    
+X[, tract_tw_vars]tract_tw_fac3_3                   -1.500e-01  1.163e-01  -1.290 0.197233    
+X[, tract_tw_vars]tract_tw_fac3_4                    9.685e-02  1.002e-01   0.966 0.333831    
+X[, tract_tw_vars]tract_tw_fac3_5                   -2.885e-02  1.127e-01  -0.256 0.797973    
+X[, tract_tw_vars]tract_tw_fac4_1                   -5.458e-02  8.838e-02  -0.618 0.536901    
+X[, tract_tw_vars]tract_tw_fac4_2                    1.673e-01  7.914e-02   2.114 0.034557 *  
+X[, tract_tw_vars]tract_tw_fac4_3                    2.521e-01  8.381e-02   3.008 0.002635 ** 
+X[, tract_tw_vars]tract_tw_fac4_4                   -2.460e-03  8.914e-02  -0.028 0.977982    
+X[, tract_tw_vars]tract_tw_fac4_5                   -2.374e-01  1.146e-01  -2.073 0.038218 *  
+X[, tract_tw_vars]tract_tw_fac5_1                   -8.210e-02  6.891e-02  -1.191 0.233478    
+X[, tract_tw_vars]tract_tw_fac5_2                   -1.095e-01  6.942e-02  -1.577 0.114709    
+X[, tract_tw_vars]tract_tw_fac5_3                    8.108e-02  7.132e-02   1.137 0.255604    
+X[, tract_tw_vars]tract_tw_fac5_4                   -3.740e-02  6.899e-02  -0.542 0.587712    
+X[, tract_tw_vars]tract_tw_fac5_5                    1.420e-02  7.077e-02   0.201 0.840951    
+X[, tract_tw_vars]tract_tw_fac6_1                   -1.959e-01  6.499e-02  -3.015 0.002575 ** 
+X[, tract_tw_vars]tract_tw_fac6_2                    9.590e-02  6.662e-02   1.439 0.150020    
+X[, tract_tw_vars]tract_tw_fac6_3                    4.583e-02  6.865e-02   0.668 0.504371    
+X[, tract_tw_vars]tract_tw_fac6_4                   -1.009e-02  6.953e-02  -0.145 0.884631    
+X[, tract_tw_vars]tract_tw_fac6_5                    8.406e-02  7.444e-02   1.129 0.258816    
+X[, tract_tw_vars]tract_tw_fac7_1                    1.162e-02  9.193e-02   0.126 0.899382    
+X[, tract_tw_vars]tract_tw_fac7_2                   -2.824e-01  9.408e-02  -3.002 0.002687 ** 
+X[, tract_tw_vars]tract_tw_fac7_3                   -3.633e-01  9.027e-02  -4.024 5.72e-05 ***
+X[, tract_tw_vars]tract_tw_fac7_4                    2.873e-01  1.015e-01   2.831 0.004642 ** 
+X[, tract_tw_vars]tract_tw_fac7_5                    6.053e-02  1.050e-01   0.576 0.564322    
+X[, tract_tw_vars]tract_tw_fac8_1                    5.408e-02  4.795e-02   1.128 0.259380    
+X[, tract_tw_vars]tract_tw_fac8_2                    1.918e-02  5.580e-02   0.344 0.731034    
+X[, tract_tw_vars]tract_tw_fac8_3                   -1.091e-01  5.499e-02  -1.983 0.047324 *  
+X[, tract_tw_vars]tract_tw_fac8_4                    3.861e-02  5.395e-02   0.716 0.474246    
+X[, tract_tw_vars]tract_tw_fac8_5                   -4.868e-02  5.804e-02  -0.839 0.401660    
+X[, tract_tw_vars]tract_tw_fac9_1                   -6.191e-02  4.860e-02  -1.274 0.202734    
+X[, tract_tw_vars]tract_tw_fac9_2                   -1.342e-01  5.651e-02  -2.375 0.017540 *  
+X[, tract_tw_vars]tract_tw_fac9_3                    6.291e-02  5.842e-02   1.077 0.281563    
+X[, tract_tw_vars]tract_tw_fac9_4                    3.392e-02  5.362e-02   0.633 0.526968    
+X[, tract_tw_vars]tract_tw_fac9_5                   -1.544e-02  5.927e-02  -0.261 0.794453    
+X[, tract_tw_vars]tract_tw_fac10_1                   3.545e-02  5.065e-02   0.700 0.483990    
+X[, tract_tw_vars]tract_tw_fac10_2                  -7.968e-02  5.120e-02  -1.556 0.119639    
+X[, tract_tw_vars]tract_tw_fac10_3                  -4.118e-02  5.406e-02  -0.762 0.446182    
+X[, tract_tw_vars]tract_tw_fac10_4                   3.560e-02  4.555e-02   0.782 0.434430    
+X[, tract_tw_vars]tract_tw_fac10_5                  -4.074e-02  5.078e-02  -0.802 0.422381    
+X[, tract_tw_vars]tract_tw_fac11_1                   8.278e-02  7.333e-02   1.129 0.258978    
+X[, tract_tw_vars]tract_tw_fac11_2                   1.903e-01  7.301e-02   2.606 0.009171 ** 
+X[, tract_tw_vars]tract_tw_fac11_3                  -5.003e-02  6.786e-02  -0.737 0.460996    
+X[, tract_tw_vars]tract_tw_fac11_4                  -1.500e-01  5.211e-02  -2.879 0.003991 ** 
+X[, tract_tw_vars]tract_tw_fac11_5                  -1.385e-01  6.005e-02  -2.306 0.021102 *  
+X[, tract_tw_vars]tract_tw_fac12_1                  -1.215e-02  6.803e-02  -0.179 0.858194    
+X[, tract_tw_vars]tract_tw_fac12_2                   9.466e-02  6.750e-02   1.402 0.160836    
+X[, tract_tw_vars]tract_tw_fac12_3                   3.410e-02  6.515e-02   0.523 0.600713    
+X[, tract_tw_vars]tract_tw_fac12_4                  -7.843e-02  6.567e-02  -1.194 0.232352    
+X[, tract_tw_vars]tract_tw_fac12_5                  -5.765e-02  6.251e-02  -0.922 0.356357    
+X[, tract_tw_vars]tract_tw_fac13_1                   1.115e-01  5.343e-02   2.086 0.036959 *  
+X[, tract_tw_vars]tract_tw_fac13_2                  -1.157e-01  5.277e-02  -2.192 0.028378 *  
+X[, tract_tw_vars]tract_tw_fac13_3                   7.630e-02  5.526e-02   1.381 0.167343    
+X[, tract_tw_vars]tract_tw_fac13_4                  -1.256e-01  4.939e-02  -2.544 0.010975 *  
+X[, tract_tw_vars]tract_tw_fac13_5                   6.615e-02  5.016e-02   1.319 0.187260    
+X[, tract_tw_vars]tract_tw_fac14_1                   6.225e-02  4.581e-02   1.359 0.174227    
+X[, tract_tw_vars]tract_tw_fac14_2                  -8.105e-02  4.587e-02  -1.767 0.077226 .  
+X[, tract_tw_vars]tract_tw_fac14_3                   1.908e-01  4.930e-02   3.869 0.000109 ***
+X[, tract_tw_vars]tract_tw_fac14_4                  -4.670e-02  4.122e-02  -1.133 0.257256    
+X[, tract_tw_vars]tract_tw_fac14_5                  -1.127e-01  4.340e-02  -2.596 0.009425 ** 
+X[, tract_tw_vars]tract_tw_fac15_1                   1.356e-01  5.531e-02   2.452 0.014203 *  
+X[, tract_tw_vars]tract_tw_fac15_2                   5.059e-02  5.455e-02   0.927 0.353801    
+X[, tract_tw_vars]tract_tw_fac15_3                  -1.913e-02  5.274e-02  -0.363 0.716861    
+X[, tract_tw_vars]tract_tw_fac15_4                  -9.360e-02  4.757e-02  -1.967 0.049148 *  
+X[, tract_tw_vars]tract_tw_fac15_5                  -1.133e-01  5.018e-02  -2.259 0.023908 *  
+X[, tract_tw_vars]tract_tw_fac16_1                  -6.090e-03  4.545e-02  -0.134 0.893423    
+X[, tract_tw_vars]tract_tw_fac16_2                  -3.332e-02  4.404e-02  -0.757 0.449277    
+X[, tract_tw_vars]tract_tw_fac16_3                  -4.603e-02  4.568e-02  -1.008 0.313636    
+X[, tract_tw_vars]tract_tw_fac16_4                  -5.602e-02  4.403e-02  -1.272 0.203297    
+X[, tract_tw_vars]tract_tw_fac16_5                   6.600e-02  4.433e-02   1.489 0.136536    
+X[, tract_tw_vars]tract_tw_fac17_1                  -1.298e-01  4.684e-02  -2.771 0.005585 ** 
+X[, tract_tw_vars]tract_tw_fac17_2                  -8.899e-04  4.607e-02  -0.019 0.984591    
+X[, tract_tw_vars]tract_tw_fac17_3                  -6.114e-02  4.604e-02  -1.328 0.184190    
+X[, tract_tw_vars]tract_tw_fac17_4                   1.298e-01  4.128e-02   3.144 0.001666 ** 
+X[, tract_tw_vars]tract_tw_fac17_5                   1.996e-02  4.327e-02   0.461 0.644679    
+X[, tract_tw_vars]tract_tw_fac18_1                   7.210e-02  4.934e-02   1.461 0.143955    
+X[, tract_tw_vars]tract_tw_fac18_2                  -4.869e-02  5.665e-02  -0.860 0.390008    
+X[, tract_tw_vars]tract_tw_fac18_3                  -1.679e-01  5.790e-02  -2.899 0.003743 ** 
+X[, tract_tw_vars]tract_tw_fac18_4                   1.046e-01  4.704e-02   2.224 0.026179 *  
+X[, tract_tw_vars]tract_tw_fac18_5                  -6.618e-04  5.223e-02  -0.013 0.989891    
+X[, tract_tw_vars]tract_tw_fac19_1                  -5.055e-02  4.838e-02  -1.045 0.296050    
+X[, tract_tw_vars]tract_tw_fac19_2                  -7.342e-03  4.734e-02  -0.155 0.876756    
+X[, tract_tw_vars]tract_tw_fac19_3                  -1.078e-01  5.123e-02  -2.104 0.035358 *  
+X[, tract_tw_vars]tract_tw_fac19_4                   1.240e-01  4.264e-02   2.908 0.003639 ** 
+X[, tract_tw_vars]tract_tw_fac19_5                  -7.721e-02  4.931e-02  -1.566 0.117383    
+X[, tract_tw_vars]tract_tw_fac20_1                  -2.757e-02  4.478e-02  -0.616 0.538189    
+X[, tract_tw_vars]tract_tw_fac20_2                  -1.829e-03  4.205e-02  -0.044 0.965300    
+X[, tract_tw_vars]tract_tw_fac20_3                   1.495e-03  4.637e-02   0.032 0.974288    
+X[, tract_tw_vars]tract_tw_fac20_4                  -3.026e-02  3.991e-02  -0.758 0.448353    
+X[, tract_tw_vars]tract_tw_fac20_5                  -7.444e-05  4.865e-02  -0.002 0.998779    
+X[, distance_vars]dis_nearest                       -3.222e-01  2.953e-01  -1.091 0.275204    
+X[, distance_vars]dis_nearest_sq                     1.948e-01  6.779e-01   0.287 0.773865    
+X[, density_vars]census_density                      4.996e-02  2.099e-03  23.796  < 2e-16 ***
+X[, density_vars]metro_den_on_a                      8.710e-02  5.697e-02   1.529 0.126303    
+X[, density_vars]metro_den_on_b                     -4.291e-02  4.344e-02  -0.988 0.323307    
+X[, density_vars]metro_den_on_c                     -2.883e-02  1.576e-02  -1.830 0.067296 .  
+X[, density_vars]metro_den_on_1                      2.409e-02  1.346e-02   1.789 0.073577 .  
+X[, density_vars]metro_den_on_2                      5.080e-04  7.489e-04   0.678 0.497587    
+X[, density_vars]metro_den_on_3                      3.342e-03  2.551e-04  13.099  < 2e-16 ***
+X[, density_vars]metro_den_on_4                      2.573e-03  1.735e-04  14.830  < 2e-16 ***
+X[, density_vars]metro_den_off_a                     1.166e-01  1.260e-01   0.925 0.354729    
+X[, density_vars]metro_den_off_b                    -7.002e-02  9.570e-02  -0.732 0.464385    
+X[, density_vars]metro_den_off_c                    -5.438e-02  3.654e-02  -1.488 0.136688    
+X[, density_vars]metro_den_off_1                     5.391e-02  3.301e-02   1.633 0.102524    
+X[, density_vars]metro_den_off_2                     1.137e-03  1.715e-03   0.663 0.507176    
+X[, density_vars]metro_den_off_3                     2.973e-03  5.559e-04   5.349 8.89e-08 ***
+X[, density_vars]metro_den_off_4                     2.536e-03  3.894e-04   6.513 7.45e-11 ***
+X[, density_vars]dummy_metro_den_on_a               -1.385e+00  8.449e-01  -1.639 0.101198    
+X[, density_vars]dummy_metro_den_on_b                4.243e-01  6.608e-01   0.642 0.520782    
+X[, density_vars]dummy_metro_den_on_c                2.594e-01  2.415e-01   1.074 0.282786    
+X[, density_vars]dummy_metro_den_on_1               -1.591e-01  2.060e-01  -0.772 0.439971    
+X[, density_vars]dummy_metro_den_on_2                1.168e-01  2.059e-02   5.673 1.42e-08 ***
+X[, density_vars]dummy_metro_den_off_a              -1.994e+00  1.869e+00  -1.067 0.286011    
+X[, density_vars]dummy_metro_den_off_b               7.195e-01  1.456e+00   0.494 0.621081    
+X[, density_vars]dummy_metro_den_off_c               5.149e-01  5.599e-01   0.920 0.357801    
+X[, density_vars]dummy_metro_den_off_1              -6.025e-01  5.051e-01  -1.193 0.232980    
+X[, density_vars]dummy_metro_den_off_2               3.870e-02  4.643e-02   0.833 0.404625    
+X[, density_vars]touristlocs_den_1                   7.013e-01  1.648e-01   4.256 2.09e-05 ***
+X[, density_vars]touristlocs_den_2                   9.962e-01  9.226e-02  10.798  < 2e-16 ***
+X[, density_vars]touristlocs_den_3                   4.507e-01  3.222e-02  13.986  < 2e-16 ***
+X[, density_vars]touristlocs_den_4                   4.715e-01  2.147e-02  21.958  < 2e-16 ***
+X[, density_vars]touristlocs_den_c                  -5.293e+00  8.097e-01  -6.538 6.33e-11 ***
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl    -9.494e-02  1.003e-01  -0.946 0.343911    
+Instr_df[, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq  4.292e-01  8.784e-02   4.887 1.03e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.498 on 35464 degrees of freedom
+Multiple R-squared:  0.8431,	Adjusted R-squared:  0.8425 
+F-statistic:  1401 on 136 and 35464 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+> idx <- which(wdcMerged$obs_weight>100)
+> fit6 <- lm( log(wdcMerged$out_dem_mean)[idx] ~ 
++               X[idx,"Intercept"] +  X[idx,other_vars] + 
++               X[idx,tract_tw_vars] + X[idx,distance_vars] + X[idx,density_vars]
++             + Instr_df[idx,c("serv_lvl","serv_lvl_sq")] + 0, 
++             weights=wdcMerged$obs_weight[idx])
+> summary(fit6)
+
+Call:
+lm(formula = log(wdcMerged$out_dem_mean)[idx] ~ X[idx, "Intercept"] + 
+    X[idx, other_vars] + X[idx, tract_tw_vars] + X[idx, distance_vars] + 
+    X[idx, density_vars] + Instr_df[idx, c("serv_lvl", "serv_lvl_sq")] + 
+    0, weights = wdcMerged$obs_weight[idx])
+
+Weighted Residuals:
+     Min       1Q   Median       3Q      Max 
+-190.754   -9.653    3.003   12.548   96.742 
+
+Coefficients:
+                                                         Estimate Std. Error t value Pr(>|t|)    
+X[idx, "Intercept"]                                    -4.0034124  0.0648389 -61.744  < 2e-16 ***
+X[idx, other_vars]                                      0.1813424  0.0060308  30.069  < 2e-16 ***
+X[idx, tract_tw_vars]tract_tw_fac1_1                    0.1562312  0.0485466   3.218 0.001291 ** 
+X[idx, tract_tw_vars]tract_tw_fac1_2                    0.0760636  0.0526142   1.446 0.148275    
+X[idx, tract_tw_vars]tract_tw_fac1_3                   -0.1805600  0.0675193  -2.674 0.007495 ** 
+X[idx, tract_tw_vars]tract_tw_fac1_4                   -0.0020476  0.0554009  -0.037 0.970518    
+X[idx, tract_tw_vars]tract_tw_fac1_5                   -0.2448644  0.0686460  -3.567 0.000362 ***
+X[idx, tract_tw_vars]tract_tw_fac2_1                   -0.0537107  0.0838121  -0.641 0.521627    
+X[idx, tract_tw_vars]tract_tw_fac2_2                    0.1249340  0.0987275   1.265 0.205722    
+X[idx, tract_tw_vars]tract_tw_fac2_3                   -0.2060912  0.1156891  -1.781 0.074853 .  
+X[idx, tract_tw_vars]tract_tw_fac2_4                    0.0372097  0.1029279   0.362 0.717719    
+X[idx, tract_tw_vars]tract_tw_fac2_5                   -0.0916617  0.1198185  -0.765 0.444275    
+X[idx, tract_tw_vars]tract_tw_fac3_1                    0.1907780  0.1255930   1.519 0.128769    
+X[idx, tract_tw_vars]tract_tw_fac3_2                   -0.0370394  0.1174897  -0.315 0.752569    
+X[idx, tract_tw_vars]tract_tw_fac3_3                   -0.2296475  0.1413362  -1.625 0.104209    
+X[idx, tract_tw_vars]tract_tw_fac3_4                   -0.0775672  0.1105628  -0.702 0.482955    
+X[idx, tract_tw_vars]tract_tw_fac3_5                   -0.1509688  0.1349037  -1.119 0.263113    
+X[idx, tract_tw_vars]tract_tw_fac4_1                   -0.1568822  0.0644066  -2.436 0.014864 *  
+X[idx, tract_tw_vars]tract_tw_fac4_2                    0.0984320  0.0593255   1.659 0.097089 .  
+X[idx, tract_tw_vars]tract_tw_fac4_3                    0.2073525  0.0624127   3.322 0.000894 ***
+X[idx, tract_tw_vars]tract_tw_fac4_4                    0.0380644  0.0585066   0.651 0.515310    
+X[idx, tract_tw_vars]tract_tw_fac4_5                   -0.1257102  0.0804695  -1.562 0.118249    
+X[idx, tract_tw_vars]tract_tw_fac5_1                    0.0091795  0.0546022   0.168 0.866493    
+X[idx, tract_tw_vars]tract_tw_fac5_2                   -0.2131372  0.0589183  -3.618 0.000298 ***
+X[idx, tract_tw_vars]tract_tw_fac5_3                   -0.0802273  0.0604259  -1.328 0.184289    
+X[idx, tract_tw_vars]tract_tw_fac5_4                    0.0007693  0.0592944   0.013 0.989648    
+X[idx, tract_tw_vars]tract_tw_fac5_5                   -0.0715197  0.0590276  -1.212 0.225663    
+X[idx, tract_tw_vars]tract_tw_fac6_1                   -0.1247502  0.0707082  -1.764 0.077692 .  
+X[idx, tract_tw_vars]tract_tw_fac6_2                   -0.0022991  0.0721760  -0.032 0.974588    
+X[idx, tract_tw_vars]tract_tw_fac6_3                   -0.0373437  0.0747255  -0.500 0.617259    
+X[idx, tract_tw_vars]tract_tw_fac6_4                   -0.0235501  0.0778801  -0.302 0.762358    
+X[idx, tract_tw_vars]tract_tw_fac6_5                   -0.0108071  0.0770802  -0.140 0.888499    
+X[idx, tract_tw_vars]tract_tw_fac7_1                    0.0176547  0.1170140   0.151 0.880074    
+X[idx, tract_tw_vars]tract_tw_fac7_2                   -0.2802011  0.1228663  -2.281 0.022583 *  
+X[idx, tract_tw_vars]tract_tw_fac7_3                   -0.1792266  0.1095943  -1.635 0.101983    
+X[idx, tract_tw_vars]tract_tw_fac7_4                    0.0632283  0.1084622   0.583 0.559930    
+X[idx, tract_tw_vars]tract_tw_fac7_5                    0.0315387  0.1269839   0.248 0.803852    
+X[idx, tract_tw_vars]tract_tw_fac8_1                    0.0633859  0.0452328   1.401 0.161127    
+X[idx, tract_tw_vars]tract_tw_fac8_2                    0.0432430  0.0521288   0.830 0.406805    
+X[idx, tract_tw_vars]tract_tw_fac8_3                   -0.0236424  0.0500866  -0.472 0.636909    
+X[idx, tract_tw_vars]tract_tw_fac8_4                   -0.0050974  0.0498439  -0.102 0.918545    
+X[idx, tract_tw_vars]tract_tw_fac8_5                   -0.1937951  0.0574542  -3.373 0.000744 ***
+X[idx, tract_tw_vars]tract_tw_fac9_1                   -0.0193432  0.0358245  -0.540 0.589241    
+X[idx, tract_tw_vars]tract_tw_fac9_2                   -0.1587671  0.0390570  -4.065 4.82e-05 ***
+X[idx, tract_tw_vars]tract_tw_fac9_3                   -0.0063525  0.0403809  -0.157 0.874998    
+X[idx, tract_tw_vars]tract_tw_fac9_4                   -0.0127050  0.0379625  -0.335 0.737875    
+X[idx, tract_tw_vars]tract_tw_fac9_5                   -0.0164179  0.0439972  -0.373 0.709034    
+X[idx, tract_tw_vars]tract_tw_fac10_1                   0.0390033  0.0502413   0.776 0.437567    
+X[idx, tract_tw_vars]tract_tw_fac10_2                  -0.1767532  0.0495438  -3.568 0.000361 ***
+X[idx, tract_tw_vars]tract_tw_fac10_3                  -0.0790257  0.0541328  -1.460 0.144343    
+X[idx, tract_tw_vars]tract_tw_fac10_4                   0.0542924  0.0437485   1.241 0.214611    
+X[idx, tract_tw_vars]tract_tw_fac10_5                  -0.0516669  0.0519323  -0.995 0.319798    
+X[idx, tract_tw_vars]tract_tw_fac11_1                  -0.0261504  0.0603214  -0.434 0.664642    
+X[idx, tract_tw_vars]tract_tw_fac11_2                   0.0658482  0.0617760   1.066 0.286469    
+X[idx, tract_tw_vars]tract_tw_fac11_3                  -0.1248629  0.0553717  -2.255 0.024141 *  
+X[idx, tract_tw_vars]tract_tw_fac11_4                  -0.0129388  0.0421008  -0.307 0.758596    
+X[idx, tract_tw_vars]tract_tw_fac11_5                  -0.0976963  0.0495570  -1.971 0.048688 *  
+X[idx, tract_tw_vars]tract_tw_fac12_1                   0.0226785  0.0480134   0.472 0.636690    
+X[idx, tract_tw_vars]tract_tw_fac12_2                   0.1284575  0.0488896   2.628 0.008606 ** 
+X[idx, tract_tw_vars]tract_tw_fac12_3                  -0.0995147  0.0438001  -2.272 0.023092 *  
+X[idx, tract_tw_vars]tract_tw_fac12_4                  -0.0348403  0.0453867  -0.768 0.442712    
+X[idx, tract_tw_vars]tract_tw_fac12_5                  -0.0674479  0.0425471  -1.585 0.112920    
+X[idx, tract_tw_vars]tract_tw_fac13_1                   0.2065739  0.0462959   4.462 8.15e-06 ***
+X[idx, tract_tw_vars]tract_tw_fac13_2                  -0.0860115  0.0447018  -1.924 0.054349 .  
+X[idx, tract_tw_vars]tract_tw_fac13_3                   0.0276716  0.0467731   0.592 0.554114    
+X[idx, tract_tw_vars]tract_tw_fac13_4                  -0.1714157  0.0382312  -4.484 7.36e-06 ***
+X[idx, tract_tw_vars]tract_tw_fac13_5                  -0.0305520  0.0430125  -0.710 0.477520    
+X[idx, tract_tw_vars]tract_tw_fac14_1                   0.0570598  0.0405514   1.407 0.159408    
+X[idx, tract_tw_vars]tract_tw_fac14_2                  -0.0896696  0.0395704  -2.266 0.023454 *  
+X[idx, tract_tw_vars]tract_tw_fac14_3                   0.0522741  0.0440269   1.187 0.235110    
+X[idx, tract_tw_vars]tract_tw_fac14_4                  -0.0367992  0.0370194  -0.994 0.320206    
+X[idx, tract_tw_vars]tract_tw_fac14_5                  -0.0635614  0.0387545  -1.640 0.100994    
+X[idx, tract_tw_vars]tract_tw_fac15_1                   0.0970726  0.0390065   2.489 0.012829 *  
+X[idx, tract_tw_vars]tract_tw_fac15_2                   0.1392694  0.0412036   3.380 0.000726 ***
+X[idx, tract_tw_vars]tract_tw_fac15_3                  -0.0748509  0.0369622  -2.025 0.042869 *  
+X[idx, tract_tw_vars]tract_tw_fac15_4                  -0.1779672  0.0332363  -5.355 8.64e-08 ***
+X[idx, tract_tw_vars]tract_tw_fac15_5                  -0.1082183  0.0345781  -3.130 0.001752 ** 
+X[idx, tract_tw_vars]tract_tw_fac16_1                  -0.0280234  0.0367088  -0.763 0.445233    
+X[idx, tract_tw_vars]tract_tw_fac16_2                  -0.0167645  0.0361293  -0.464 0.642641    
+X[idx, tract_tw_vars]tract_tw_fac16_3                  -0.0728478  0.0379297  -1.921 0.054792 .  
+X[idx, tract_tw_vars]tract_tw_fac16_4                   0.0183869  0.0365815   0.503 0.615228    
+X[idx, tract_tw_vars]tract_tw_fac16_5                   0.0275457  0.0353615   0.779 0.436002    
+X[idx, tract_tw_vars]tract_tw_fac17_1                  -0.1329179  0.0397475  -3.344 0.000827 ***
+X[idx, tract_tw_vars]tract_tw_fac17_2                   0.0421986  0.0388502   1.086 0.277405    
+X[idx, tract_tw_vars]tract_tw_fac17_3                  -0.0283611  0.0377169  -0.752 0.452089    
+X[idx, tract_tw_vars]tract_tw_fac17_4                   0.0536301  0.0358380   1.496 0.134544    
+X[idx, tract_tw_vars]tract_tw_fac17_5                   0.0179044  0.0354360   0.505 0.613379    
+X[idx, tract_tw_vars]tract_tw_fac18_1                   0.0271077  0.0652985   0.415 0.678046    
+X[idx, tract_tw_vars]tract_tw_fac18_2                  -0.0589518  0.0788622  -0.748 0.454750    
+X[idx, tract_tw_vars]tract_tw_fac18_3                  -0.1601867  0.0726840  -2.204 0.027540 *  
+X[idx, tract_tw_vars]tract_tw_fac18_4                   0.0473880  0.0615392   0.770 0.441278    
+X[idx, tract_tw_vars]tract_tw_fac18_5                  -0.0119334  0.0695294  -0.172 0.863729    
+X[idx, tract_tw_vars]tract_tw_fac19_1                   0.0137335  0.0330475   0.416 0.677730    
+X[idx, tract_tw_vars]tract_tw_fac19_2                  -0.1384636  0.0373057  -3.712 0.000206 ***
+X[idx, tract_tw_vars]tract_tw_fac19_3                  -0.1886180  0.0378967  -4.977 6.49e-07 ***
+X[idx, tract_tw_vars]tract_tw_fac19_4                   0.1216899  0.0310028   3.925 8.69e-05 ***
+X[idx, tract_tw_vars]tract_tw_fac19_5                  -0.0214369  0.0334604  -0.641 0.521745    
+X[idx, tract_tw_vars]tract_tw_fac20_1                   0.0293305  0.0444731   0.660 0.509573    
+X[idx, tract_tw_vars]tract_tw_fac20_2                  -0.0528275  0.0432349  -1.222 0.221766    
+X[idx, tract_tw_vars]tract_tw_fac20_3                  -0.0562729  0.0492889  -1.142 0.253591    
+X[idx, tract_tw_vars]tract_tw_fac20_4                  -0.0010194  0.0426914  -0.024 0.980949    
+X[idx, tract_tw_vars]tract_tw_fac20_5                   0.0519919  0.0499576   1.041 0.298014    
+X[idx, distance_vars]dis_nearest                       -0.4277155  0.2680803  -1.595 0.110616    
+X[idx, distance_vars]dis_nearest_sq                     0.3019465  0.6298504   0.479 0.631662    
+X[idx, density_vars]census_density                      0.0166027  0.0019181   8.656  < 2e-16 ***
+X[idx, density_vars]metro_den_on_a                      0.1717468  0.0470716   3.649 0.000264 ***
+X[idx, density_vars]metro_den_on_b                     -0.0011764  0.0394083  -0.030 0.976185    
+X[idx, density_vars]metro_den_on_c                     -0.0299781  0.0178419  -1.680 0.092928 .  
+X[idx, density_vars]metro_den_on_1                      0.0216970  0.0158583   1.368 0.171268    
+X[idx, density_vars]metro_den_on_2                      0.0030999  0.0005859   5.291 1.23e-07 ***
+X[idx, density_vars]metro_den_on_3                      0.0025080  0.0002104  11.923  < 2e-16 ***
+X[idx, density_vars]metro_den_on_4                      0.0023789  0.0001455  16.351  < 2e-16 ***
+X[idx, density_vars]metro_den_off_a                     0.0701830  0.1043417   0.673 0.501190    
+X[idx, density_vars]metro_den_off_b                     0.1077821  0.0813395   1.325 0.185151    
+X[idx, density_vars]metro_den_off_c                    -0.0260038  0.0334948  -0.776 0.437547    
+X[idx, density_vars]metro_den_off_1                     0.0284682  0.0314315   0.906 0.365091    
+X[idx, density_vars]metro_den_off_2                     0.0040459  0.0014378   2.814 0.004897 ** 
+X[idx, density_vars]metro_den_off_3                     0.0016945  0.0004510   3.757 0.000172 ***
+X[idx, density_vars]metro_den_off_4                     0.0018650  0.0003393   5.497 3.90e-08 ***
+X[idx, density_vars]dummy_metro_den_on_a               -2.6526727  0.6986724  -3.797 0.000147 ***
+X[idx, density_vars]dummy_metro_den_on_b               -0.1576017  0.6035846  -0.261 0.794010    
+X[idx, density_vars]dummy_metro_den_on_c                0.3552073  0.2721815   1.305 0.191890    
+X[idx, density_vars]dummy_metro_den_on_1               -0.1671511  0.2412705  -0.693 0.488443    
+X[idx, density_vars]dummy_metro_den_on_2                0.0499013  0.0170686   2.924 0.003463 ** 
+X[idx, density_vars]dummy_metro_den_off_a              -1.6011205  1.5383023  -1.041 0.297960    
+X[idx, density_vars]dummy_metro_den_off_b              -1.9299874  1.2499798  -1.544 0.122595    
+X[idx, density_vars]dummy_metro_den_off_c               0.1905673  0.5153696   0.370 0.711558    
+X[idx, density_vars]dummy_metro_den_off_1              -0.2502730  0.4826064  -0.519 0.604053    
+X[idx, density_vars]dummy_metro_den_off_2              -0.0790293  0.0402280  -1.965 0.049477 *  
+X[idx, density_vars]touristlocs_den_1                   0.1868165  0.1169339   1.598 0.110137    
+X[idx, density_vars]touristlocs_den_2                   0.8790568  0.0784905  11.200  < 2e-16 ***
+X[idx, density_vars]touristlocs_den_3                   0.3900888  0.0265779  14.677  < 2e-16 ***
+X[idx, density_vars]touristlocs_den_4                   0.2962984  0.0195810  15.132  < 2e-16 ***
+X[idx, density_vars]touristlocs_den_c                  -4.6593903  0.9957702  -4.679 2.89e-06 ***
+Instr_df[idx, c("serv_lvl", "serv_lvl_sq")]serv_lvl     0.8821947  0.1251162   7.051 1.81e-12 ***
+Instr_df[idx, c("serv_lvl", "serv_lvl_sq")]serv_lvl_sq -0.3458047  0.0942985  -3.667 0.000246 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 20.68 on 30061 degrees of freedom
+Multiple R-squared:  0.8935,	Adjusted R-squared:  0.893 
+F-statistic:  1854 on 136 and 30061 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+
+

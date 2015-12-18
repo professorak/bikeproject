@@ -1,5 +1,5 @@
 source("constants_mw6.R")
-sink("r74.5_noRD_hyperlocal_majoritystates_metrodummies_moments_1:20_full_nldis_pr6_2.txt",split=T)
+sink("r74.6_noRD_hyperlocal_majoritystates_metrodummies_moments_1:20_full_nldis_pr6.txt",split=T)
 
 #least squares implementation 
 #quadratic formulation for service level
@@ -246,8 +246,8 @@ var_covar_theta_2 <- eval_theta2_variance(theta1,deltain_stin,wdcMerged,points,a
 serv_cols <- which(rownames(theta2) %like% "serv_lvl")
 round(theta2_save[serv_cols]/sqrt(diag(var_covar_theta_2)[serv_cols]),2)
 st_err_theta2 <- sqrt(diag(var_covar_theta_2))
-round(correlation_theta_2_estimates <- diag(as.matrix(1/st_err_theta2[serv_cols])) %*% var_covar_theta_2[serv_cols,serv_cols] %*% 
-        diag(as.matrix(1/st_err_theta2[serv_cols])),3)
+round(correlation_theta_2_estimates <- diag(c(as.matrix(1/st_err_theta2[serv_cols])), nrow=length(serv_cols)) %*% var_covar_theta_2[serv_cols,serv_cols] %*% 
+        diag(c(as.matrix(1/st_err_theta2[serv_cols])), nrow=length(serv_cols)),3)
 
 serv_lvl_scale <- scalecols_X[rownames(theta2)[serv_cols]]
 
